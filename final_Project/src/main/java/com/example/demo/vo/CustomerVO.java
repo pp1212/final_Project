@@ -4,3 +4,4 @@ public class CustomerVO {
 	int no;
 	private String name;
 }
+
