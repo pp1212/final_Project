@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({url:"listCategory",success:function(data){
+			$.each(data,function(){
+				$("#select_category").attr("href","listProduct/"+category_code);
+			})
+		}});
+	});
+</script>
+</head>
+<body>
+	<ul>
+		<li><a id="select_category"></a></li>
+	</ul>
+</body>
+</html>
