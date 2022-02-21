@@ -28,12 +28,12 @@ public class ProductController {
 	@Autowired
 	private Product_categoryDAO cdao;
 	
-	@RequestMapping("/totalProduct")
+	@RequestMapping("/market/totalProduct")
 	public void listCategory(Model model){
 		model.addAttribute("category", cdao.listCategory());
 	}
 	
-	@RequestMapping("/listProduct/{category_code}")
+	@RequestMapping("/market/listProduct/{category_code}")
 	@ResponseBody
 	public List<ProductVO> listProduct(@PathVariable String category_code){
 		return dao.listProduct(category_code);
