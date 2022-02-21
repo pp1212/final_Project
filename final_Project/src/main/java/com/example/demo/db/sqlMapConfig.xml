@@ -6,6 +6,10 @@
   <properties resource="com/example/demo/db/db.properties"/>
   <typeAliases>
   	<typeAlias type="com.example.demo.vo.CustomerVO" alias="customerVO"/>
+  	<typeAlias type="com.example.demo.vo.QnaVO" alias="qnaVO"/>
+  	<typeAlias type="com.example.demo.vo.MonthTotalVO" alias="monthTotalVO"/>
+  	<typeAlias type="com.example.demo.vo.Customer_orderVO" alias="customer_orderVO"/>
+  	<typeAlias type="com.example.demo.vo.CustomerOrder_detailVO" alias="customerOrder_detailVO"/>
   </typeAliases>
   
   <environments default="development">
@@ -20,6 +24,8 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/example/demo/db/CustomerMapper.xml"/>
+    <mapper resource="com/example/demo/db/customerMapper.xml"/>
+    <mapper resource="com/example/demo/db/qnaMapper.xml"/>
+    <mapper resource="com/example/demo/db/customer_orderMapper.xml"/>
   </mappers>
 </configuration>

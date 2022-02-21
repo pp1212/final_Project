@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customer_order">
+  <select id="monthTotal" parameterType="monthTotalVO">
+	select month,sum(total) from (select substr(order_date,4,2) month,total from customer_order o,(select order_no,sum(detail_price*detail_cnt) total from customerorder_detail group by order_no) s where o.order_no = s.order_no)  group by month
+  </select>
+</mapper>

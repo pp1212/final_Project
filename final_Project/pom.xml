@@ -64,6 +64,14 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		<!-- 서버재가동없이 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
