@@ -49,6 +49,36 @@ public class CustomerController {
 		
 	}
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public void login_form() {
+		
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public void login_submit() {
+		
+	}
+	
+	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
+	public void find_id_form() {
+		
+	}
+	
+	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
+	public void find_id_submit() {
+		
+	}
+	
+	@RequestMapping(value = "/find_pwd", method = RequestMethod.GET)
+	public void find_pwd_form() {
+		
+	}
+	
+	@RequestMapping(value = "/find_pwd", method = RequestMethod.POST)
+	public void find_pwd_submit() {
+		
+	}
+	
 	
 }
 

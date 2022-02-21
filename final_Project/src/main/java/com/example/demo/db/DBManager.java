@@ -9,8 +9,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.example.demo.vo.CustomerOrder_refundVO;
 import com.example.demo.vo.CustomerVO;
+import com.example.demo.vo.ListDetailVO;
+import com.example.demo.vo.ListOrderVO;
 import com.example.demo.vo.MonthTotalVO;
+import com.example.demo.vo.OrderCancelVO;
 import com.example.demo.vo.QnaVO;
 
 public class DBManager {
@@ -149,7 +153,28 @@ public class DBManager {
 	}
 	
 	//===========================================
-	//monthTotal
+	//customer_order
+	public static List<ListOrderVO> listOrder(String cust_id) {
+		SqlSession session = factory.openSession();
+		List<ListOrderVO> list = session.selectList("customer_order.listOrder",cust_id);
+		session.close();
+		return list;
+	}
+	
+	public static List<OrderCancelVO> orderCancelPage(int order_no) {
+		SqlSession session = factory.openSession();
+		List<OrderCancelVO> list = session.selectList("customer_order.orderCancelPage", order_no);
+		session.close();
+		return list;
+	}
+	
+	public static int orderCancelCheck(int order_no) {
+		SqlSession session = factory.openSession();
+		int re = session.update("customer_order.orderCancelCheck",order_no);
+		session.commit();
+		session.close();
+		return re;
+	}
 	
 	public static List<MonthTotalVO> monthTotal() {
 		SqlSession session = factory.openSession();
@@ -158,6 +183,31 @@ public class DBManager {
 		return list;
 	}
 	
+	//=========================================
+	//customerOrder_detail
+	public static List<ListDetailVO> listDetail(int order_no) {
+		SqlSession session = factory.openSession();
+		List<ListDetailVO> list = session.selectList("customerOrder_detail.listDetail", order_no);
+		session.close();
+		return list;
+	}
+	
+	public static int totalDetail(int order_no) {
+		SqlSession session = factory.openSession();
+		int re = session.selectOne("customerOrder_detail.totalDetail", order_no);
+		session.close();
+		return re;
+	}
+	
+	//===========================================
+	//customerOrder_refund
+	public static int insertRefund(CustomerOrder_refundVO cr) {
+		cr.setRefund_no(getNextNo());
+		SqlSession session = factory.openSession();
+		int re = session.insert("customerOrder_refund.insertRefund", cr);
+		session.close();
+		return re;
+	}
 }
 
 

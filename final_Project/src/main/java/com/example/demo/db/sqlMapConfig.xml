@@ -10,6 +10,10 @@
   	<typeAlias type="com.example.demo.vo.MonthTotalVO" alias="monthTotalVO"/>
   	<typeAlias type="com.example.demo.vo.Customer_orderVO" alias="customer_orderVO"/>
   	<typeAlias type="com.example.demo.vo.CustomerOrder_detailVO" alias="customerOrder_detailVO"/>
+  	<typeAlias type="com.example.demo.vo.ListOrderVO" alias="listOrderVO"/>
+  	<typeAlias type="com.example.demo.vo.OrderCancelVO" alias="orderCancelVO"/>
+  	<typeAlias type="com.example.demo.vo.CustomerOrder_refundVO" alias="customerOrder_refundVO"/>
+  	<typeAlias type="com.example.demo.vo.ListDetailVO" alias="listDetailVO"/>
   </typeAliases>
   
   <environments default="development">
@@ -27,5 +31,7 @@
     <mapper resource="com/example/demo/db/customerMapper.xml"/>
     <mapper resource="com/example/demo/db/qnaMapper.xml"/>
     <mapper resource="com/example/demo/db/customer_orderMapper.xml"/>
+    <mapper resource="com/example/demo/db/customerOrder_detailMapper.xml"/>
+    <mapper resource="com/example/demo/db/customerOrder_refundMapper.xml"/>
   </mappers>
 </configuration>
