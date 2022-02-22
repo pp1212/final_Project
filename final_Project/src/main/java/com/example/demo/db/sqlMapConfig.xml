@@ -7,6 +7,9 @@
   <typeAliases>
   	<typeAlias type="com.example.demo.vo.ProductVO" alias="productVO"/>
   	<typeAlias type="com.example.demo.vo.Product_categoryVO" alias="product_categoryVO"/>
+  	<typeAlias type="com.example.demo.vo.ReviewVO" alias="reviewVO"/>
+  	<typeAlias type="com.example.demo.vo.ListReviewVO" alias="listReviewVO"/>
+  	<typeAlias type="com.example.demo.vo.ContentReviewVO" alias="contentReviewVO"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -22,5 +25,6 @@
   <mappers>
     <mapper resource="com/example/demo/db/productMapper.xml"/>
     <mapper resource="com/example/demo/db/product_categoryMapper.xml"/>
+    <mapper resource="com/example/demo/db/reviewMapper.xml"/>
   </mappers>
 </configuration>

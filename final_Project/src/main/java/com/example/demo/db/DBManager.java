@@ -9,8 +9,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.example.demo.vo.ContentReviewVO;
+import com.example.demo.vo.ListReviewVO;
 import com.example.demo.vo.ProductVO;
 import com.example.demo.vo.Product_categoryVO;
+import com.example.demo.vo.ReviewVO;
 
 public class DBManager {
 	private static SqlSessionFactory factory;
@@ -45,5 +48,42 @@ public class DBManager {
 		int no = session.selectOne("product.getTotalRecord", map);
 		session.close();
 		return no;
+	}
+	
+	public static List<ListReviewVO> listReviewWrite(String cust_id){
+		SqlSession session = factory.openSession();
+		List<ListReviewVO> list = session.selectList("review.listReviewWrite",cust_id);
+		session.close();
+		return list;
+	}
+	
+	public static List<ContentReviewVO> listReviewComplete(String cust_id){
+		SqlSession session = factory.openSession();
+		List<ContentReviewVO> list = session.selectList("review.listReviewComplete", cust_id);
+		session.close();
+		return list;
+	}
+	
+	public static int deleteReview(int review_no) {
+		SqlSession session = factory.openSession();
+		int re = session.delete("review.deleteReview", review_no);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	public static ContentReviewVO contentReview(int review_no) {
+		SqlSession session = factory.openSession();
+		ContentReviewVO c = session.selectOne("review.contentReview", review_no);
+		session.close();
+		return c;
+	}
+	
+	public static int updateReview(ReviewVO r) {
+		SqlSession session = factory.openSession();
+		int re = session.update("review.updateReview", r);
+		session.commit();
+		session.close();
+		return re;
 	}
 }
