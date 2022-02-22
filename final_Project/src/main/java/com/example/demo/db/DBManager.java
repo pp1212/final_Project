@@ -1,6 +1,7 @@
 package com.example.demo.db;
 
 import java.io.Reader;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -23,9 +24,11 @@ public class DBManager {
 		}
 	}
 	
-	public static List<ProductVO> listProduct(String category_code){
+	public static List<ProductVO> listProduct(HashMap map){
 		SqlSession session = factory.openSession();
-		List<ProductVO> list = session.selectList("product.listProduct", category_code);
+		List<ProductVO> list = session.selectList("product.listProduct", map);
+		System.out.println(list);
+		System.out.println("데이터수:"+list.size());
 		session.close();
 		return list;
 	}
@@ -35,5 +38,12 @@ public class DBManager {
 		List<Product_categoryVO> list = session.selectList("product_category.listCategory");
 		session.close();
 		return list;
+	}
+	
+	public static int getTotalRecord(HashMap map) {
+		SqlSession session = factory.openSession();
+		int no = session.selectOne("product.getTotalRecord", map);
+		session.close();
+		return no;
 	}
 }
