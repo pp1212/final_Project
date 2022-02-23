@@ -22,8 +22,11 @@ public class CustomerDAO {
 		return DBManager.doubleCheck_email(cust_email);
 	}
 	
-	public String login(int cust_id) {
-		return DBManager.login(cust_id);
+	//1. id가 존재하지 않는 경우 int -1을 반환
+	//2. 암호가 일치하지 않는 경우 int 0을 반환
+	//3. 암호가 일치하는 경우 int 1을 반환
+	public int login(String cust_id, String cust_pwd) {
+		return DBManager.login(cust_id, cust_pwd);
 	}
 	
 	public HashMap findId(String cust_name, String cust_phone) {
@@ -34,7 +37,7 @@ public class CustomerDAO {
 		return DBManager.findPwd(cust_id, cust_phone);
 	}
 	
-	public CustomerVO detailCustomer(int cust_id) {
+	public CustomerVO detailCustomer(String cust_id) {
 		return DBManager.detailCustomer(cust_id);
 	}
 	
@@ -42,7 +45,7 @@ public class CustomerDAO {
 		return DBManager.updateCustomer(c);
 	}
 	
-	public CustomerVO showCustomer(int cust_id) {
+	public CustomerVO showCustomer(String cust_id) {
 		return DBManager.showCustomer(cust_id);
 	}
 }

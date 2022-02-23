@@ -54,11 +54,19 @@ public class DBManager {
 		return re;
 	}
 	
-	public static String login(int cust_id) {
+	public static int login(String cust_id, String cust_pwd) {
+		int re = -1;
 		SqlSession session = factory.openSession();
-		String str = session.selectOne("customer.login",cust_id);
+		String dbPwd = session.selectOne("customer.login",cust_id);
 		session.close();
-		return str;
+		if(dbPwd != null) { //dbPwd != null이면 re는 -1이 반환
+			if(dbPwd.equals(cust_pwd)) {
+				re = 1;
+			}else {
+				re = 0;
+			}
+		}
+		return re;
 	}
 	
 	public static HashMap findId(String cust_name, String cust_phone) {
@@ -81,7 +89,7 @@ public class DBManager {
 		return map;
 	}
 	
-	public static CustomerVO detailCustomer(int cust_id) {
+	public static CustomerVO detailCustomer(String cust_id) {
 		SqlSession session = factory.openSession();
 		CustomerVO c = session.selectOne("customer.detailCustomer",cust_id);
 		session.close();
@@ -96,7 +104,7 @@ public class DBManager {
 		return re;
 	}
 	
-	public static CustomerVO showCustomer(int cust_id) {
+	public static CustomerVO showCustomer(String cust_id) {
 		SqlSession session = factory.openSession();
 		CustomerVO c = session.selectOne("customer.showCustomer",cust_id);
 		session.close();
@@ -136,9 +144,9 @@ public class DBManager {
 		return no;
 	}
 	
-	public static List<QnaVO> listQna() {
+	public static List<QnaVO> listQna(String cust_id) {
 		SqlSession session = factory.openSession();
-		List<QnaVO> list = session.selectList("qna.listQna");
+		List<QnaVO> list = session.selectList("qna.listQna",cust_id);
 		session.close();
 		return list;
 	}

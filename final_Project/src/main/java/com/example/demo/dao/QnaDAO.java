@@ -22,8 +22,8 @@ public class QnaDAO {
 		return DBManager.deleteQna(qna_no);
 	}
 	
-	public List<QnaVO> listQna() {
-		return DBManager.listQna();
+	public List<QnaVO> listQna(String cust_id) {
+		return DBManager.listQna(cust_id);
 	}
 	
 	public int insertQna(QnaVO q) {

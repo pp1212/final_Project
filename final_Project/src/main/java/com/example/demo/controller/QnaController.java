@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.dao.CustomerDAO;
 import com.example.demo.dao.QnaDAO;
+import com.example.demo.vo.CustomerVO;
 import com.example.demo.vo.QnaVO;
 
 import lombok.Setter;
@@ -26,8 +29,9 @@ public class QnaController {
 	private QnaDAO dao;
 	
 	@RequestMapping("/mypage/listQna")
-	public void list(Model model) {
-		model.addAttribute("list",dao.listQna());
+	public void list(HttpSession session, Model model) {
+		CustomerVO c = (CustomerVO)session.getAttribute("member");
+		model.addAttribute("list",dao.listQna(c.getCust_id()));
 	}
 	
 	@RequestMapping(value = "/mypage/insertQna", method = RequestMethod.GET)
