@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@
 			<tr>
 				<td>${q.qna_no }</td>	
 				<td><a href="detailQna?qna_no=${q.qna_no }">${q.qna_title }</a></td>	
-				<td>${q.qna_date }</td>	
+				<td><fmt:formatDate value="${q.qna_date }"/></td>					
 			</tr>
 		</c:forEach>
 	</table>

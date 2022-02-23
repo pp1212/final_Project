@@ -9,7 +9,7 @@
 <body>
 	<h2>1:1 문의 작성</h2>
 	<form action="insertQna" method="post" enctype="multipart/form-data">
-		번호 : <input type="text" name="qna_no" value="${qna_no }"><br>
+		번호  <input type="text" name="qna_no" value="${qna_no }"><br>
 		제목  <input type="text" name="qna_title"><br>
 		주문번호  <input type="text" name="detail_no"><br>
 		문의내용  <textarea rows="10" cols="80" name="qna_content"></textarea><br>
