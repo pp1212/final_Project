@@ -86,4 +86,11 @@ public class DBManager {
 		session.close();
 		return re;
 	}
+	
+	public static ReviewVO findByNo(int review_no) {
+		SqlSession session = factory.openSession();
+		ReviewVO r = session.selectOne("review.findByNo", review_no);
+		session.close();
+		return r;
+	}
 }

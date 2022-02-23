@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,10 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.ReviewDAO;
+import com.example.demo.vo.ContentReviewVO;
 import com.example.demo.vo.ListReviewVO;
+import com.example.demo.vo.ReviewVO;
 
 import lombok.Setter;
 
@@ -45,8 +49,8 @@ public class ReviewController {
 		
 		int re = dao.deleteReview(review_no);
 		if(re != 1) {
-			mav.setViewName("error");
-			mav.addObject("msg", "상품 삭제에 실패하였습니다.");
+			mav.setViewName("/common/error");
+			mav.addObject("msg", "상품후기 삭제에 실패하였습니다.");
 		}else {
 			String path = request.getRealPath("images");
 			System.out.println("path:"+path);
@@ -56,11 +60,50 @@ public class ReviewController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/mypage/updateReview/{review_no}",method = RequestMethod.GET)
-	public void updateReview_form(@PathVariable int review_no,Model model) {
-		model.addAttribute("review_no", review_no);
-		model.addAttribute("r", dao.contentReview(review_no));
+	@RequestMapping(value = "/mypage/updateReview",method = RequestMethod.GET)
+	public void updateReview_form(int review_no,Model model) {
+		model.addAttribute("c", dao.contentReview(review_no));
+		model.addAttribute("r", dao.findByNo(review_no));
+		System.out.println("r:"+dao.findByNo(review_no));
 	}
 	
+	@RequestMapping(value = "/mypage/updateReview",method = RequestMethod.POST)
+	public ModelAndView updateReview_submit(HttpServletRequest request,ReviewVO r) {
+		ModelAndView mav = new ModelAndView("redirect:/mypage/listReviewComplete");
+		String path = request.getRealPath("images");
+		System.out.println("path:"+path);
+		
+		MultipartFile uploadFile = r.getUploadFile();
+		String review_img = uploadFile.getOriginalFilename();
+		
+		if(review_img != null && !review_img.equals("")) {
+			r.setReview_img(review_img);
+		}
+		
+		int re = dao.updateReview(r);
+		if(re != 1) {
+			mav.setViewName("/common/error");
+			mav.addObject("msg", "상품후기 등록에 실패하였습니다.");
+		}else {
+			try {
+				byte[] data = uploadFile.getBytes();
+				if(review_img != null && !review_img.equals("")) {
+					FileOutputStream fos = new FileOutputStream(path + "/" + review_img);
+					fos.write(data);
+					fos.close();
+				}
+			}catch (Exception e) {
+				System.out.println("예외발생:"+e.getMessage());
+			}
+		}
+		return mav;
+	}
 	
+	@RequestMapping("/mypage/contentReview")
+	public void contentReview(int review_no,Model model) {
+		ContentReviewVO c = dao.contentReview(review_no);
+		c.setReview_no(review_no);
+		model.addAttribute("c", c);
+		System.out.println("c:"+c);
+	}
 }

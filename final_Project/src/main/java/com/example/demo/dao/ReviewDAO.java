@@ -31,4 +31,8 @@ public class ReviewDAO {
 	public int updateReview(ReviewVO r) {
 		return DBManager.updateReview(r);
 	}
+	
+	public ReviewVO findByNo(int review_no) {
+		return DBManager.findByNo(review_no);
+	}
 }

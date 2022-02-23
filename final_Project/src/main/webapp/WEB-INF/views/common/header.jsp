@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="header">
-		<section class="user-area"></section>	<!-- ·Î±×ÀÎ¿¡ µû¶ó ¹Ù²î´Â °÷ -->
+		<section class="user-area"></section>	<!-- ë¡œê·¸ì¸ì— ë”°ë¼ ë°”ë€ŒëŠ” ê³³ -->
 		<div class="header_inner">
 			<div class="header_sec">
 				<h1 class="logo">
@@ -16,18 +16,18 @@
 				</h1>
 				<div class="nb">
 					<ul class="nb_list">
-						<li><a href="market/totalProduct">Ä«Å×°í¸®</a>
+						<li><a href="market/totalProduct">ì¹´í…Œê³ ë¦¬</a>
 							<!-- <ul class="drop-down">
-								<li><a href="market/totalProduct?category_code=sp">±¹,Âî°³</a></li>
-								<li><a href="listProduct/d">¹ÝÂù</a></li>
-								<li><a href="listProduct/s">»ø·¯µå</a></li>
-								<li><a href="listProduct/n">¸é·ù</a></li>
-								<li><a href="listProduct/r">¹ä,Á×</a></li>
-								<li><a href="listProduct/b">º£ÀÌÄ¿¸®</a></li>
-								<li><a href="listProduct/v">ºñ°Ç</a></li>
+								<li><a href="market/totalProduct?category_code=sp">êµ­,ì°Œê°œ</a></li>
+								<li><a href="listProduct/d">ë°˜ì°¬</a></li>
+								<li><a href="listProduct/s">ìƒëŸ¬ë“œ</a></li>
+								<li><a href="listProduct/n">ë©´ë¥˜</a></li>
+								<li><a href="listProduct/r">ë°¥,ì£½</a></li>
+								<li><a href="listProduct/b">ë² ì´ì»¤ë¦¬</a></li>
+								<li><a href="listProduct/v">ë¹„ê±´</a></li>
 							</ul> -->
 						</li>
-						<li><a href="#">½ÅÁ¦Ç°</a></li>
+						<li><a href="#">ì‹ ì œí’ˆ</a></li>
 					</ul>
 				</div>
 				<div></div>

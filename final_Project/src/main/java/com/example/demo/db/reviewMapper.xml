@@ -18,11 +18,15 @@
   </delete>
   
   <select id="contentReview" resultType="contentReviewVO">
-  	select product_name, review_title, review_content, review_img from review r, customerOrder_detail c, product p
+  	select product_img,product_name, review_title, review_content, review_img from review r, customerOrder_detail c, product p
 	where c.detail_no=r.detail_no and c.product_no = p.product_no and review_no=#{review_no}
   </select>
   
   <update id="updateReview" parameterType="reviewVO">
-  	update review set review_title=#{review_title}, review_content=#{review_content}, review_img=#{review_img}, review_code=1 where review_no=#{review_no}
+  	update review set review_title=#{review_title}, review_content=#{review_content}, review_img=#{review_img}, review_code=#{review_code} where review_no=#{review_no}
   </update>
+  
+  <select id="findByNo" resultType="reviewVO">
+  	select * from review where review_no=#{review_no}
+  </select>
 </mapper>

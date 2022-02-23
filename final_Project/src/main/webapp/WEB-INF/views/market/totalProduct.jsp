@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -67,9 +67,9 @@
 		<div class="marketList_p">
 			<div class="head">
 				<select class="orderTypeSelect" id="selectBoxTest" onchange="changeSelection(this.value)">
-					<option class="orderTypeOption" value="product_date desc" selected="selected"><a href="javascript:">ÃÖ½Å¼ø</a></option>
-					<option class="orderTypeOption" value="product_price desc">³ôÀº°¡°Ý¼ø</option>
-					<option class="orderTypeOption" value="product_price">³·Àº°¡°Ý¼ø</option>
+					<option class="orderTypeOption" value="product_date desc" selected="selected"><a href="javascript:">ìµœì‹ ìˆœ</a></option>
+					<option class="orderTypeOption" value="product_price desc">ë†’ì€ê°€ê²©ìˆœ</option>
+					<option class="orderTypeOption" value="product_price">ë‚®ì€ê°€ê²©ìˆœ</option>
 				</select>
 			</div>
 			<div class="box">

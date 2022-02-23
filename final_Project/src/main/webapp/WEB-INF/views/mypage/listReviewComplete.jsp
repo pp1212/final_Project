@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -9,17 +9,17 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header"><!-- ��� --></div>
+		<div id="header"><!-- 헤더 --></div>
 		<div class="page_article">
-			<div><!-- �޴� --></div>
+			<div><!-- 메뉴 --></div>
 			<div class="page_section">
 				<div class="head_article">
-					<h2>��ǰ �ı�</h2>
-				</div>
+					<h2>상품 후기</h2>
+				</div> 
 				<div id="reviewView">
 					<ul class="tab_menu">
-						<li><a href="/mypage/listReviewWrite">�ۼ����� �ı�</a></li>
-						<li><a href="/mypage/listReviewComplete">�ۼ��Ϸ� �ı�</a></li>
+						<li><a href="/mypage/listReviewWrite">작성가능 후기</a></li>
+						<li><a href="/mypage/listReviewComplete">작성완료 후기</a></li>
 					</ul>
 				</div>
 				<div id="reviewAfterList">
@@ -27,9 +27,8 @@
 						<c:forEach var="r" items="${list }">
 							<li>
 								<div>
-									<div class="name">${r.product_name }</div>
+									<div class="name"><a href="/mypage/contentReview?review_no=${r.review_no }">${r.product_name }</a></div>
 									<div class="title">${r.review_title }</div>
-									<a href="/mypage/deleteReview/${r.review_no }">����</a>
 								</div>
 							</li>
 						</c:forEach>
@@ -37,7 +36,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="footer"><!-- Ǫ�� --></div>
+		<div id="footer"><!-- 푸터 --></div>
 	</div>
 	
 </body>
