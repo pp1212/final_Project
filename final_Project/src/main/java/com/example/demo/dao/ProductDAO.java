@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.db.DBManager;
 import com.example.demo.vo.ProductVO;
-import com.example.demo.vo.Product_categoryVO;
 
 @Repository
 public class ProductDAO {

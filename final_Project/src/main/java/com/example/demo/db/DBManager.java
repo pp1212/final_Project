@@ -12,7 +12,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.example.demo.vo.ContentReviewVO;
 import com.example.demo.vo.ListReviewVO;
 import com.example.demo.vo.ProductVO;
-import com.example.demo.vo.Product_categoryVO;
 import com.example.demo.vo.ReviewVO;
 
 public class DBManager {
@@ -29,16 +28,9 @@ public class DBManager {
 	
 	public static List<ProductVO> listProduct(HashMap map){
 		SqlSession session = factory.openSession();
-		List<ProductVO> list = session.selectList("product.listProduct", map);
+		List<ProductVO> list = session.selectList("product.listProduct",map);
 		System.out.println(list);
 		System.out.println("데이터수:"+list.size());
-		session.close();
-		return list;
-	}
-	
-	public static List<Product_categoryVO> listCategory(){
-		SqlSession session = factory.openSession();
-		List<Product_categoryVO> list = session.selectList("product_category.listCategory");
 		session.close();
 		return list;
 	}
@@ -46,6 +38,7 @@ public class DBManager {
 	public static int getTotalRecord(HashMap map) {
 		SqlSession session = factory.openSession();
 		int no = session.selectOne("product.getTotalRecord", map);
+		System.out.println("totalRecord:"+no);
 		session.close();
 		return no;
 	}

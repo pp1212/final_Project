@@ -104,6 +104,5 @@ public class ReviewController {
 		ContentReviewVO c = dao.contentReview(review_no);
 		c.setReview_no(review_no);
 		model.addAttribute("c", c);
-		System.out.println("c:"+c);
 	}
 }
