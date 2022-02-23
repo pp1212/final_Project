@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="customerOrder_refund">
   <select id="getNextNo" resultType="java.lang.Integer">
-  	select nvl(max(no),0)+1 from customerOrder_refund
+  	select nvl(max(refund_no),0)+1 from customerOrder_refund
   </select>
   
   <insert id="insertRefund" parameterType="CustomerOrder_refundVO">

@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="customerOrder_detail">
    <select id="getNextNo" resultType="java.lang.Integer">
- 	select nvl(max(no),0)+1 from customerOrder_detail
+ 	select nvl(max(detail_no),0)+1 from customerOrder_detail
   </select>
   
   <select id="listDetail" resultType="ListDetailVO">

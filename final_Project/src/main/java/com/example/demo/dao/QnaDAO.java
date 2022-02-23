@@ -29,4 +29,8 @@ public class QnaDAO {
 	public int insertQna(QnaVO q) {
 		return DBManager.insertQna(q);
 	}
+	
+	public int getNextNo() {
+		return DBManager.getNextNo();
+	}
 }
