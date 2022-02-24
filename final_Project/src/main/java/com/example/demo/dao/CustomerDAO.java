@@ -48,4 +48,8 @@ public class CustomerDAO {
 	public CustomerVO showCustomer(String cust_id) {
 		return DBManager.showCustomer(cust_id);
 	}
+	
+	public String getRole(String cust_id) {
+		return DBManager.getRole(cust_id);
+	}
 }

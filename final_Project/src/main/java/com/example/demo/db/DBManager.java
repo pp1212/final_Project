@@ -189,6 +189,13 @@ public class DBManager {
 		return c;
 	}
 	
+	public static String getRole(String cust_id) {
+		SqlSession session = factory.openSession();
+		String role = session.selectOne("member.getRole",cust_id);
+		session.close();
+		return role;
+	}
+	
 	//===================================================
 	//qna
 	
