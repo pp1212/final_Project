@@ -3,6 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="customerOrder_detail">
+
+	<insert id="insertCustomerOrder_detail" parameterType="customerOrder_detailVO">
+     insert into customerOrder_detail(detail_no,order_no,product_no,detail_price,detail_cnt) values(#{detail_no},#{order_no},#{product_no},#{detail_price},#{detail_cnt});
+ 	</insert>
+	
    <select id="getNextNo" resultType="java.lang.Integer">
  	select nvl(max(detail_no),0)+1 from customerOrder_detail
   </select>

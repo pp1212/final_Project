@@ -18,4 +18,5 @@ public class OrderCancelVO {
 	private int detail_price;	
 	private int detail_cnt;	
 	private int payment_code;	
+
 }

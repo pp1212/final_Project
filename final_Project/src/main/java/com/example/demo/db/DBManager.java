@@ -8,17 +8,21 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.example.demo.vo.CartProductVO;
+import com.example.demo.vo.CartVO;
 import com.example.demo.vo.ContentReviewVO;
-import com.example.demo.vo.ListReviewVO;
-import com.example.demo.vo.ProductVO;
-import com.example.demo.vo.ReviewVO;
+import com.example.demo.vo.CustomerOrder_detailVO;
 import com.example.demo.vo.CustomerOrder_refundVO;
 import com.example.demo.vo.CustomerVO;
+import com.example.demo.vo.Customer_orderVO;
 import com.example.demo.vo.ListDetailVO;
 import com.example.demo.vo.ListOrderVO;
+import com.example.demo.vo.ListReviewVO;
 import com.example.demo.vo.MonthTotalVO;
 import com.example.demo.vo.OrderCancelVO;
+import com.example.demo.vo.ProductVO;
 import com.example.demo.vo.QnaVO;
+import com.example.demo.vo.ReviewVO;
 
 
 public class DBManager {
@@ -266,6 +270,37 @@ public class DBManager {
 		return list;
 	}
 	
+	public static int insertCustomer_order(Customer_orderVO co) {
+		SqlSession session = factory.openSession();
+		int re = session.insert("customer_order.insertCustomer_order", co);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+//	public static List<ListOrderVO> listOrder(ListOrderVO lo){
+//		SqlSession session = factory.openSession();
+//		List<ListOrderVO> list= session.selectList("customer_order.listOrder",lo);
+//		session.close();
+//		return list;
+//	}
+//	
+//	public static OrderCancelVO orderCancelPage(int order_no) {
+//		SqlSession session = factory.openSession();
+//		OrderCancelVO oc= session.selectOne("customer_order.orderCancelPage", order_no);
+//		session.commit();
+//		session.close();
+//		return oc;
+//	}
+//	
+//	public static int orderCancelcheck(int order_no) {
+//		SqlSession session = factory.openSession();
+//		int re=session.update("customer_order.orderCancelCheck", order_no);
+//		session.commit();
+//		session.close();
+//		return re;
+//	}
+	
 	//=========================================
 	//customerOrder_detail
 	
@@ -283,6 +318,14 @@ public class DBManager {
 		return re;
 	}
 	
+	public static int insertCustomerOrder_detail(CustomerOrder_detailVO cd) {
+		SqlSession session = factory.openSession();
+		int re=session.insert("customerOrder_detail.insertCustomerOrder_detail", cd);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
 	//===========================================
 	//customerOrder_refund
 	
@@ -293,5 +336,52 @@ public class DBManager {
 		session.close();
 		return re;
 	}
-}
+	
+	//===========================================
+	//cart
+	
+	public static int insertCart(CartVO c) {
+		SqlSession session = factory.openSession();
+		int re = session.insert("cart.insertCart", c);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	public static List<CartProductVO> cartProduct(){
+		SqlSession session = factory.openSession();
+		List<CartProductVO> list= session.selectList("cart.cartProduct");
+		session.close();
+		return list;
+	}
+	
+	public static int updateCart(CartVO c) {
+		SqlSession session = factory.openSession();
+		int re=session.update("cart.updateCart", c);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	public static int deleteCart(int cart_no) {
+		SqlSession session = factory.openSession();
+		int re=session.delete("cart.deleteCart",cart_no);
+		session.commit();
+		session.close();
+		return re;
+		}
+	
+	public static CartProductVO cartOrder(CartVO c) {
+		SqlSession session = factory.openSession();
+		CartProductVO cp= session.selectOne("cart.cartOrder", c);
+		session.commit();
+		session.close();
+		return cp;
+	}
+	
+	
+	
 
+	
+	
+}
