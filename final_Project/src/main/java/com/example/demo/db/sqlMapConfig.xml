@@ -18,6 +18,8 @@
   	<typeAlias type="com.example.demo.vo.OrderCancelVO" alias="orderCancelVO"/>
   	<typeAlias type="com.example.demo.vo.CustomerOrder_refundVO" alias="customerOrder_refundVO"/>
   	<typeAlias type="com.example.demo.vo.ListDetailVO" alias="listDetailVO"/>
+  	<typeAlias type="com.example.demo.vo.CartVO" alias="cartVO"/>
+  	<typeAlias type="com.example.demo.vo.CartProductVO" alias="cartProductVO"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -38,5 +40,6 @@
     <mapper resource="com/example/demo/db/customer_orderMapper.xml"/>
     <mapper resource="com/example/demo/db/customerOrder_detailMapper.xml"/>
     <mapper resource="com/example/demo/db/customerOrder_refundMapper.xml"/>
+    <mapper resource="com/example/demo/db/cartMapper.xml"/>
   </mappers>
 </configuration>

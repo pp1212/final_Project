@@ -4,8 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.db.DBManager;
+import com.example.demo.vo.CustomerOrder_detailVO;
 import com.example.demo.vo.ListDetailVO;
+import com.example.demo.db.DBManager;
 
 @Repository
 public class CustomerOrder_detailDAO {
@@ -16,5 +17,9 @@ public class CustomerOrder_detailDAO {
 	
 	public int totalDetail(int order_no) {
 		return DBManager.totalDetail(order_no);
+	}
+	
+	public int insertCustomerOrder_detail(CustomerOrder_detailVO cd) {
+		return DBManager.insertCustomerOrder_detail(cd);
 	}
 }

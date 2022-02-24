@@ -20,5 +20,8 @@
   <select id="monthTotal" resultType="monthTotalVO">
 	select month,sum(total) from (select substr(order_date,4,2) month,total from customer_order o,(select order_no,sum(detail_price*detail_cnt) total from customerorder_detail group by order_no) s where o.order_no = s.order_no)  group by month
   </select>
-
+  
+   <insert id="insertCustomer_order" parameterType="customer_orderVO">
+  	insert into customer_order(order_no,cust_id,order_date,order_addr1,order_addr2,order_addr3,status_code,payment_code) values(#{order_no},#{cust_id},sysdate,#{order_addr1},#{order_addr2},#{order_addr3},0,#{payment_code})
+  </insert>
 </mapper>
