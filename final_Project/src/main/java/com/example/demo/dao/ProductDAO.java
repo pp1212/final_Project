@@ -21,4 +21,8 @@ public class ProductDAO {
 		
 		return DBManager.listProduct(map);
 	}
+	
+	public List<ProductVO> recentProduct(String orderType){
+		return DBManager.recentProduct(orderType);
+	}
 }

@@ -47,21 +47,12 @@ public class ProductController {
 		System.out.println("start:"+start);
 		System.out.println("end:"+end);
 		
-		
 		HashMap map = new HashMap();
 		map.put("orderType", orderType);
 		map.put("category_code", category_code);
 		map.put("start", start);
 		map.put("end",end);
 		System.out.println("category_code:"+category_code);
-		
-		/*
-		 * ResultVO r = new ResultVO(); r.setList(dao.listProduct(map));
-		 * r.setTotalPage(dao.totalPage);
-		 * System.out.println("totalPage:"+dao.totalPage);
-		 * 
-		 * return r;
-		 */
 		
 		model.addAttribute("list", dao.listProduct(map));
 		model.addAttribute("totalPage", dao.totalPage);
@@ -74,5 +65,11 @@ public class ProductController {
 		if(orderType != null) {
 			session.setAttribute("orderType", orderType);
 		}
+	}
+	
+	@RequestMapping("/market/recentProduct")
+	public void recentProduct(String orderType,Model model) {
+		System.out.println("orderType:"+orderType);
+		model.addAttribute("list", dao.recentProduct(orderType));
 	}
 }

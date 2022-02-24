@@ -58,6 +58,13 @@ public class DBManager {
 		return no;
 	}
 	
+	public static List<ProductVO> recentProduct(String orderType){
+		SqlSession session = factory.openSession();
+		List<ProductVO> list = session.selectList("product.recentProduct",orderType);
+		session.close();
+		return list;
+	}
+	
 	
 	//=========================================
 	//review

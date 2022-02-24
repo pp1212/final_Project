@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -26,11 +26,11 @@
 				</div>
 				<div class="marketList_p">
 					<div class="head">
-						<select class="orderTypeSelect" id="selectBoxTest"><!--  onchange="changeSelection(this.value)" -->
-							<option class="orderTypeOption" value="product_date desc" selected="selected"><a href="/market/listProduct?orderType=product_date desc">최신순</a></option>
-							<option class="orderTypeOption" value="product_price desc"><a href="/market/listProduct?orderType=product_date desc">높은가격순</a></option>
-							<option class="orderTypeOption" value="product_price"><a href="/market/listProduct?orderType=product_date desc">낮은가격순</a></option>
-						</select>
+						<ul class="list">
+							<li><a href="/market/listProduct?orderType=product_date desc">최신순</a></li><br>
+							<li><a href="/market/listProduct?orderType=product_price desc">높은가격순</a></li><br>
+							<li><a href="/market/listProduct?orderType=product_price">낮은가격순</a></li><br>
+						</ul>
 					</div>
 					<div class="box">
 						<c:forEach var="p" items="${list }">
@@ -50,6 +50,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="footer"><!-- 푸터 --></div>
 	</div>
 	
 </body>

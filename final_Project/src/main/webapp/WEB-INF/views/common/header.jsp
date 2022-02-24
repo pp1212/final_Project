@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
 								<li><a href="/market/listProduct?category_code=v">비건</a></li>
 							</ul>
 						</li>
-						<li><a href="#">신제품</a></li>
+						<li><a href="/market/recentProduct">신제품</a></li>
 					</ul>
 				</div>
 				<div></div>
