@@ -58,6 +58,43 @@ public class DBManager {
 		return no;
 	}
 	
+	public static List<ProductVO> mgr_listProduct(){
+		SqlSession session = factory.openSession();
+		List<ProductVO> list = session.selectList("product.mgr_listProduct");
+		session.close();
+		return list;
+	}
+	
+	public static int mgr_insertProduct(ProductVO p) {
+		SqlSession session = factory.openSession();
+		int re = session.insert("product.mgr_insertProduct",p);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	public static ProductVO mgr_detailProduct(int product_no){
+		SqlSession session = factory.openSession();
+		ProductVO p = session.selectOne("product.mgr_detailProduct",product_no);
+		session.close();
+		return p;
+	}
+	
+	public static int mgr_updateProduct(ProductVO p) {
+		SqlSession session = factory.openSession();
+		int re = session.update("product.mgr_updateProduct",p);
+		session.commit();
+		session.close();
+		return re;
+	}
+
+	public static int mgr_deleteProduct(int product_no) {
+		SqlSession session = factory.openSession();
+		int re = session.delete("product.mgr_deleteProduct",product_no);
+		session.commit();
+		session.close();
+		return re;
+	}
 	
 	//=========================================
 	//review
@@ -191,7 +228,7 @@ public class DBManager {
 	
 	public static String getRole(String cust_id) {
 		SqlSession session = factory.openSession();
-		String role = session.selectOne("member.getRole",cust_id);
+		String role = session.selectOne("customer.getRole",cust_id);
 		session.close();
 		return role;
 	}

@@ -3,13 +3,15 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdminController {
 	@RequestMapping("/admin/adminMain")
 	@ResponseBody
-	public String adminMain() {
-		return "관리자-메인페이지입니다.";
+	public ModelAndView adminMain() {
+		ModelAndView mav = new ModelAndView();
+		return mav;
 	}
 	
 	@RequestMapping("/admin/mgr_insertProduct")
@@ -20,8 +22,10 @@ public class AdminController {
 	
 	@RequestMapping("/admin/mgr_listProduct")
 	@ResponseBody
-	public String mgr_listProduct() {
-		return "관리자-상품목록입니다.";
+	public ModelAndView mgr_listProduct() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", dao.cartProduct());
+		return mav;
 	}
 	
 	@RequestMapping("/admin/mgr_detailProduct")
