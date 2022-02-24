@@ -56,13 +56,12 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login_submit(HttpSession session, String cust_id, String cust_pwd) {
-		session.setAttribute("member",dao.detailCustomer(cust_id));
 		ModelAndView mav = new ModelAndView("loginOK");
 		int re = dao.login(cust_id, cust_pwd);
 		String msg = "";
 		if(re == 1) {
 			msg = cust_id + "님, 로그인 하였습니다.";
-			session.setAttribute("cust_id", cust_id);
+			session.setAttribute("member",dao.detailCustomer(cust_id));
 		}else { //re가 -1
 			msg = "아이디가 존재하지 않습니다.";
 		}
