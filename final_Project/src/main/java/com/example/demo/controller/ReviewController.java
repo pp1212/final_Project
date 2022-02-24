@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.ReviewDAO;
 import com.example.demo.vo.ContentReviewVO;
+import com.example.demo.vo.CustomerVO;
 import com.example.demo.vo.ListReviewVO;
 import com.example.demo.vo.ReviewVO;
 
@@ -30,14 +32,15 @@ public class ReviewController {
 	private ReviewDAO dao;
 	
 	@RequestMapping("/mypage/listReviewWrite")
-	public void listReviewWrite(Model model){
-		String cust_id = "pagy1218";
+	public void listReviewWrite(HttpSession session,Model model){
+		String cust_id = (String)session.getAttribute("cust_id");
 		model.addAttribute("list", dao.listReviewWrite(cust_id));
 	}
 	
 	@RequestMapping("/mypage/listReviewComplete")
-	public void listReviewComplete(Model model) {
-		String cust_id = "pagy1218";
+	public void listReviewComplete(HttpSession session,Model model) {
+		//String cust_id = "pagy1218";
+		String cust_id = (String)session.getAttribute("cust_id");
 		model.addAttribute("list", dao.listReviewComplete(cust_id));
 	}
 	
