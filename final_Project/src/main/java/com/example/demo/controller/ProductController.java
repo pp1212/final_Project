@@ -30,12 +30,16 @@ public class ProductController {
 	
 	
 	@RequestMapping("/market/listProduct")
-	public void listProduct(String category_code,Model model,HttpSession session,@RequestParam(defaultValue = "1") int pageNUM){
+	public void listProduct(String category_code,String orderType,Model model,HttpSession session,@RequestParam(defaultValue = "1") int pageNUM){
 		if(category_code == null) {
 			category_code = (String)session.getAttribute("category_code");
 		}
 		
-//		System.out.println("정렬컬럼:"+orderColumn);
+		if(orderType == null && session.getAttribute("orderType") != null) {
+			orderType = (String)session.getAttribute("orderType");
+		}
+		
+		System.out.println("정렬컬럼:"+orderType);
 		System.out.println("pageNUM:"+pageNUM);
 		
 		int start = (pageNUM-1)*dao.pageSIZE +1;
@@ -45,7 +49,7 @@ public class ProductController {
 		
 		
 		HashMap map = new HashMap();
-		//map.put("orderColumn", orderColumn);
+		map.put("orderType", orderType);
 		map.put("category_code", category_code);
 		map.put("start", start);
 		map.put("end",end);
@@ -59,7 +63,6 @@ public class ProductController {
 		 * return r;
 		 */
 		
-		//model.addAttribute("list", dao.listProduct(category_code));
 		model.addAttribute("list", dao.listProduct(map));
 		model.addAttribute("totalPage", dao.totalPage);
 		
@@ -68,8 +71,8 @@ public class ProductController {
 		}
 		
 		
-//		if(orderColumn != null) {
-//			session.setAttribute("orderColumn", orderColumn);
-//		}
+		if(orderType != null) {
+			session.setAttribute("orderType", orderType);
+		}
 	}
 }

@@ -26,10 +26,10 @@
 				</div>
 				<div class="marketList_p">
 					<div class="head">
-						<select class="orderTypeSelect" id="selectBoxTest" onchange="changeSelection(this.value)">
-							<option class="orderTypeOption" value="product_date desc" selected="selected"><a href="/market/listProduct?orderColumn=product_date desc">최신순</a></option>
-							<option class="orderTypeOption" value="product_price desc">높은가격순</option>
-							<option class="orderTypeOption" value="product_price">낮은가격순</option>
+						<select class="orderTypeSelect" id="selectBoxTest"><!--  onchange="changeSelection(this.value)" -->
+							<option class="orderTypeOption" value="product_date desc" selected="selected"><a href="/market/listProduct?orderType=product_date desc">최신순</a></option>
+							<option class="orderTypeOption" value="product_price desc"><a href="/market/listProduct?orderType=product_date desc">높은가격순</a></option>
+							<option class="orderTypeOption" value="product_price"><a href="/market/listProduct?orderType=product_date desc">낮은가격순</a></option>
 						</select>
 					</div>
 					<div class="box">
