@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <properties resource="com/example/demo/db/db.properties"/>
+  <typeAliases>
+  	<typeAlias type="com.example.demo.vo.CartVO" alias="cartVO"/>
+  	<typeAlias type="com.example.demo.vo.CartProductVO" alias="cartProductVO"/>
+  	<typeAlias type="com.example.demo.vo.ListOrderVO" alias="listOrderVO"/>
+  	<typeAlias type="com.example.demo.vo.ListDetailVO" alias="listDetailVO"/>
+  	<typeAlias type="com.example.demo.vo.Customer_orderVO" alias="customer_orderVO"/>
+  	<typeAlias type="com.example.demo.vo.CustomerOrder_detailVO" alias="customerOrder_detailVO"/>
+  </typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="com/example/demo/db/cartMapper.xml"/>
+    <mapper resource="com/example/demo/db/customer_orderMapper.xml"/>
+    <mapper resource="com/example/demo/db/customerOrder_detailMapper.xml"/>
+  </mappers>
+</configuration>

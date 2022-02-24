@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customer_order">
+  <insert id="insertCustomer_order" parameterType="customer_orderVO">
+  	insert into customer_order(order_no,cust_id,order_date,order_addr1,order_addr2,order_addr3,status_code,payment_code) values(?,?,sysdate,?,?,?,0,?)
+  </insert>
+  
+  <select id="getNextNo" resultType="java.lang.Integer">
+  	select nvl(max(cart_no),0)+1 from cart
+  </select>	
+  
+</mapper>
