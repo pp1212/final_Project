@@ -16,19 +16,6 @@ public class Customer_orderDAO {
 	public int insertCustomer_order(Customer_orderVO co) {
 		return DBManager.insertCustomer_order(co);
 	}
-	
-//	public List<ListOrderVO> listOrder(ListOrderVO lo){
-//		return DBManager.listOrder(lo);
-//	}
-//	
-//	public OrderCancelVO orderCancelPage(int order_no) {
-//		return DBManager.orderCancelPage(order_no);
-//	}
-//	
-//	public int orderCancelcheck(int order_no) {
-//		return DBManager.orderCancelcheck(order_no);
-//	}
-
 
 	public List<ListOrderVO> listOrder(String cust_id) {
 		return DBManager.listOrder(cust_id);

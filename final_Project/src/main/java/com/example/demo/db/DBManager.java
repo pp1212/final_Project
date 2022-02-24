@@ -285,28 +285,9 @@ public class DBManager {
 		return re;
 	}
 	
-//	public static List<ListOrderVO> listOrder(ListOrderVO lo){
-//		SqlSession session = factory.openSession();
-//		List<ListOrderVO> list= session.selectList("customer_order.listOrder",lo);
-//		session.close();
-//		return list;
-//	}
-//	
-//	public static OrderCancelVO orderCancelPage(int order_no) {
-//		SqlSession session = factory.openSession();
-//		OrderCancelVO oc= session.selectOne("customer_order.orderCancelPage", order_no);
-//		session.commit();
-//		session.close();
-//		return oc;
-//	}
-//	
-//	public static int orderCancelcheck(int order_no) {
-//		SqlSession session = factory.openSession();
-//		int re=session.update("customer_order.orderCancelCheck", order_no);
-//		session.commit();
-//		session.close();
-//		return re;
-//	}
+
+
+
 	
 	//=========================================
 	//customerOrder_detail
