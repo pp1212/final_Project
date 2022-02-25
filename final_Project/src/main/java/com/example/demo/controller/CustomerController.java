@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.net.http.HttpResponse;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -89,12 +90,28 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
 	public void find_id_form() {
-		
+
 	}
 	
 	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
-	public void find_id_submit() {
+	public ModelAndView find_id_submit(Model model, String cust_name, String cust_phone) {
+		ModelAndView mav = new ModelAndView();
 		
+		HashMap map = new HashMap();
+		map.put("cust_name",cust_name);
+		map.put("cust_phone",cust_phone);
+		String cust_id = dao.findId(map);
+		System.out.println("cust_id:"+cust_id);
+		System.out.println("cust_name:"+cust_name);
+		System.out.println("cust_phone:"+cust_phone);
+		if(cust_id != null) {
+			mav.setViewName("/find_idOK");
+			mav.addObject("msg","고객님의 아이디는"+cust_id+"입니다.");
+		}else {
+			mav.setViewName("redirect:/common/error");
+			mav.addObject("msg","이름과 연락처를 확인해주세요.");
+		}		
+		return mav;
 	}
 	
 	@RequestMapping(value = "/find_pwd", method = RequestMethod.GET)
@@ -103,8 +120,24 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/find_pwd", method = RequestMethod.POST)
-	public void find_pwd_submit() {
+	public ModelAndView find_pwd_submit(Model model, String cust_id, String cust_phone) {
+		ModelAndView mav = new ModelAndView();
 		
+		HashMap map = new HashMap();
+		map.put("cust_id",cust_id);
+		map.put("cust_phone",cust_phone);
+		String cust_pwd = dao.findPwd(map);
+		System.out.println("cust_pwd:"+cust_pwd);
+		System.out.println("cust_id:"+cust_id);
+		System.out.println("cust_phone:"+cust_phone);
+		if(cust_pwd != null) {
+			mav.setViewName("/find_pwdOK");
+			mav.addObject("msg","고객님의 비밀번호는"+cust_pwd+"입니다.");
+		}else {
+			mav.setViewName("/common/error");
+			mav.addObject("msg","아이디와 연락처를 확인해주세요.");
+		}		
+		return mav;
 	}
 	
 	@RequestMapping(value = "/mypage/updateCustomer", method = RequestMethod.GET)
@@ -128,9 +161,28 @@ public class CustomerController {
 	
 	@RequestMapping(value="/logout",method=RequestMethod.GET)
 	public String getLogout(HttpSession session) throws Exception{
-		
 		session.invalidate();
 		return "redirect:/main";
+	}
+	
+	@RequestMapping(value = "mypageMain", method = RequestMethod.GET)
+	public void mypageMain_form(HttpSession session, Model model) {
+		String cust_id = (String)session.getAttribute("cust_id");
+	}
+		
+	@RequestMapping(value = "mypageMain", method = RequestMethod.POST)
+	public ModelAndView mypageMain_submit(String cust_id, String cust_pwd) {
+		ModelAndView mav = new ModelAndView();
+		System.out.println(cust_pwd);
+		int re = dao.mypage_login(cust_id);
+		if(re == 1) {
+			mav.setViewName("redirect:/main");
+		}else {
+			mav.addObject("msg","비밀번호가 일치하지 않습니다.");
+			mav.setViewName("/error");
+		}
+		
+		return mav;
 	}
 }
 

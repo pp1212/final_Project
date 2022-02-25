@@ -26,23 +26,28 @@ public class CustomerDAO {
 		return DBManager.login(cust_id, cust_pwd);
 	}
 	
-	public HashMap findId(String cust_name, String cust_phone) {
-		return DBManager.findId(cust_name, cust_phone);
+	public String findId(HashMap map) {
+		return DBManager.findId(map);
 	}
 	
-	public HashMap findPwd(String cust_id, String cust_phone) {
-		return DBManager.findPwd(cust_id, cust_phone);
+	public String findPwd(HashMap map) {
+		return DBManager.findPwd(map);
 	}
 	
 	public CustomerVO detailCustomer(String cust_id) {
 		return DBManager.detailCustomer(cust_id);
 	}
 	
-	public int  updateCustomer(CustomerVO c) {
+	public int updateCustomer(CustomerVO c) {
 		return DBManager.updateCustomer(c);
 	}
 	
 	public CustomerVO showCustomer(String cust_id) {
 		return DBManager.showCustomer(cust_id);
 	}
+	
+	public int mypage_login(String cust_id) {
+		return DBManager.mypageMain(cust_id);
+	}
+
 }
