@@ -28,4 +28,8 @@
   		order by ${orderType}
   	</if>
   </select>
+  
+  <select id="detailProduct" resultType="productVO">
+  	select product_img,product_desc,product_name,product_price,product_detail from product where product_no=#{product_no}
+  </select>
 </mapper>

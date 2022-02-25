@@ -29,4 +29,6 @@
   <select id="findByNo" resultType="reviewVO">
   	select * from review where review_no=#{review_no}
   </select>
+  
+  
 </mapper>

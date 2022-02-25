@@ -65,6 +65,12 @@ public class DBManager {
 		return list;
 	}
 	
+	public static ProductVO detailProduct(int product_no) {
+		SqlSession session = factory.openSession();
+		ProductVO p = session.selectOne("product.detailProduct", product_no);
+		session.close();
+		return p;
+	}
 	
 	//=========================================
 	//review
@@ -111,6 +117,13 @@ public class DBManager {
 		ReviewVO r = session.selectOne("review.findByNo", review_no);
 		session.close();
 		return r;
+	}
+	
+	public static List<ContentReviewVO> findAllReview(int product_no){
+		SqlSession session = factory.openSession();
+		List<ContentReviewVO> list = session.selectList("review.findAllReview", product_no);
+		session.close();
+		return list;
 	}
 
 	

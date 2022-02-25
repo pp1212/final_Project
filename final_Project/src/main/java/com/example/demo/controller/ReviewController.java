@@ -108,4 +108,9 @@ public class ReviewController {
 		c.setReview_no(review_no);
 		model.addAttribute("c", c);
 	}
+	
+	@RequestMapping("/")
+	public void findAllReview(int product_no) {
+		
+	}
 }

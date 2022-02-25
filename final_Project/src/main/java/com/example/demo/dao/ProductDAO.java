@@ -25,4 +25,8 @@ public class ProductDAO {
 	public List<ProductVO> recentProduct(String orderType){
 		return DBManager.recentProduct(orderType);
 	}
+	
+	public ProductVO detailProduct(int product_no) {
+		return DBManager.detailProduct(product_no);
+	}
 }

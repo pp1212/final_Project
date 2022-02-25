@@ -35,10 +35,9 @@
 					<div class="box">
 						<c:forEach var="p" items="${list }">
 							<div class="box_list">
-								<a href="/market/detailProduct"><img class="box_list_img" src="/images/${p.product_img }" width="400" height="400"></a>
+								<a href="/market/detailProduct?product_no=${p.product_no }"><img class="box_list_img" src="/images/${p.product_img }" width="400" height="400"></a>
 								<div class="box_list_name" name="product_name">${p.product_name }</div>
 								<div class="box_list_price" name="product_price">${p.product_price }</div>
-								<button type="button" class="box_list_cart"><img src="/images/shopping-cart.jpg" width="15" height="15"></button>
 							</div>
 						</c:forEach>
 					</div>

@@ -72,4 +72,12 @@ public class ProductController {
 		System.out.println("orderType:"+orderType);
 		model.addAttribute("list", dao.recentProduct(orderType));
 	}
+	
+	@RequestMapping("/market/detailProduct")
+	public void detailProduct(int product_no,Model model,HttpSession session) {
+		String cust_id = (String)session.getAttribute("cust_id");
+		ProductVO p = dao.detailProduct(product_no);
+		p.setProduct_no(product_no);
+		model.addAttribute("p", p);
+	}
 }
