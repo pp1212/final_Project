@@ -22,9 +22,6 @@ public class CustomerDAO {
 		return DBManager.doubleCheck_email(cust_email);
 	}
 	
-	//1. id가 존재하지 않는 경우 int -1을 반환
-	//2. 암호가 일치하지 않는 경우 int 0을 반환
-	//3. 암호가 일치하는 경우 int 1을 반환
 	public int login(String cust_id, String cust_pwd) {
 		return DBManager.login(cust_id, cust_pwd);
 	}

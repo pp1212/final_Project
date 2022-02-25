@@ -10,10 +10,11 @@
 	<h2>아이디 찾기</h2>
 	<hr>
 	<h3>휴대폰 인증</h3>
+	
 	<form action="find_id" method="post">
-		이름 : <br>
+		이름 <br>
 		<input type="text" placeholder="이름을 입력해주세요" name="cust_name"><br>
-		휴대폰번호 : <br>
+		휴대폰번호  <br>
 		<input type="tel" placeholder="휴대폰 번호를 입력해주세요" name="cust_phone"><br>
 		<input type="submit" value="인증번호 받기">
 	</form>
