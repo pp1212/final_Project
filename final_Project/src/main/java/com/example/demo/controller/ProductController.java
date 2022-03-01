@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.ProductDAO;
+import com.example.demo.dao.ReviewDAO;
+import com.example.demo.vo.ContentReviewVO;
 import com.example.demo.vo.ProductVO;
 import com.example.demo.vo.ResultVO;
 
@@ -27,6 +29,9 @@ public class ProductController {
 	
 	@Autowired
 	private ProductDAO dao;
+	
+	@Autowired
+	private ReviewDAO reviewDao;
 	
 	
 	@RequestMapping("/market/listProduct")
@@ -79,5 +84,9 @@ public class ProductController {
 		ProductVO p = dao.detailProduct(product_no);
 		p.setProduct_no(product_no);
 		model.addAttribute("p", p);
+		
+		List<ContentReviewVO> reviewList = reviewDao.findAllReview(product_no);
+		model.addAttribute("reviewList", reviewList);
+		System.out.println("reviewList:"+reviewList);
 	}
 }

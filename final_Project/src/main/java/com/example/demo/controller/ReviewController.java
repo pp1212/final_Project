@@ -109,8 +109,5 @@ public class ReviewController {
 		model.addAttribute("c", c);
 	}
 	
-	@RequestMapping("/")
-	public void findAllReview(int product_no) {
-		
-	}
+	
 }

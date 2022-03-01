@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,25 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../resources/js/detailProduct.js" type="text/javascript"></script>
+<style type="text/css">
+	.review-accordion{
+		/* visibility: hidden; */
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		/* $(".review_title").click(function(){
+			$(".review-accordion").css("visibility","visible");
+		}); */
+		/* $(document).on("click",".review_title",function(){
+			$(".review-accordion").css("visibility","visible");
+		}); */
+		$(".review_title").click(function(){
+			$(".review-accordion").toggle('slow');
+		});
+	});
+</script>
 </head>
 <body>
 	<div id="container">
@@ -99,30 +119,34 @@
 			
 			<div class="bottom-section">
 				<div class='review-wrap' style="display:none;">
-					<ul class='review-ul'>
-						<li class='li-tag'>
-							<div class='review-top'>
-								<span>전체&nbsp;(</span><span id='reviewQuantity'></span><span>)</span>
-							</div>
-						</li>
-					</ul>
 					<ul class='review-ul-body'>
-						<c:forEach>
-							<li class='li-tag'>
-								<div class='review-box'>
-									<div class='review-text-div'>
-										<span></span><br>
-										<span></span>&nbsp;&nbsp;&nbsp;&nbsp;
-										<span></span><span></span>
-									</div>
-								</div>
-							</li>
-						</c:forEach>
+						<c:choose>
+							<c:when test="${not empty reviewList}">
+								<c:forEach var="r" items="${reviewList }">
+									<li class='li-tag'>
+										<div class='review-box'>
+											<div class='review-text-div'>
+												<span class="review_title">${r.review_title }</span><br>
+												<span>${r.cust_id }</span>
+											</div>
+											<div class="review-accordion">
+												<span>${r.review_content }</span>
+												<img src="/images/${r.review_img }" onerror="this.style.display='none'">
+											</div>
+										</div>
+									</li>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<img src="/images/icon_mark.png">
+								등록된 상품후기가 없습니다.
+							</c:otherwise>
+						</c:choose>
 					</ul>
 				</div>
 				
 				<div class="detail-wrap">
-					
+					<img src="/images/${p.product_detail }"> 
 				</div>
 				
 				<div class="qna-wrap">

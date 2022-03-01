@@ -63,8 +63,7 @@ const changeColorBtn = () => {
 
 
 const reviewTap = () => {
-	changeColorBtn()
-	const cust_id = $('#cust_id').text();
+	changeColorBtn();
 	$('#reviewButton').removeClass('btn-secondary').addClass('btn-primary');
 	$('.detail-wrap').css('display','none');
 	$('.qna-wrap').css('display','none');
@@ -81,3 +80,4 @@ const detailTap = () => {
 	$('.exchange-wrap').css('display','none');
 	$('.detail-wrap').css('display','block');
 }
+
