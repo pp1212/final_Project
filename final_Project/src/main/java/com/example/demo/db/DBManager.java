@@ -17,6 +17,7 @@ import com.example.demo.vo.CustomerVO;
 import com.example.demo.vo.Customer_orderVO;
 import com.example.demo.vo.ListDetailVO;
 import com.example.demo.vo.ListOrderVO;
+import com.example.demo.vo.ListQnaVO;
 import com.example.demo.vo.ListReviewVO;
 import com.example.demo.vo.MonthTotalVO;
 import com.example.demo.vo.OrderCancelVO;
@@ -259,6 +260,13 @@ public class DBManager {
 		return re;
 	}
 	
+	public static List<ListQnaVO> findAllQna(int product_no){
+		SqlSession session = factory.openSession();
+		List<ListQnaVO> list = session.selectList("qna.findAllQna", product_no);
+		session.close();
+		return list;
+	}
+	
 	//===========================================
 	//customer_order
 	
@@ -400,7 +408,22 @@ public class DBManager {
 		return cp;
 	}
 	
+	public static int cartGetNextNo() {
+		SqlSession session = factory.openSession();
+		int re = session.selectOne("cart.cartGetNextNo");
+		session.close();
+		return re;
+	}
 	
+	public static int findByProduct(String cust_id,int product_no) {
+		SqlSession session = factory.openSession();
+		HashMap map = new HashMap();
+		map.put("cust_id",cust_id);
+		map.put("product_no",product_no);
+		int re = session.selectOne("cart.findByProduct",map );
+		session.close();
+		return re;
+	}
 	
 
 	

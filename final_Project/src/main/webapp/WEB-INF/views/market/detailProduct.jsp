@@ -15,6 +15,9 @@
 		/* visibility: hidden; */
 		display: none;
 	}
+	.qna-accordion{
+		display: none;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -25,7 +28,10 @@
 			$(".review-accordion").css("visibility","visible");
 		}); */
 		$(".review_title").click(function(){
-			$(".review-accordion").toggle('slow');
+			$(".review-accordion").toggle("slow");
+		});
+		$(".qna_title").click(function(){
+			$(".qna-accordion").toggle("slow");
 		});
 	});
 </script>
@@ -118,7 +124,7 @@
 			</div>
 			
 			<div class="bottom-section">
-				<div class='review-wrap' style="display:none;">
+				<div class='review-wrap' style='display:none;'>
 					<ul class='review-ul-body'>
 						<c:choose>
 							<c:when test="${not empty reviewList}">
@@ -145,20 +151,47 @@
 					</ul>
 				</div>
 				
-				<div class="detail-wrap">
+				<div class='detail-wrap'>
 					<img src="/images/${p.product_detail }"> 
 				</div>
 				
-				<div class="qna-wrap">
-				
+				<div class='qna-wrap' style='display:none;'>
+					<ul class='qna-ul-body'>
+						<c:choose>
+							<c:when test="${not empty qnaList}">
+								<c:forEach var="q" items="${qnaList }">
+									<li class='li-tag'>
+										<div class='qna-box'>
+											<div class='qna-text-div'>
+												<span class="qna_title">${q.qna_title }</span><br>
+												<span>${q.cust_id }</span>
+												" | "
+												<span>${q.qna_date }</span>
+											</div>
+											<div class="qna-accordion">
+												<span>${q.qna_content }</span>
+												<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
+												<span>${q.qna_answer }</span>
+											</div>
+										</div>
+									</li>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<img src="/images/icon_mark.png">
+								등록된 상품문의가 없습니다.
+							</c:otherwise>
+						</c:choose>
+					</ul>
 				</div>
 				
-				<div class="exchange-wrap">
-				
+				<div class='exchange-wrap' style='display:none;'>
+					<img src="/images/exchange_desc.jpg">
 				</div>
 			</div>
 		</div>
 		<div id="footer"><!-- 푸터 --></div>
 	</div>
+	
 </body>
-</html>
+</html> 

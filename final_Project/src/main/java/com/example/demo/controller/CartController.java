@@ -26,16 +26,16 @@ public class CartController {
 	@Autowired
 	private CartDAO dao;
 
-	@RequestMapping(value = "/market/insertCart", method = RequestMethod.POST)
-	public ModelAndView insertSubmit(HttpServletRequest request, CartVO c) {
-		int re = dao.insertCart(c);
-		ModelAndView mav = new ModelAndView("redirect:/cartProduct");
-		if (re != 1) {
-			mav.setViewName("error");
-			mav.addObject("msg", "장바구니 등록에 실패하였습니다.");
-		}
-		return mav;
-	}
+//	@RequestMapping(value = "/market/insertCart", method = RequestMethod.POST)
+//	public ModelAndView insertSubmit(HttpServletRequest request, CartVO c) {
+//		int re = dao.insertCart(c);
+//		ModelAndView mav = new ModelAndView("redirect:/cartProduct");
+//		if (re != 1) {
+//			mav.setViewName("error");
+//			mav.addObject("msg", "장바구니 등록에 실패하였습니다.");
+//		}
+//		return mav;
+//	}
 
 	@RequestMapping("/market/cartProduct")
 	public ModelAndView cartProduct() {
