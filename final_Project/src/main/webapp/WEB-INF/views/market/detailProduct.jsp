@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,6 @@
 <script src="../../resources/js/detailProduct.js" type="text/javascript"></script>
 <style type="text/css">
 	.review-accordion{
-		/* visibility: hidden; */
 		display: none;
 	}
 	.qna-accordion{
@@ -21,12 +21,6 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		/* $(".review_title").click(function(){
-			$(".review-accordion").css("visibility","visible");
-		}); */
-		/* $(document).on("click",".review_title",function(){
-			$(".review-accordion").css("visibility","visible");
-		}); */
 		$(".review_title").click(function(){
 			$(".review-accordion").toggle("slow");
 		});
@@ -165,13 +159,21 @@
 											<div class='qna-text-div'>
 												<span class="qna_title">${q.qna_title }</span><br>
 												<span>${q.cust_id }</span>
-												" | "
-												<span>${q.qna_date }</span>
+													|
+												<span><fmt:formatDate value="${q.qna_date }"/> </span>
 											</div>
 											<div class="qna-accordion">
-												<span>${q.qna_content }</span>
-												<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
-												<span>${q.qna_answer }</span>
+												<div class="qna-question">
+													<span><img src="/images/icon_q.jpg" style="width: 25px; height: 25px;"></span>
+													<span>${q.qna_content }</span>
+													<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
+												</div>
+												<c:if test="${not empty q.qna_answer}">
+													<div class="qna-answer">
+														<span><img src="/images/icon_a.jpg" style="width: 25px; height: 25px;"></span>
+														<span>${q.qna_answer }</span>
+													</div>
+												</c:if>
 											</div>
 										</div>
 									</li>

@@ -95,6 +95,7 @@ public class ProductController {
 		ProductVO p = dao.detailProduct(product_no);
 		p.setProduct_no(product_no);
 		model.addAttribute("p", p);
+		System.out.println("p:"+p);
 		
 		List<ContentReviewVO> reviewList = reviewDao.findAllReview(product_no);
 		model.addAttribute("reviewList", reviewList);

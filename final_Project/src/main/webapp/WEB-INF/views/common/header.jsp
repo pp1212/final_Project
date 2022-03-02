@@ -16,7 +16,7 @@
 				</h1>
 				<div class="nb">
 					<ul class="nb_list">
-						<li><a href="market/listProduct?category_code=sp">카테고리</a>
+						<li><a href="/market/listProduct?category_code=sp">카테고리</a>
 							<ul class="drop-down">
 								<li><a href="/market/listProduct?category_code=sp">국,찌개</a></li>
 								<li><a href="/market/listProduct?category_code=d">반찬</a></li>
