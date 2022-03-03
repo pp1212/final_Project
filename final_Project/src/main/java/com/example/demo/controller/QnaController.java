@@ -34,6 +34,13 @@ public class QnaController {
 		model.addAttribute("list",dao.listQna(member.getCust_id()));
 	}
 	
+	@RequestMapping("/mypage/detailQna")
+	public ModelAndView detail(int qna_no) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("q",dao.detailQna(qna_no));
+		return mav;
+	}
+	
 	@RequestMapping(value = "/mypage/insertQna", method = RequestMethod.GET)
 	public void insert_form(Model model) {
 		model.addAttribute("qna_no",dao.getNextNo());
@@ -70,13 +77,7 @@ public class QnaController {
 		}
 		return mav;
 	}
-	
-	@RequestMapping("/mypage/detailQna")
-	public ModelAndView detail(int qna_no) {
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("q",dao.detailQna(qna_no));
-		return mav;
-	}
+
 	
 	@RequestMapping(value = "/mypage/updateQna", method = RequestMethod.GET)
 	public void update_form(Model model, int qna_no) {
