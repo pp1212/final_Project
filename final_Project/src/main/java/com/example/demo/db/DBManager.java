@@ -305,12 +305,10 @@ public class DBManager {
 		return re;
 	}
 	
-	public static int updateQna_answer(String qna_answer, int qna_no) {
+	public static int updateQna_answer(QnaVO q) {
 		SqlSession session = factory.openSession();
-		HashMap map = new HashMap();
-		map.put("qna_answer", qna_answer);
-		map.put("qna_no", qna_no);
-		int re=session.update("qna.update_answer",map);
+		int re=session.update("qna.updateQna_answer",q);
+		session.commit();
 		session.close();
 		return re;
 	}
@@ -420,9 +418,9 @@ public class DBManager {
 		return re;
 	}
 	
-	public static List<CartProductVO> cartProduct(){
+	public static List<CartProductVO> cartProduct(String cust_id){
 		SqlSession session = factory.openSession();
-		List<CartProductVO> list= session.selectList("cart.cartProduct");
+		List<CartProductVO> list= session.selectList("cart.cartProduct",cust_id);
 		session.close();
 		return list;
 	}

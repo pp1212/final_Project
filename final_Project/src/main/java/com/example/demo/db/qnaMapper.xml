@@ -36,7 +36,7 @@
   </select>
   
    <select id="mgr_detailQna" resultType="qnaVO">
-	select detail_no, qna_title, qna_content, qna_img, qna_date from qna where qna_no=#{qna_no}
+	select qna_no, detail_no, qna_title, qna_content, qna_img, qna_date, qna_answer from qna where qna_no=#{qna_no}
   </select>
   
 </mapper>

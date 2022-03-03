@@ -140,9 +140,28 @@ public class QnaController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/admin/updateQna_answer", method = RequestMethod.GET)
-	public void updateQna_answer_form(Model model, int qna_no,String qna_answer) {
-		model.addAttribute("q",dao.detailQna(qna_no));
+//	@RequestMapping(value = "/admin/updateQna_answer", method = RequestMethod.GET)
+//	public void updateQna_answer_form(Model model, int qna_no) {
+//		model.addAttribute("q",dao.detailQna(qna_no));
+//	}
+	
+	@RequestMapping(value = "/admin/updateQna_answer",method = RequestMethod.GET )
+	public ModelAndView updateQna_answer_form(int qna_no) { //수정한 고객에대해 상태유지해야해서 보이드x 모델앤드뷰 사용
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("q",dao.mgr_detailQna(qna_no));
+		return mav;
+	}
+	
+	@RequestMapping(value = "/admin/updateQna_answer",method = RequestMethod.POST ) //요청하는 서비스명
+	public ModelAndView updateQna_answer_submit(HttpServletRequest request,QnaVO q) {
+		ModelAndView mav = new ModelAndView("redirect:/admin/mgr_listQna");
+		System.out.println(q);
+		int re = dao.updateQna_answer(q);
+		if(re != 1) {
+			mav.setViewName("/common/error");
+			mav.addObject("msg","답글달기에 실패하였습니다.");
+		}
+		return mav;
 	}
 	
 	@RequestMapping("/admin/mgr_listQna")
