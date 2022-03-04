@@ -20,7 +20,7 @@
   </select>
   
   <select id="listQna" resultType="qnaVO">
-	select q.qna_no, d.detail_no, q.qna_title, q.qna_date from qna q, customerOrder_detail d, customer_order o where q.detail_no=d.detail_no and o.order_no=d.order_no and o.cust_id=#{cust_id}
+	select q.qna_no, d.detail_no, q.qna_title, q.qna_date from qna q, customerOrder_detail d, customer_order o where q.detail_no=d.detail_no and o.order_no=d.order_no and o.cust_id=#{cust_id} order by q.qna_date desc
   </select>
   
   <insert id="insertQna" parameterType="qnaVO">

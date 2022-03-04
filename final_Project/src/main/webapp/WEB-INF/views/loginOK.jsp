@@ -9,9 +9,17 @@
 </head>
 <body>
 	${msg }
+
 	<a href="main">메인으로 가기</a><br>
 	 <c:if test="${cust_id eq 'bbox' }"> 
                 <a href="admin/adminMain">관리자페이지로 가기</a><br>
         </c:if>
+
+	<a href="main">메인으로 가기</a>
+	<a href="/mypage/listQna">qna 가기</a>
+	<a href="/mypage/updateCustomer">개인정보수정</a>
+	<a href="/mypage/orderList">주문내역</a><br>
+	<a href="logout">logout</a>
+
 </body>
 </html>

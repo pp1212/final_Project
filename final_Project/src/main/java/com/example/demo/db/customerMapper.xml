@@ -43,4 +43,8 @@
   	select role from customer where cust_id=#{cust_id}
    </select>
   
+  <select id="mypage_login" resultType="java.lang.Integer">
+  	select cust_pwd from customer where cust_id=#{cust_id}
+  </select>
+
 </mapper>

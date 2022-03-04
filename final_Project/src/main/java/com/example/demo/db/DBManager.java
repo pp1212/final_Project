@@ -207,24 +207,18 @@ public class DBManager {
 		return re;
 	}
 	
-	public static HashMap findId(String cust_name, String cust_phone) {
+	public static String findId(HashMap map) {
 		SqlSession session = factory.openSession();
-		HashMap map = new HashMap();
-		map.put("cust_name", cust_name);
-		map.put("cust_phone", cust_phone);
-		session.selectOne("customer.findId",map);
+		String cust_id = session.selectOne("customer.findId",map);
 		session.close();
-		return map;
+		return cust_id;
 	}
 	
-	public static HashMap findPwd(String cust_id, String cust_phone) {
+	public static String findPwd(HashMap map) {
 		SqlSession session = factory.openSession();
-		HashMap map = new HashMap();
-		map.put("cust_id", cust_id);
-		map.put("cust_phone", cust_phone);
-		session.selectOne("customer.findId",map);
+		String cust_pwd = session.selectOne("customer.findPwd",map);
 		session.close();
-		return map;
+		return cust_pwd;
 	}
 	
 	public static CustomerVO detailCustomer(String cust_id) {
@@ -249,11 +243,19 @@ public class DBManager {
 		return c;
 	}
 	
+
 	public static String getRole(String cust_id) {
 		SqlSession session = factory.openSession();
 		String role = session.selectOne("customer.getRole",cust_id);
 		session.close();
 		return role;
+	}
+	public static int mypageMain(String cust_id) {
+		SqlSession session = factory.openSession();
+		int re = session.selectOne("customer.mypage_login",cust_id);
+		session.close();
+		return re;
+
 	}
 	
 	//===================================================

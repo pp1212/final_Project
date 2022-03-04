@@ -14,9 +14,13 @@ public class SpringConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new LoginIntercepter())
 		.addPathPatterns("/mypage/**");
+
 		
 		registry.addInterceptor(new AdminIntercepter() ) 
 		.addPathPatterns("/admin/**");
+
+
+//		.excludePathPatterns("/mypage/updateCustomer");
 
 	}
 }

@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="customer_order">
   <select id="listOrder" resultType="ListOrderVO">
-  	select order_date, order_no, status_code from customer_order where cust_id=#{cust_id}
+  	select order_date, order_no, status_name from customer_order o, status_type s where s.status_code=o.status_code and cust_id=#{cust_id} order by order_date desc
   </select>
   
   <select id="orderCancelPage" resultType="OrderCancelVO">
