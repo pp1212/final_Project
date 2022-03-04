@@ -8,9 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/orderList.css" type="text/css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 </head>
 <body>
 	<!-- 이름줄때 앞에 ol붙이기(orderlist) -->
@@ -31,7 +29,7 @@
 					<hr width="650px">
 					<div id="ol_content">
 						<p>주문번호&nbsp;&nbsp;&nbsp;${o.order_no }</p>			
-						<span>주문상태&nbsp;&nbsp;&nbsp;${o.status_name }</span><a id="ol_cancel" style="height: 30px; width: 80px;" href="orderCancelPage">주문취소</a>
+						<span>주문상태&nbsp;&nbsp;&nbsp;${o.status_name }</span><a id="ol_cancel" style="height: 30px; width: 80px;" href="orderCancelPage?order_no=${o.order_no}">주문취소</a>
 					</div>					
 				</div>	
 

@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/login.css" type="text/css">
 <script type="text/javascript" src="http://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript">
 	Kakao.init("51f6f1b1862f38ef216edbad5ec912c9");
@@ -28,6 +30,7 @@
 </script>
 </head>
 <body>
+<!--id나 class에 login 붙이기 -->
 	<h2>로그인</h2>
 	<hr>
 	<form action="login" method="post">

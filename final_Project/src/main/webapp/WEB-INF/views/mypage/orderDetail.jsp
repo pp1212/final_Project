@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 </head>
 <body>
 	<h2>주문 내역 상세</h2>

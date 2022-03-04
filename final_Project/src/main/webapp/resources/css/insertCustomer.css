@@ -20,8 +20,9 @@ font-family: 'Noto Sans KR', sans-serif;
 }
 #join_essential{
 	position: relative;
-	text-align: right;
-	margin-right: 450px;
+ 	text-align: right;
+	margin-left: 1000px;
+	margin-right: 250px;	
 }
 .join_form{
 	width: 1000px;

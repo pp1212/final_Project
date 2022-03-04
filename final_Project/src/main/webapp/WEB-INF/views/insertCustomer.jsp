@@ -103,7 +103,9 @@
 		<div id="join_essential">
 			<label class="join_8">*</label>필수입력사항
 		</div>
-		<hr width="1000px">
+		<div>
+			<hr width="1000px">
+		</div>
 		
 		<form action="insertCustomer" method="post" name="joinForm">
 			<div class="join_form">
