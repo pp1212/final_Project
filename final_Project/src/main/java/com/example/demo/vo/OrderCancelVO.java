@@ -1,6 +1,5 @@
 package com.example.demo.vo;
 
-
 import java.util.Date;
 
 import lombok.AllArgsConstructor;

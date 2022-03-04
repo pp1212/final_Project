@@ -38,4 +38,16 @@ public class QnaDAO {
 	public List<ListQnaVO> findAllQna(int product_no){
 		return DBManager.findAllQna(product_no);
 	}
+	
+	public int updateQna_answer(QnaVO q) {
+		return DBManager.updateQna_answer(q);
+	}
+	
+	public List<QnaVO> mgr_listQna(){
+		return DBManager.mgr_listQna();
+	}
+	
+	public QnaVO mgr_detailQna(int qna_no) {
+		return DBManager.mgr_detailQna(qna_no);
+	}
 }

@@ -15,8 +15,8 @@ public class CartDAO {
 		return DBManager.insertCart(c);
 	}
 	
-	public List<CartProductVO> cartProduct(){
-		return DBManager.cartProduct();
+	public List<CartProductVO> cartProduct(String cust_id){
+		return DBManager.cartProduct(cust_id);
 	}
 	
 	public int updateCart(CartVO c) {
