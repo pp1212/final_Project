@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="login">login</a>
 	<jsp:include page="common/header.jsp"></jsp:include>
 </body>
 </html>
