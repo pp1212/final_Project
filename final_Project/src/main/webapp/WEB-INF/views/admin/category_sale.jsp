@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <form action="">
+ <form action="categorysaleform">
       <h1>카테고리별 판매량</h1>
       <select name="category_code">
         <option value="sp">국, 찌개</option>
@@ -20,6 +20,10 @@
       </select>
       <input type="submit">
     </form>
+    
+    
+
+
     
     
 </body>
