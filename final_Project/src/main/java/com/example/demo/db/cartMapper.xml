@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+  <insert id="insertCart" parameterType="cartVO">
+  	insert into cart values (#{cart_no},#{product_cnt},#{cust_id},#{product_no})
+  </insert>
+  
+  <select id="cartProduct" resultType="cartProductVO">
+  	select p.product_no,cart_no, cust_id, product_img,product_name,product_price,product_cnt from product p,cart c where p.product_no=c.product_no and cust_id=#{cust_id} order by cart_no desc
+  </select>
+  
+  <select id="cartGetNextNo" resultType="java.lang.Integer">
+  	select nvl(max(cart_no),0)+1 from cart
+  </select>
+  
+  <update id="updateCart" parameterType="cartVO">   
+    UPDATE cart SET product_cnt= #{product_cnt} WHERE product_no= #{product_no} AND cust_id= #{cust_id}	
+  </update>
+  
+  <delete id="deleteCart">
+    DELETE FROM cart WHERE cart_no = #{cart_no}
+  </delete>
+  
+  <update id="cartOrder" parameterType="cartVO">   
+    	UPDATE cart SET isOrder = 1 WHERE cart_no = #{cart_no} AND cust_id = #{cust_id}	
+  </update> 	
+  
+  <select id="findByProduct" resultType="java.lang.Integer">
+  	select count(*) from cart where cust_id=#{cust_id} and product_no=#{product_no}
+  </select>
+</mapper>

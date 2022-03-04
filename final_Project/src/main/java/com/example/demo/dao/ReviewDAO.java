@@ -35,4 +35,8 @@ public class ReviewDAO {
 	public ReviewVO findByNo(int review_no) {
 		return DBManager.findByNo(review_no);
 	}
+	
+	public List<ContentReviewVO> findAllReview(int product_no){
+		return DBManager.findAllReview(product_no);
+	}
 }
