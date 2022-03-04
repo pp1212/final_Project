@@ -18,7 +18,8 @@
 					<ul class="list-menu">
 						<li>${member.cust_name }보글님</li>
 						<li><a href="/mypage/orderList">마이페이지</a></li>
-						<li><a href="logout">로그아웃</a></li>
+						<li><a href="/logout">로그아웃</a></li>
+
 					</ul>
 				</c:when>
 				<c:otherwise>

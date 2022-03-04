@@ -12,13 +12,13 @@ section{
 #user-area{
 	width: 1100px;
 	margin: 0 auto;
-	padding-top: 5px;
 	text-align: right;
 }
 
 #user-area .list-menu > li{
 	display: inline-block;
 	position: relative;
+	font-size: 13px;
 }
 
 #user-area .list-menu > li:not(:first-child){
@@ -78,14 +78,18 @@ section{
 	color: #333;
 	line-height: 25px;
 	text-align: center;
+	font-weight: 600;
 }
 
 #sub-menu{
-	visibility: hidden;
+	/* visibility: hidden; */
+	position: absolute;
 	transition: all 0.15s ease-in;
 	border: 1px solid #ccc;
 	margin-left: 15px;
     margin-top: 15px;
+    background: #fff;
+    display: none;
 }
 
 #sub-menu > ul{
@@ -99,5 +103,5 @@ section{
 }
 
 #header .nb_list > li:hover #sub-menu{
-	visibility: visible;
+	display: block;
 }
