@@ -166,18 +166,18 @@ public class CustomerController {
 		return "redirect:/main";
 	}
 	
-	@RequestMapping(value = "mypageMain", method = RequestMethod.GET)
+	@RequestMapping(value = "/mypage/mypageMain", method = RequestMethod.GET)
 	public void mypageMain_form(HttpSession session, Model model) {
 		String cust_id = (String)session.getAttribute("cust_id");
 	}
 		
-	@RequestMapping(value = "mypageMain", method = RequestMethod.POST)
+	@RequestMapping(value = "/mypage/mypageMain", method = RequestMethod.POST)
 	public ModelAndView mypageMain_submit(String cust_id, String cust_pwd) {
 		ModelAndView mav = new ModelAndView();
 		System.out.println(cust_pwd);
 		int re = dao.mypage_login(cust_id);
 		if(re == 1) {
-			mav.setViewName("redirect:/main");
+			mav.setViewName("redirect:/mypage/updateCustomer");
 		}else {
 			mav.addObject("msg","비밀번호가 일치하지 않습니다.");
 			mav.setViewName("/error");
