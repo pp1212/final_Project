@@ -34,6 +34,10 @@ public class ProductDAO {
 		return DBManager.detailProduct(product_no);
 	}
 	
+	public List<ProductVO> bestProduct() {
+		return DBManager.bestProduct();
+	}
+	
 	public List<ProductVO> mgr_listProduct(HashMap map){
 		mgr_totalRecord = DBManager.mgr_getTotalRecord();
 		mgr_totalPage = (int)Math.ceil(mgr_totalRecord/(double)mgr_pageSIZE);

@@ -12,9 +12,70 @@
 	margin: auto;
 }
 
-.image_wrap img{
-	max-width: 85%;
-	height: auto;
-	display: block;
-	margin: auto;
+.post-slider{
+	width: 1200px;
+}
+
+.post-slider .btn-b img{
+	width: 20px;
+	height: 20px;
+}
+
+.post-slider{
+	margin: 0px auto;
+	position: relative;
+}
+
+.post-slider .slider-title{
+	text-align: center;
+	margin: 30px auto;
+}
+
+.post-slider .next{
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	cursor: pointer;
+	border: 0px;
+	background: white;
+}
+
+.post-slider .prev{
+	position: absolute;
+	top: 50%;
+	left: 30px;
+	cursor: pointer;
+	border: 0px;
+	background: white;
+}
+
+.post-slider .post-wrapper{
+	width: 90%;
+	margin: 0px auto;
+ 	overflow: hidden; 
+	padding: 10px 0px 10px 0px;
+}
+
+.post-slider .post-wrapper .post{
+	margin: 0px 15px;
+	display: inline-block;
+	background: white;
+}
+
+.post-slider .post-wrapper .post .slick-slide{
+	width: 300px;
+}
+
+.post-slider .post-wrapper .post .post-info{
+	height: 30%;
+	padding-left: 10px;
+}
+
+.post-slider .post-wrapper .post .post-info h4{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.post-slider .post-wrapper .post .post-price{
+	font-weight: 700;
 }

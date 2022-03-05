@@ -73,6 +73,13 @@ public class DBManager {
 		return p;
 	}
 	
+	public static List<ProductVO> bestProduct(){
+		SqlSession session = factory.openSession();
+		List<ProductVO> list = session.selectList("product.bestProduct");
+		session.close();
+		return list;
+	}
+	
 	public static List<ProductVO> mgr_listProduct(HashMap map){
 		SqlSession session = factory.openSession();
 		List<ProductVO> list = session.selectList("product.mgr_listProduct",map);

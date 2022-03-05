@@ -33,6 +33,11 @@
   	select product_img,product_desc,product_name,product_price,product_detail from product where product_no=#{product_no}
   </select>    
   
+  <select id="bestProduct" resultType="productVO">
+  	select * from (select p.product_no, product_img, product_name, product_price, count(*) from product p, customerOrder_detail c 
+	where c.product_no=p.product_no group by p.product_no, product_img, product_name, product_price order by count(*) desc) where rownum &lt;= 8
+  </select>
+  
   <!-- admin -->
   <select id="mgr_listProduct" resultType="productVO">
     select product_no,category_code,product_name from 
