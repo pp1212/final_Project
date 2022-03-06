@@ -34,8 +34,12 @@
   </select>    
   
   <select id="bestProduct" resultType="productVO">
-  	select * from (select p.product_no, product_img, product_name, product_price, count(*) from product p, customerOrder_detail c 
-	where c.product_no=p.product_no group by p.product_no, product_img, product_name, product_price order by count(*) desc) where rownum &lt;= 8
+  	select * from (select p.product_no, product_img, product_name, product_price, product_desc, count(*) from product p, customerOrder_detail c 
+	where c.product_no=p.product_no group by p.product_no, product_img, product_name, product_price,product_desc order by count(*) desc) where rownum &lt;= 8
+  </select>
+  
+  <select id="marginProduct" resultType="marginProductVO">
+  	select product_no,product_img, product_name, product_price,product_desc from product where product_margin=1
   </select>
   
   <!-- admin -->

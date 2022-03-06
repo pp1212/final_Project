@@ -19,6 +19,7 @@ import com.example.demo.vo.ListDetailVO;
 import com.example.demo.vo.ListOrderVO;
 import com.example.demo.vo.ListQnaVO;
 import com.example.demo.vo.ListReviewVO;
+import com.example.demo.vo.MarginProductVO;
 import com.example.demo.vo.MonthTotalVO;
 import com.example.demo.vo.OrderCancelVO;
 import com.example.demo.vo.ProductVO;
@@ -76,6 +77,13 @@ public class DBManager {
 	public static List<ProductVO> bestProduct(){
 		SqlSession session = factory.openSession();
 		List<ProductVO> list = session.selectList("product.bestProduct");
+		session.close();
+		return list;
+	}
+	
+	public static List<MarginProductVO> marginProduct(){
+		SqlSession session = factory.openSession();
+		List<MarginProductVO> list = session.selectList("product.marginProduct");
 		session.close();
 		return list;
 	}
