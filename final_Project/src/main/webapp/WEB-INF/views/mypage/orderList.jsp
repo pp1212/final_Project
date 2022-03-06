@@ -62,6 +62,7 @@
 		</div>
 		<div id="footer"><!-- 푸터 --></div>
 	</div>
+	</div>
 			
 </body>
 </html>

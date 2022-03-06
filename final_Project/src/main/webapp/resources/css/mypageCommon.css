@@ -4,6 +4,7 @@
 
 .head_article{
 	margin-left: 50px;
+	height: 70px;
 }
 
 .page_article{
@@ -14,6 +15,10 @@
 #snb{
 	float: left;
 	width: 200px;
+}
+
+.tit_snb{
+	margin-top: 0px;
 }
 
 #snb .tit_snb{
