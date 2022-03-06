@@ -8,11 +8,18 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <script type="text/javascript">
-	$(function(){
-		$("#btnSubmit").click(function(){
+	function btnSubmit(){
+		let review_title = $(".review_title").val();
+		let review_content = $(".review_content").val();
+		
+		if(review_title != "" && review_content != ""){
 			alert("후기를 작성해주셔서 감사합니다.");
-		});
-	});
+			document.form_review.submit();
+		}else{
+			alert("내용을 작성해주십시오.");
+			return;
+		}
+	}
 </script>
 </head>
 <body>
@@ -24,7 +31,7 @@
 				<div class="head_article">
 					<h2>후기 작성</h2>
 				</div>
-				<form name="form_review" id="form_review" action="/mypage/updateReview" method="post" enctype="multipart/form-data">
+				<form name="form_review" action="/mypage/updateReview" method="post" enctype="multipart/form-data">
 					<div class="write_board">
 						<div class="goods_info">
 							<img src="/images/${c.product_img }">
@@ -42,13 +49,13 @@
 								<tr>
 									<th>제목</th>
 									<td>
-										<input type="text" name="review_title" placeholder="제목을 입력해주세요.">
+										<input type="text" name="review_title" class="review_title" placeholder="제목을 입력해주세요.">
 									</td>
 								</tr>
 								<tr>
 									<th>후기내용</th>
 									<td>
-										<textarea id="fieldCmt" name="review_content" rows="10" cols="100" 
+										<textarea id="fieldCmt" name="review_content" class="review_content" rows="10" cols="100" 
 											placeholder="내용을 입력해주세요.반품/환불 문의는 상품문의로 가능합니다." style="height:202px;"></textarea>
 									</td>
 								</tr>
@@ -64,7 +71,8 @@
 								</tr>
 							</tbody>
 						</table>
-						<input type="submit" id="btnSubmit" class="btn_reg" value="등록">
+						<input type="reset" value="취소">
+						<input type="button" onclick="btnSubmit();" value="등록">
 					</div>
 				</form>
 			</div>

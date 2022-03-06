@@ -8,21 +8,50 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/listProduct.css" type="text/css">
 </head>
 <body>
 	<div id="container">
-		<div id="header"><jsp:include page="../common/header.jsp"></jsp:include></div>
+		<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 		<div class="page_article">
 			<div class="marketLsit">
 				<div class="marketList_category"> 
 					<ul class="tnb_inner">
-						<li><a href="/market/listProduct?category_code=sp">국,찌개</a></li>
-						<li><a href="/market/listProduct?category_code=d">반찬</a></li>
-						<li><a href="/market/listProduct?category_code=s">샐러드</a></li>
-						<li><a href="/market/listProduct?category_code=n">면류</a></li>
-						<li><a href="/market/listProduct?category_code=r">밥,죽</a></li>
-						<li><a href="/market/listProduct?category_code=b">베이커리</a></li>
-						<li><a href="/market/listProduct?category_code=v">비건</a></li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=sp">
+								<span class="tnb_list_depth">국,찌개</span>
+							</a>
+						</li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=d">
+								<span class="tnb_list_depth">반찬</span>
+							</a>
+						</li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=s">
+								<span class="tnb_list_depth">샐러드</span>
+							</a>
+						</li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=n">
+								<span class="tnb_list_depth">면류</span>
+							</a>
+						</li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=r">
+								<span class="tnb_list_depth">밥,죽</span>
+							</a>
+						</li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=b">
+								<span class="tnb_list_depth">베이커리</span>
+							</a>
+						</li>
+						<li class="tnb_list">
+							<a href="/market/listProduct?category_code=v">
+								<span class="tnb_list_depth">비건</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 				<div class="marketList_p">

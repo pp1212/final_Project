@@ -32,7 +32,7 @@
 		<div class="header_inner">
 			<div class="header_sec">
 				<h1 class="logo">
-					<a href="/main"><img src="/images/BoggleBox_logo.jpg" style="width: 130px; height: 70px;"></a>
+					<a href="/main"><img src="/images/BoggleBox_logo.jpg" style="width: 120px;"></a>
 				</h1>
 				<div class="nb">
 					<ul class="nb_list">
