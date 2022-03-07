@@ -12,6 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../resources/js/detailProduct.js" type="text/javascript"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/detailProduct.css" type="text/css">
 <style type="text/css">
 	.review-accordion{
 		display: none;
@@ -33,7 +34,7 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header"><jsp:include page="../common/header.jsp"></jsp:include></div>
+		<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 		
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
@@ -76,27 +77,28 @@
 		<div class="page_article">
 			<div class="top-section">
 				<div class="top-left-section">
-					<div class="img-wrap" style="height: 100%;">
+					<div class="img-wrap">
 						<img id="img" src="/images/${p.product_img }">
 					</div>
 				</div>
 				<div class="top-right-section">
-					<div class="div-top-section" style="margin-bottom: 0;">
-						<span class="short-desc">${p.product_desc}</span><br>
-						<span class="name">${p.product_name}</span>
+					<p class="info-area_desc">${p.product_desc}</p>
+					<h3 class="info-area_name">${p.product_name}</h3>
+					<div class="info-area-price">
+						<span class="info-area_origin">${p.product_price}원</span>
 					</div>
-	
-					<div class="div-top-section" style="margin-top: 10px;">
-						<div class="right-info-title">가격</div>
-						<div class="right-info-desc">
-							<span>${p.product_price}</span>
-							<span>원</span>
+					<div class="info-area_box">
+						<div class="info-area_box-list">
+							<div class="info-area_box_tit">배송비</div>
+							<div class="info-area_box_cont">
+								<strong>3000원</strong>
+							</div>
 						</div>
-					</div>
-					<div class="div-top-section">
-						<div class="right-info-title">배송 정보</div>
-						<div class="right-info-desc" style="margin-bottom: 20px;">
-							<span>일반배송 : 3000원</span>
+						<div class="info-area_box-list">
+							<div class="info-area_box_tit">판매자</div>
+							<div class="info-area_box_cont">
+								<div>그리팅</div>
+							</div>
 						</div>
 					</div>
 					<div class="hidden-info">
@@ -104,12 +106,12 @@
 						<span id="product_no" style="display:none;">${p.product_no }</span>
 					</div>
 					<div class="div-top-section button-wrap">
-						<button type="button" class="btn btn-outline-primary top-button" data-bs-toggle="modal" data-bs-target="#exampleModal">장바구니</button>
+						<button type="button" class="btn btn-outline-primary top-button" data-bs-toggle="modal" data-bs-target="#exampleModal">장바구니 담기</button>
 					</div>
 				</div>
 			</div>
 			
-			<hr style="box-shadow: 0px 0px 3px 0px gray; margin: 3% 17%">
+			
 			
 			<div class="tap-section">
 				<button id="detailButton" class="btn btn-lg btn-primary tap-button" onclick="detailTap()">상품정보</button>
@@ -193,7 +195,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="footer"><!-- 푸터 --></div>
+		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
 	
 </body>
