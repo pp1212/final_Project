@@ -56,30 +56,41 @@
 				</div>
 				<div class="marketList_p">
 					<div class="head">
-						<ul class="list">
-							<li><a href="/market/listProduct?orderType=product_date desc">최신순</a></li><br>
-							<li><a href="/market/listProduct?orderType=product_price desc">높은가격순</a></li><br>
-							<li><a href="/market/listProduct?orderType=product_price">낮은가격순</a></li><br>
-						</ul>
+						<div class="sort_menu">
+							<ul class="list">
+								<li><a href="/market/listProduct?orderType=product_date desc">최신순</a></li>
+								<li><a href="/market/listProduct?orderType=product_price desc">높은가격순</a></li>
+								<li><a href="/market/listProduct?orderType=product_price">낮은가격순</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="box">
+					<ul class="box">
 						<c:forEach var="p" items="${list }">
-							<div class="box_list">
-								<a href="/market/detailProduct?product_no=${p.product_no }"><img class="box_list_img" src="/images/${p.product_img }" width="400" height="400"></a>
-								<div class="box_list_name" name="product_name">${p.product_name }</div>
-								<div class="box_list_price" name="product_price">${p.product_price }</div>
-							</div>
+							<li class="box_list">
+								<a href="/market/detailProduct?product_no=${p.product_no }">
+									<img class="box_list_img" src="/images/${p.product_img }" width="340">
+								</a>
+								<div class="box_list_title_wrap">
+									<span class="box_list_sub">${p.product_desc }</span>
+									<span class="box_list_title">${p.product_name }</span>
+								</div>
+								<div class="box_list_price">
+									<span class="box_list_price-origin">${p.product_price }원</span>
+								</div>
+							</li>
 						</c:forEach>
-					</div>
+					</ul>
 					<div class="pagenation">
-						<c:forEach var="i" begin="1" end="${totalPage }">
-							<a href="/market/listProduct?category_code=${category_code }&pageNUM=${i }">${i }</a>&nbsp;&nbsp;
-						</c:forEach>
+						<span class="pagenation_number">
+							<c:forEach var="i" begin="1" end="${totalPage }">
+								<a href="/market/listProduct?category_code=${category_code }&pageNUM=${i }">${i }</a>&nbsp;&nbsp;
+							</c:forEach>
+						</span>
 					</div> 
 				</div>
 			</div>
 		</div>
-		<div id="footer"><!-- 푸터 --></div>
+		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
 	
 </body>

@@ -78,7 +78,9 @@
 										</div>
 										<div class="post-title-wrap">
 											<span class="post-desc">${m.product_desc }</span>
-											<span class="post-title">${m.product_name }</span>
+											<span class="post-title">
+												<a href="/market/detailProduct?product_no=${m.product_no }">${m.product_name }</a>
+											</span>
 										</div>
 										<span class="post-price">
 											<span class="post-price-discounted-rate">10%</span>

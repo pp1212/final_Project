@@ -11,33 +11,36 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header"><jsp:include page="../common/header.jsp"></jsp:include></div>
+		<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 		<div class="page_article">
 			<div class="recentLsit">
-				
 				<div class="head">
-					<ul class="list">
-						<li><a href="/market/recentProduct?orderType=product_price desc">높은가격순</a></li><br>
-						<li><a href="/market/recentProduct?orderType=product_price">낮은가격순</a></li><br>
-					</ul>
+					<div class="sort_menu">
+						<ul class="list">
+							<li><a href="/market/recentProduct?orderType=product_price desc">높은가격순</a></li>
+							<li><a href="/market/recentProduct?orderType=product_price">낮은가격순</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="list_goods">
-					<ul class="list">
-						<c:forEach var="r" items="${list }">
-							<li>
-								<div class="item">
-									<a href="/market/detailProduct"><img class="box_list_img" src="/images/${r.product_img }" width="400" height="400"></a>
-									<div class="box_list_name" name="product_name">${r.product_name }</div>
-									<div class="box_list_price" name="product_price">${r.product_price }</div>
-								</div>
-							</li>
-						</c:forEach>
-					</ul>
-				</div> 
-				
+				<ul class="box">
+					<c:forEach var="r" items="${list }">
+						<li class="box_list">
+							<a href="/market/detailProduct?product_no=${r.product_no }">
+								<img class="box_list_img" src="/images/${r.product_img }" width="340">
+							</a>
+							<div class="box_list_title_wrap">
+								<span class="box_list_sub">${r.product_desc }</span>
+								<span class="box_list_title">${r.product_name }</span>
+							</div>
+							<div class="box_list_price">
+								<span class="box_list_price-origin">${r.product_price }원</span>
+							</div>
+						</li>
+					</c:forEach>
+				</ul>
 			</div>
 		</div>
-		<div id="footer"><!-- 푸터 --></div>
+		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
 	
 </body>
