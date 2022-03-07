@@ -111,87 +111,97 @@
 				</div>
 			</div>
 			
-			
-			
-			<div class="tap-section">
-				<button id="detailButton" class="btn btn-lg btn-primary tap-button" onclick="detailTap()">상품정보</button>
-				<button id="reviewButton" class="btn btn-lg btn-secondary tap-button" onclick="reviewTap()">상품후기</button>
-				<button id="qnaButton" class="btn btn-lg btn-secondary tap-button" onclick="qnaTap()">상품문의</button>
-				<button id="exchangeButton" class="btn btn-lg btn-secondary tap-button" onclick="exchangeTap()">교환/반품</button>
-			</div>
-			
-			<div class="bottom-section">
-				<div class='review-wrap' style='display:none;'>
-					<ul class='review-ul-body'>
-						<c:choose>
-							<c:when test="${not empty reviewList}">
-								<c:forEach var="r" items="${reviewList }">
-									<li class='li-tag'>
-										<div class='review-box'>
-											<div class='review-text-div'>
-												<span class="review_title">${r.review_title }</span><br>
-												<span>${r.cust_id }</span>
-											</div>
-											<div class="review-accordion">
-												<span>${r.review_content }</span>
-												<img src="/images/${r.review_img }" onerror="this.style.display='none'">
-											</div>
-										</div>
-									</li>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
-								<img src="/images/icon_mark.png">
-								등록된 상품후기가 없습니다.
-							</c:otherwise>
-						</c:choose>
+			<div class="marketDetail_sect">
+				<div class="tap-section">
+					<ul class="tap-section_inner">
+						<li id="detailButton" class="tab-section_list" onclick="detailTap()">
+							<span class="tap-change" id="d_tap">상품정보</span>
+						</li>
+						<li id="reviewButton" class="tab-section_list" onclick="reviewTap()">
+							<span class="tap-change" id="r_tap">상품후기</span>
+						</li>
+						<li id="qnaButton" class="tab-section_list" onclick="qnaTap()">
+							<span class="tap-change" id="q_tap">상품문의</span>
+						</li>
+						<li id="exchangeButton" class="tab-section_list" onclick="exchangeTap()">
+							<span class="tap-change" id="e_tap">교환/반품</span>
+						</li>
 					</ul>
 				</div>
-				
-				<div class='detail-wrap'>
-					<img src="/images/${p.product_detail }"> 
-				</div>
-				
-				<div class='qna-wrap' style='display:none;'>
-					<ul class='qna-ul-body'>
-						<c:choose>
-							<c:when test="${not empty qnaList}">
-								<c:forEach var="q" items="${qnaList }">
-									<li class='li-tag'>
-										<div class='qna-box'>
-											<div class='qna-text-div'>
-												<span class="qna_title">${q.qna_title }</span><br>
-												<span>${q.cust_id }</span>
-													|
-												<span><fmt:formatDate value="${q.qna_date }"/> </span>
-											</div>
-											<div class="qna-accordion">
-												<div class="qna-question">
-													<span><img src="/images/icon_q.jpg" style="width: 25px; height: 25px;"></span>
-													<span>${q.qna_content }</span>
-													<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
+			
+				<div class="bottom-section">
+					<div class='review-wrap' style='display:none;'>
+						<ul class='review-ul-body'>
+							<c:choose>
+								<c:when test="${not empty reviewList}">
+									<c:forEach var="r" items="${reviewList }">
+										<li class='li-tag'>
+											<div class='review-box'>
+												<div class='review-text-div'>
+													<span class="review_title">${r.review_title }</span><br>
+													<span>${r.cust_id }</span>
 												</div>
-												<c:if test="${not empty q.qna_answer}">
-													<div class="qna-answer">
-														<span><img src="/images/icon_a.jpg" style="width: 25px; height: 25px;"></span>
-														<span>${q.qna_answer }</span>
-													</div>
-												</c:if>
+												<div class="review-accordion">
+													<span>${r.review_content }</span>
+													<img src="/images/${r.review_img }" onerror="this.style.display='none'">
+												</div>
 											</div>
-										</div>
-									</li>
-								</c:forEach>
-							</c:when>
-							<c:otherwise>
-								<img src="/images/icon_mark.png">
-								등록된 상품문의가 없습니다.
-							</c:otherwise>
-						</c:choose>
-					</ul>
-				</div>
-				
-				<div class='exchange-wrap' style='display:none;'>
-					<img src="/images/exchange_desc.jpg">
+										</li>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<img src="/images/icon_mark.png">
+									등록된 상품후기가 없습니다.
+								</c:otherwise>
+							</c:choose>
+						</ul>
+					</div>
+					
+					<div class='detail-wrap'>
+						<img src="/images/${p.product_detail }"> 
+					</div>
+					
+					<div class='qna-wrap' style='display:none;'>
+						<ul class='qna-ul-body'>
+							<c:choose>
+								<c:when test="${not empty qnaList}">
+									<c:forEach var="q" items="${qnaList }">
+										<li class='li-tag'>
+											<div class='qna-box'>
+												<div class='qna-text-div'>
+													<span class="qna_title">${q.qna_title }</span><br>
+													<span>${q.cust_id }</span>
+														|
+													<span><fmt:formatDate value="${q.qna_date }"/> </span>
+												</div>
+												<div class="qna-accordion">
+													<div class="qna-question">
+														<span><img src="/images/icon_q.jpg" style="width: 25px; height: 25px;"></span>
+														<span>${q.qna_content }</span>
+														<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
+													</div>
+													<c:if test="${not empty q.qna_answer}">
+														<div class="qna-answer">
+															<span><img src="/images/icon_a.jpg" style="width: 25px; height: 25px;"></span>
+															<span>${q.qna_answer }</span>
+														</div>
+													</c:if>
+												</div>
+											</div>
+										</li>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<img src="/images/icon_mark.png">
+									등록된 상품문의가 없습니다.
+								</c:otherwise>
+							</c:choose>
+						</ul>
+					</div>
+					
+					<div class='exchange-wrap' style='display:none;'>
+						<img src="/images/exchange_desc.jpg">
+					</div>
 				</div>
 			</div>
 		</div>
