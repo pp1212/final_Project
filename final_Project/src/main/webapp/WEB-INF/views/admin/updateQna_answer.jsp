@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 </head>
 <body>
 	<h2>1:1문의 상세</h2>
@@ -19,7 +20,7 @@
 	제목  ${q.qna_title }<br>
 	주문번호  ${q.detail_no}<br>
 	문의 내용 <textarea rows="10" cols="80" name="qna_content" readonly="readonly">${q.qna_content }</textarea><br>
-	첨부파일  <img src="/images/ ${q.qna_img }" width="100" height="100"><br>
+	첨부파일  <img src="/images/${q.qna_img }" width="100" height="100"><br>
 	답글 		<textarea rows="10" cols="80" name="qna_answer">${q.qna_answer }</textarea><br>
 	
 	<input type="submit" value="확인">

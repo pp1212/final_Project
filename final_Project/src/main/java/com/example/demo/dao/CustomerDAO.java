@@ -54,5 +54,9 @@ public class CustomerDAO {
 	public int mypage_login(String cust_id) {
 		return DBManager.mypageMain(cust_id);
 	}
+	
+	public String getEmail(String cust_id) {
+		return DBManager.getEmail(cust_id);
+	}
 
 }
