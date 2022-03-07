@@ -11,6 +11,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../resources/js/detailProduct.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <style type="text/css">
 	.review-accordion{
 		display: none;
