@@ -205,7 +205,7 @@ public class Customer_orderController {
 
 	@RequestMapping(value = "/market/orderRequest", method = RequestMethod.POST)
 	@ResponseBody
-	public void insertCustomer_order(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView insertCustomer_order(ModelAndView mv, HttpServletRequest request, HttpServletResponse response) {
 		Gson gson = new Gson();
 		
 		
@@ -269,6 +269,9 @@ public class Customer_orderController {
 		}catch (Exception e) {
 			System.out.println("예외발생:"+e.getMessage());
 		}
+		
+		mv.setViewName("market/orderPageOK");
+		return mv;
 
 
 		
