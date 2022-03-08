@@ -25,7 +25,7 @@
 						<li><a href="/mypage/orderList">주문 내역</a></li>
 						<li><a href="/mypage/listReviewWrite">상품 후기</a></li>
 						<li><a href="/mypage/listQna">상품 문의</a></li>
-						<li><a href="/mypage/mypageMain">개인 정보 수정</a></li>
+						<li><a href="/mypage/loginMypage">개인 정보 수정</a></li>
 					</ul>
 				</div>
 			</div>
@@ -51,8 +51,12 @@
 						</div>
 						<hr width="650px">
 						<div id="ol_content">
-							<p>주문번호&nbsp;&nbsp;&nbsp;${o.order_no }</p>			
-							<span>주문상태&nbsp;&nbsp;&nbsp;${o.status_name }</span><a id="ol_cancel" style="height: 30px; width: 80px;" href="orderCancelPage?order_no=${o.order_no}">주문취소</a>
+							<p>주문번호&nbsp;&nbsp;&nbsp;${o.order_no }</p>	
+							<span>주문상태&nbsp;&nbsp;&nbsp;${o.status_name }</span>
+							 <c:if test="${o.status_name != '주문취소' }"> 
+					            <a id="ol_cancel" style="height: 30px; width: 80px;" href="orderCancelPage?order_no=${o.order_no}">주문취소</a>
+					        </c:if>		
+							
 						</div>					
 					</div>	
 	

@@ -95,6 +95,7 @@
 </script>
 </head>
 <body>
+<div><jsp:include page="./common/header.jsp"></jsp:include></div>
 <!-- 이름줄때 앞에 join_ 붙이기 -->
 	<div class="join_container">
 		<div id="join_title">

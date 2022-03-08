@@ -30,15 +30,26 @@
 </script>
 </head>
 <body>
-<!--id나 class에 login 붙이기 -->
-	<h2>로그인</h2>
-	<hr>
-	<form action="login" method="post">
-		아이디 : <input type="text" placeholder="아이디를 입력해주세요" name="cust_id"><br>	
-		비밀번호 : <input type="password" placeholder="비밀번호를 입력해주세요" name="cust_pwd"><br>
-		<a href="find_id">아이디 찾기 |</a><a href="find_pwd">비밀번호 찾기</a><br>
-		<input type="submit" value="로그인"><a href="insertCustomer">회원가입</a><br>
-		<a href="javascript:kakaoLogin()">카카오톡으로 로그인하기</a>
-	</form>
+	<div><jsp:include page="./common/header.jsp"></jsp:include></div>
+	<!--id나 class에 login 붙이기 -->
+	<h2 id="login_login">로그인</h2>
+	<hr width="700px">
+	
+	<div id="login_container">
+		<form action="login" method="post">
+			<p id="login_id">
+				<input class="login_content" type="text" placeholder="아이디를 입력해주세요" name="cust_id" >
+			</p>	
+			<p id="login_pwd">
+				<input class="login_content" type="password" placeholder="비밀번호를 입력해주세요" name="cust_pwd" >
+			</p>
+			<p id="login_find">
+				<a href="find_id">아이디 찾기</a>&nbsp;|&nbsp;<a href="find_pwd">비밀번호 찾기</a>
+			</p>
+			<input id="login_btn" type="submit" value="로그인"><a id="login_insert" href="insertCustomer">회원가입</a><br>
+			<a id="login_kakao" href="javascript:kakaoLogin()">카카오톡으로 로그인하기<img id="login_kakaoImg" src="/images/kakao.PNG"></a>
+		</form>
+	</div>
+	
 </body>
 </html>

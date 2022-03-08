@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../resources/css/insertCustomer.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/updateCustomer.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -39,15 +40,32 @@ function passConfirm() {
 </script>
 </head>
 <body>
-<!-- 이름줄때 앞에 join_ 붙이기 -->
+
+<div id="container">
+		<div><jsp:include page="../common/header.jsp"></jsp:include></div>
+		<div class="page_article">
+		
+		
+			<div id="snb">
+				<h2 class="tit_snb">마이보글</h2>
+				<div class="inner_snb">
+					<ul class="list_menu">
+						<li><a href="/mypage/orderList">주문 내역</a></li>
+						<li><a href="/mypage/listReviewWrite">상품 후기</a></li>
+						<li><a href="/mypage/listQna">상품 문의</a></li>
+						<li><a href="/mypage/loginMypage">개인 정보 수정</a></li>
+					</ul>
+				</div>
+			</div>
+	<!-- 이름줄때 앞에 join_ 붙이기 -->
 	<div class="join_container">
-		<div id="join_title">
-			<h2>개인 정보 수정</h2>
+		<div >
+			<h2 id="join_title">개인 정보 수정</h2>
 		</div>
 		<div id="join_essential">
 			<label class="join_8">*</label>필수입력사항
 		</div>
-		<hr width="1000px">
+		<hr id="hr" width="700px">
 		
 		<form action="updateCustomer" method="post" name="joinForm">
 			<div class="join_form">
@@ -109,6 +127,10 @@ function passConfirm() {
 			</div>
 			
 		</form>
+	</div>
+	
+				</div>
+		<div id="footer"><!-- 푸터 --></div>
 	</div>
 </body>
 </html>

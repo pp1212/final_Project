@@ -273,9 +273,9 @@ public class DBManager {
 		session.close();
 		return role;
 	}
-	public static int mypageMain(String cust_id) {
+	public static int mypageMain(HashMap map) {
 		SqlSession session = factory.openSession();
-		int re = session.selectOne("customer.mypage_login",cust_id);
+		int re = session.selectOne("customer.mypage_login",map);
 		session.close();
 		return re;
 
@@ -391,6 +391,8 @@ public class DBManager {
 		session.close();
 		return list;
 	}
+	
+	
 	
 	public static int insertCustomer_order(Customer_orderVO co) {
 		SqlSession session = factory.openSession();
