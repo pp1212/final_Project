@@ -203,6 +203,22 @@ public class DBManager {
 		return list;
 	}
 	
+	public static int review_getNextNo() {
+		SqlSession session = factory.openSession();
+		int review_no = session.selectOne("review.getNextNo");
+		session.close();
+		return review_no;
+	}
+	
+	public static int defaultReview(ReviewVO r) {
+		SqlSession session = factory.openSession();
+		int re= session.insert("review.defaultReview", r);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	
 
 	
 	//==============================================
@@ -288,12 +304,19 @@ public class DBManager {
 		session.close();
 		return role;
 	}
-	public static int mypageMain(String cust_id) {
+	public static int mypageMain(HashMap map) {
 		SqlSession session = factory.openSession();
-		int re = session.selectOne("customer.mypage_login",cust_id);
+		int re = session.selectOne("customer.mypage_login",map);
 		session.close();
 		return re;
 
+	}
+	
+	public static String getEmail(String cust_id) {
+		SqlSession session = factory.openSession();
+		String email = session.selectOne("customer.getEmail",cust_id);
+		session.close();
+		return email;
 	}
 	
 	//===================================================
@@ -407,6 +430,8 @@ public class DBManager {
 		return list;
 	}
 	
+	
+	
 	public static int insertCustomer_order(Customer_orderVO co) {
 		SqlSession session = factory.openSession();
 		int re = session.insert("customer_order.insertCustomer_order", co);
@@ -415,7 +440,20 @@ public class DBManager {
 		return re;
 	}
 	
-
+	public static int getOrder_count() {
+		SqlSession session = factory.openSession();
+		int re= session.selectOne("customer_order.getOrder_count");
+		session.close();
+		return re;
+	}
+	
+	public static int order_getNextNo() {
+		SqlSession session = factory.openSession();
+		int order_no = session.selectOne("customer_order.getNextNo");
+		session.close();
+		return order_no;
+	}
+	
 
 
 	
@@ -442,6 +480,13 @@ public class DBManager {
 		session.commit();
 		session.close();
 		return re;
+	}
+	
+	public static int orderdetail_getNextNo() {
+		SqlSession session = factory.openSession();
+		int detail_no = session.selectOne("customerOrder_detail.getNextNo");
+		session.close();
+		return detail_no;
 	}
 	
 	//===========================================

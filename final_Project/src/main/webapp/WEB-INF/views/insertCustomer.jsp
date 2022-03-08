@@ -95,6 +95,7 @@
 </script>
 </head>
 <body>
+<div><jsp:include page="./common/header.jsp"></jsp:include></div>
 <!-- 이름줄때 앞에 join_ 붙이기 -->
 	<div class="join_container">
 		<div id="join_title">
@@ -103,7 +104,9 @@
 		<div id="join_essential">
 			<label class="join_8">*</label>필수입력사항
 		</div>
-		<hr width="1000px">
+		<div>
+			<hr width="1000px">
+		</div>
 		
 		<form action="insertCustomer" method="post" name="joinForm">
 			<div class="join_form">
