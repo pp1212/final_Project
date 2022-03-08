@@ -173,6 +173,7 @@ public class QnaController {
 	@RequestMapping("/admin/mgr_detailQna")
 	public void mgr_detailQna(int qna_no,Model model) {
 		model.addAttribute("q",dao.mgr_detailQna(qna_no));
+
 	}
 	
 	

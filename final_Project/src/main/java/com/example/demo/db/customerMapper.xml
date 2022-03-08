@@ -46,5 +46,9 @@
   <select id="mypage_login" resultType="java.lang.Integer">
   	select count(*) from customer where cust_pwd=#{cust_pwd} and cust_id=#{cust_id}
   </select>
+  
+  <select id="getEmail" resultType="java.lang.String">
+  	select cust_email from customer where cust_id=#{cust_id}
+  </select>
 
 </mapper>

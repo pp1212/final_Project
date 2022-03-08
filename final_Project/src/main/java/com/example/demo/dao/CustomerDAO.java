@@ -54,5 +54,9 @@ public class CustomerDAO {
 	public int mypage_login(HashMap map) {
 		return DBManager.mypageMain(map);
 	}
+	
+	public String getEmail(String cust_id) {
+		return DBManager.getEmail(cust_id);
+	}
 
 }

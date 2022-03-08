@@ -318,9 +318,20 @@ public class ProductController {
 		return mav;
 	}
 	
-	@RequestMapping("/admin/category_sale")
+	@RequestMapping(value="/admin/category_sale", method = RequestMethod.GET)
 	public void category_sale() {
 		
+	}
+	
+	
+	@RequestMapping(value="/admin/category_sale", method = RequestMethod.POST)
+	@ResponseBody
+	public Object category_sale(String category_code) {
+		System.out.println(category_code);
+		List<ProductVO> list = dao.category_sale(category_code);
+		System.out.println(list);
+
+		return list;
 	}
 	
 }

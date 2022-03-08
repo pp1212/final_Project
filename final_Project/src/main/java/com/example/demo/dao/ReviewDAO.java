@@ -39,4 +39,12 @@ public class ReviewDAO {
 	public List<ContentReviewVO> findAllReview(int product_no){
 		return DBManager.findAllReview(product_no);
 	}
+	
+	public int review_getNextNo() {
+		return DBManager.review_getNextNo();
+	}
+	
+	public int defaultReview(ReviewVO r) {
+		return DBManager.defaultReview(r);
+	}
 }
