@@ -73,7 +73,8 @@ public class CustomerController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login_submit(HttpSession session, String cust_id, String cust_pwd) {
 		
-		ModelAndView mav = new ModelAndView("main");
+//		ModelAndView mav = new ModelAndView("main");
+		ModelAndView mav = new ModelAndView("loginOK");
 		int re = dao.login(cust_id, cust_pwd);
 		String msg = "";
 		if(re == 1) {
