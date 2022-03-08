@@ -5,12 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/css/find.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 </head>
 <body>
-	${msg }
-	<a href="main">메인으로 가기</a>
-	<a href="/mypage/listQna">qna 가기</a>
-	<a href="/mypage/updateCustomer">개인정보수정</a><br>
-	<a href="logout">logout</a>
+<div><jsp:include page="./common/header.jsp"></jsp:include></div>
+<hr width="1100px">
+	<div id="findOK_msg">
+		${msg }
+	</div> 
+	<a id="find_main" href="main">메인으로 가기</a>
+
 </body>
 </html>
