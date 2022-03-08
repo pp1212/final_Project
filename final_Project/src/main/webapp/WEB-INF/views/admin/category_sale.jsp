@@ -22,11 +22,6 @@
         <option value="v">비건</option>
       </select>
       <input type="submit" value="확인" onclick='Show_Category();'><br>
-      
-      <div id="cate_list">
-      
-      </div>
-
     
     <script>
     	function Show_Category(category_code) {
@@ -51,23 +46,22 @@
     	console.log(obj);
     	if (obj != null) {
     		console.log("callback success");
+    		document.getElementById("cate_list").innerHTML="";
     		for (var index = 0; index < count; index++) {
     			obj[index].product_no;
     			obj[index].product_name;
     			
     			var data = new Object();
-    			data.product_no= obj[index].product_no;
-    			data.product_name= obj[index].product_name;
-    			
-    			document.body.append(data.product_no); 
-    			document.body.append(data.product_name); 
+    			data.product_name= obj[index].product_name;    			
+    			//document.body.append(data.product_name);
+    			document.getElementById("cate_list").innerHTML+="<br/><br/>"+(index+1)+"위: "+data.product_name;
     		}
     	}
     }
     </script>
     
     
-
+<div id="cate_list"></div>
 
     
     
