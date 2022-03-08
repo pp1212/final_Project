@@ -17,6 +17,9 @@
 				<c:when test="${not empty member }">
 					<ul class="list-menu">
 						<li>${member.cust_name }보글님</li>
+						<c:if test="${cust_id eq 'bbox' }"> 
+               				 <li><a href="admin/adminMain">관리자페이지로 가기</a><br></li>
+       				    </c:if>
 						<li><a href="/mypage/listReviewWrite">마이페이지</a></li>
 						<li><a href="/logout">로그아웃</a></li>
 					</ul>
