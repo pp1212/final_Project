@@ -132,8 +132,8 @@
 			    console.log(data);
 				orderList.push(data);
 			}
-			//console.log(orderList);
-
+			console.log(orderList);
+			
 			var jsonData = JSON.stringify(orderList);
 			console.log(jsonData);
 
@@ -151,7 +151,7 @@
 
 			document.body.appendChild(form);
 			form.submit();
-
+			
 		}
 		
 	</script>

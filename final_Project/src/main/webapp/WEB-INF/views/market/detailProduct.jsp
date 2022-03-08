@@ -97,7 +97,7 @@
 						<div class="info-area_box-list">
 							<div class="info-area_box_tit">판매자</div>
 							<div class="info-area_box_cont">
-								<div>그리팅</div>
+								<div>보글박스</div>
 							</div>
 						</div>
 					</div>
