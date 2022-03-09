@@ -17,6 +17,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -137,72 +138,14 @@ public class Customer_orderController {
 //	}
 //	
 	
-	@SuppressWarnings("unchecked")
-	@RequestMapping(value="/admin/monthTotal" ,method=RequestMethod.GET)
-	public ResponseEntity<JSONObject> money_list(){
-		ResponseEntity<JSONObject>  entity=null;
-		List<MonthTotalVO>  items=  dao.monthTotal();
-		//리스트 형태를 json 형태로 만들어서 리턴
-		JSONObject data =new JSONObject();
-		
-		//컬럼객체
-		JSONObject col1 =new JSONObject();
-		JSONObject col2 =new JSONObject();
-		JSONArray title =new JSONArray();
-		col1.put("label", "월");
-		col1.put("type", "number");
-		col2.put("label", "금액");
-		col2.put("type" , "number");
-		
-		title.add(col1);
-		title.add(col2);
-		
-		data.put("cols", title);
-/*		
-		"rows": [
-			        {"c":[{"v":"Mushrooms"},{"v":3}]},
-			        {"c":[{"v":"Onions"},{"v":1}]},
-			       ]
-			       
-		rows : [ 배열 (객체 :배열[객체])]
-		
-*/ 	
-
-		//들어갈 형태  ->  rows 객체 에 배열  <- 
-		//  <- [  c 라는 객체에 배열 <- 객체
-		//  data 객체 -> rows 배열 <-  c 객체  ->배열  <- v 객체 2개/
 	
-		JSONArray  body =new JSONArray();
-		for(MonthTotalVO  mt : items){
-			JSONObject month =new JSONObject();
-			month.put("month", mt.getMonth()); //월이름
-			JSONObject price =new JSONObject(); 
-			price.put("price", mt.getTotal()); //금액
-
-			//  v객체를 row 배열을 만든후 추가한다.
-			JSONArray row =new JSONArray();
-			row.add(month);
-			row.add(price);   
- 
-			//   c 객체 를 만든후 row 배열을 담는다.
-			JSONObject c =new JSONObject();
-			c.put("c", row);		
-			// c 객체를 배열 형태의 body 에 담는다.
-			body.add(c);		
-		}
-		// 배열 형태의 body 를 rows 키값으로 객체 data 에 담는다.
-		data.put("rows", body);
-		try{
-			 entity =new ResponseEntity<JSONObject>(data, HttpStatus.OK);
-		}catch (Exception e) {
-			System.out.println(" 에러            -- ");
-			entity =new ResponseEntity<JSONObject>(HttpStatus.BAD_REQUEST);
-		}
-		return entity;
+	@GetMapping(value="/admin/monthTotal")
+	@ResponseBody
+	public  List<MonthTotalVO> monthTotal(){		
+	 return   dao.monthTotal();//월별 매출액
+	
 	}
 	
-
-
 	@RequestMapping(value = "/market/orderRequest", method = RequestMethod.POST)
 	@ResponseBody
 	public void insertCustomer_order(HttpServletRequest request, HttpServletResponse response) {

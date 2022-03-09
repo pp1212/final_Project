@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="../resources/css/insertCustomer.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/footer.css" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -172,8 +174,6 @@
 				<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkCustomer()">
 				</div>
 		</form>	
-	</div>
-		
-
+		<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 </body>
 </html>

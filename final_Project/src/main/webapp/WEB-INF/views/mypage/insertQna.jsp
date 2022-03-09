@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 </head>
 <body>
+<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 	<h2>1:1 문의 작성</h2>
 	<form action="insertQna" method="post" enctype="multipart/form-data">
 		번호  <input type="text" name="qna_no" value="${qna_no }"><br>
@@ -17,5 +19,6 @@
 		<input type="reset" value="취소">
 		<input type="submit" value="확인">
 	</form>
+	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>
