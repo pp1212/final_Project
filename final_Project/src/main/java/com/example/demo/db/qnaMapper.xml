@@ -28,7 +28,7 @@
   </insert>
  
   <select id="findAllQna" resultType="listQnaVO">
-  	select qna_title,qna_content,qna_img,qna_answer,qna_date,cust_id from qna q,customerorder_detail d,customer_order o 
+  	select qna_no,qna_title,qna_content,qna_img,qna_answer,qna_date,cust_id from qna q,customerorder_detail d,customer_order o 
 	where q.detail_no = d.detail_no and d.order_no = o.order_no and product_no=#{product_no} order by qna_date desc
   </select>
 

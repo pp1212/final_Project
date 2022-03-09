@@ -23,11 +23,12 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		$(".review_title").click(function(){
-			$(".review-accordion").toggle("slow");
-		});
 		$(".qna_title").click(function(){
-			$(".qna-accordion").toggle("slow");
+			$(this).siblings(".qna-accordion").toggle("slow");
+		});
+		
+		$(".review_title").click(function(){
+			$(this).siblings(".review-accordion").toggle("slow");
 		});
 	});
 </script>
@@ -140,10 +141,10 @@
 												<div class='review-text-div'>
 													<span class="review_title">${r.review_title }</span><br>
 													<span>${r.cust_id }</span>
-												</div>
-												<div class="review-accordion">
-													<span>${r.review_content }</span>
-													<img src="/images/${r.review_img }" onerror="this.style.display='none'">
+													<div class="review-accordion">
+														<span>${r.review_content }</span>
+														<img src="/images/${r.review_img }" onerror="this.style.display='none'">
+													</div>
 												</div>
 											</div>
 										</li>
@@ -173,19 +174,19 @@
 													<span>${q.cust_id }</span>
 														|
 													<span><fmt:formatDate value="${q.qna_date }"/> </span>
-												</div>
-												<div class="qna-accordion">
-													<div class="qna-question">
-														<span><img src="/images/icon_q.jpg" style="width: 25px; height: 25px;"></span>
-														<span>${q.qna_content }</span>
-														<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
-													</div>
-													<c:if test="${not empty q.qna_answer}">
-														<div class="qna-answer">
-															<span><img src="/images/icon_a.jpg" style="width: 25px; height: 25px;"></span>
-															<span>${q.qna_answer }</span>
+													<div class="qna-accordion">
+														<div class="qna-question">
+															<span><img src="/images/icon_q.jpg" style="width: 25px; height: 25px;"></span>
+															<span>${q.qna_content }</span>
+															<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
 														</div>
-													</c:if>
+														<c:if test="${not empty q.qna_answer}">
+															<div class="qna-answer">
+																<span><img src="/images/icon_a.jpg" style="width: 25px; height: 25px;"></span>
+																<span>${q.qna_answer }</span>
+															</div>
+														</c:if>
+													</div>
 												</div>
 											</div>
 										</li>

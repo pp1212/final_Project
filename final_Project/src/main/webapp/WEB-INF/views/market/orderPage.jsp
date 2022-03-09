@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css"
 	type="text/css">
 </head>
@@ -134,23 +135,76 @@
 			}
 			console.log(orderList);
 			
-			var jsonData = JSON.stringify(orderList);
-			console.log(jsonData);
+			if(orderList[0].payment_code == 0){
+				//console.log(orderList[0].payment_code);
+				
+				var i_name = "";
+				var i_price = 0;
+				
+				for(var i=0 ; i<orderList.length ; i++){
+					i_name += orderList[i].product_name;
+					if(i < orderList.length-1){
+						i_name += ",";
+					}
+					i_price += parseInt(orderList[i].product_price)*parseInt(orderList[i].product_cnt);
+				}
+				
+				i_price += 3000;
+				//console.log(i_price);
+				
+				IMP.init("imp76937091");
+				IMP.request_pay({ 
+			          pg: "kcp",
+			          pay_method: "card",
+			          merchant_uid: "bogglebox" + new Date().getTime(),
+			          name: i_name,
+			          amount: i_price,
+			          buyer_name: orderList[0].name,
+			          buyer_tel: orderList[0].phone,
+			      }, function (rsp) { 
+			          if (rsp.success) {
+			        	var jsonData = JSON.stringify(orderList);
+			  			console.log(jsonData);
 
-			var form = document.createElement('form'); // 폼객체 생성
-			form.setAttribute('method', 'post'); //get,post 가능
-			form.setAttribute('action', "/market/orderRequest"); //보내는 url
-			document.charset = "utf-8";
-			var objs;
-			objs = document.createElement('input'); // 값이 들어있는 녀석의 형식
-			objs.setAttribute('type', 'hidden'); // 값이 들어있는 녀석의 type
-			objs.setAttribute('name', 'orderList'); // 객체이름
-			objs.setAttribute('value', jsonData); //객체값
-			objs.setAttribute('contentType', 'application/json');
-			form.appendChild(objs);
+			  			var form = document.createElement('form'); // 폼객체 생성
+			  			form.setAttribute('method', 'post'); //get,post 가능
+			  			form.setAttribute('action', "/market/orderRequest"); //보내는 url
+			  			document.charset = "utf-8";
+			  			var objs;
+			  			objs = document.createElement('input'); // 값이 들어있는 녀석의 형식
+			  			objs.setAttribute('type', 'hidden'); // 값이 들어있는 녀석의 type
+			  			objs.setAttribute('name', 'orderList'); // 객체이름
+			  			objs.setAttribute('value', jsonData); //객체값
+			  			objs.setAttribute('contentType', 'application/json');
+			  			form.appendChild(objs);
 
-			document.body.appendChild(form);
-			form.submit();
+			  			document.body.appendChild(form);
+			  			form.submit();
+			        	
+			  			console.log("rsp:"+rsp);
+			          } else {
+			        	  alert('결제실패 : ' + response.error_msg);
+			          }
+			    });
+			}else{
+				var jsonData = JSON.stringify(orderList);
+				console.log(jsonData);
+	
+				var form = document.createElement('form'); // 폼객체 생성
+				form.setAttribute('method', 'post'); //get,post 가능
+				form.setAttribute('action', "/market/orderRequest"); //보내는 url
+				document.charset = "utf-8";
+				var objs;
+				objs = document.createElement('input'); // 값이 들어있는 녀석의 형식
+				objs.setAttribute('type', 'hidden'); // 값이 들어있는 녀석의 type
+				objs.setAttribute('name', 'orderList'); // 객체이름
+				objs.setAttribute('value', jsonData); //객체값
+				objs.setAttribute('contentType', 'application/json');
+				form.appendChild(objs);
+	
+				document.body.appendChild(form);
+				form.submit();
+			}
 			
 		}
 		
