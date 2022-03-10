@@ -21,3 +21,7 @@ a:link,a:visited{
 a:hover{
 	color:#F26835;
 }
+
+body{
+	margin: 0;
+}

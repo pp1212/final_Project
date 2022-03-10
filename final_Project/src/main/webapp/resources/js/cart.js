@@ -146,8 +146,6 @@ function CheckOrder(frm) {
 		
 		document.body.appendChild(form);
 		form.submit();
-
-		
 	}
 	if (yn && a == 0) {
 		alert("선택된 제품이 없습니다.");

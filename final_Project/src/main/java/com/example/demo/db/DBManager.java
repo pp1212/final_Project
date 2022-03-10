@@ -19,6 +19,7 @@ import com.example.demo.vo.ListDetailVO;
 import com.example.demo.vo.ListOrderVO;
 import com.example.demo.vo.ListQnaVO;
 import com.example.demo.vo.ListReviewVO;
+import com.example.demo.vo.MarginProductVO;
 import com.example.demo.vo.MonthTotalVO;
 import com.example.demo.vo.OrderCancelVO;
 import com.example.demo.vo.ProductVO;
@@ -71,6 +72,20 @@ public class DBManager {
 		ProductVO p = session.selectOne("product.detailProduct", product_no);
 		session.close();
 		return p;
+	}
+	
+	public static List<ProductVO> bestProduct(){
+		SqlSession session = factory.openSession();
+		List<ProductVO> list = session.selectList("product.bestProduct");
+		session.close();
+		return list;
+	}
+	
+	public static List<MarginProductVO> marginProduct(){
+		SqlSession session = factory.openSession();
+		List<MarginProductVO> list = session.selectList("product.marginProduct");
+		session.close();
+		return list;
 	}
 	
 	public static List<ProductVO> mgr_listProduct(HashMap map){
@@ -188,6 +203,22 @@ public class DBManager {
 		return list;
 	}
 	
+	public static int review_getNextNo() {
+		SqlSession session = factory.openSession();
+		int review_no = session.selectOne("review.getNextNo");
+		session.close();
+		return review_no;
+	}
+	
+	public static int defaultReview(ReviewVO r) {
+		SqlSession session = factory.openSession();
+		int re= session.insert("review.defaultReview", r);
+		session.commit();
+		session.close();
+		return re;
+	}
+	
+	
 
 	
 	//==============================================
@@ -273,12 +304,19 @@ public class DBManager {
 		session.close();
 		return role;
 	}
-	public static int mypageMain(String cust_id) {
+	public static int mypageMain(HashMap map) {
 		SqlSession session = factory.openSession();
-		int re = session.selectOne("customer.mypage_login",cust_id);
+		int re = session.selectOne("customer.mypage_login",map);
 		session.close();
 		return re;
 
+	}
+	
+	public static String getEmail(String cust_id) {
+		SqlSession session = factory.openSession();
+		String email = session.selectOne("customer.getEmail",cust_id);
+		session.close();
+		return email;
 	}
 	
 	//===================================================
@@ -314,12 +352,36 @@ public class DBManager {
 		return no;
 	}
 	
-	public static List<QnaVO> listQna(String cust_id) {
+//	public static List<ProductVO> listProduct(HashMap map){
+//		SqlSession session = factory.openSession();
+//		List<ProductVO> list = session.selectList("product.listProduct",map);
+//		System.out.println(list);
+//		System.out.println("데이터수:"+list.size());
+//		session.close();
+//		return list;
+//	}
+	
+	public static List<QnaVO> listQna(HashMap map) {
 		SqlSession session = factory.openSession();
-		List<QnaVO> list = session.selectList("qna.listQna",cust_id);
+		List<QnaVO> list = session.selectList("qna.listQna",map);
 		session.close();
 		return list;
 	}
+	
+	public static int QnaGetTotalRecord(HashMap map) {
+		SqlSession session = factory.openSession();
+		int no = session.selectOne("qna.QnaGetTotalRecord", map);
+		System.out.println("totalRecord:"+no);
+		session.close();
+		return no;
+	}
+	
+//	public static List<QnaVO> listQna(String cust_id) {
+//		SqlSession session = factory.openSession();
+//		List<QnaVO> list = session.selectList("qna.listQna",cust_id);
+//		session.close();
+//		return list;
+//	}
 	
 	public static int insertQna(QnaVO q) {
 		SqlSession session = factory.openSession();
@@ -392,6 +454,8 @@ public class DBManager {
 		return list;
 	}
 	
+	
+	
 	public static int insertCustomer_order(Customer_orderVO co) {
 		SqlSession session = factory.openSession();
 		int re = session.insert("customer_order.insertCustomer_order", co);
@@ -400,7 +464,20 @@ public class DBManager {
 		return re;
 	}
 	
-
+	public static int getOrder_count() {
+		SqlSession session = factory.openSession();
+		int re= session.selectOne("customer_order.getOrder_count");
+		session.close();
+		return re;
+	}
+	
+	public static int order_getNextNo() {
+		SqlSession session = factory.openSession();
+		int order_no = session.selectOne("customer_order.getNextNo");
+		session.close();
+		return order_no;
+	}
+	
 
 
 	
@@ -427,6 +504,13 @@ public class DBManager {
 		session.commit();
 		session.close();
 		return re;
+	}
+	
+	public static int orderdetail_getNextNo() {
+		SqlSession session = factory.openSession();
+		int detail_no = session.selectOne("customerOrder_detail.getNextNo");
+		session.close();
+		return detail_no;
 	}
 	
 	//===========================================
