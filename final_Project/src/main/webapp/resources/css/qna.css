@@ -24,23 +24,30 @@
 	margin-left: 0px;
 }
 #qna_content{
+	border-bottom: 1px solid black;
 	width: 700px;
 	height: 30px;
 	padding-top: 8px;
 	vertical-align: middle;
+	display: flex;
 }
 #qna_content_no{
-	float: left;
+	flex: 1;
+	/* float: left;*/
 	margin-left: 60px;
-	margin-right: 100px;
+	margin-right: 80px; 
 }
-/* #qna_content_title{
-	float:left;
-} */
+ #qna_content_title{
+ flex:3;
+ width: 150px;
+	/* text-align: center; */
+} 
 
 #qna_content_date{
-	float: right;
-	margin-right: 60px;
+	flex: 1.4;
+	
+/* 	float: right;
+	margin-right: 60px; */
 }
 #qna_right{
 	float: right;
@@ -56,5 +63,6 @@
 }
 #qna_page{
 	text-align: center;
+	margin-right: 200px;
 }
 
