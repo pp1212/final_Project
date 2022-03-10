@@ -214,6 +214,7 @@ public class Customer_orderController {
 		}
 		
 		mv.setViewName("market/orderPageOK");
+		mv.addObject("order_no", order_no);
 		return mv;
 
 
