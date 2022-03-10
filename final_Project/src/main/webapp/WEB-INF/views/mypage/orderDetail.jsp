@@ -23,7 +23,7 @@
 						<li><a href="/mypage/orderList">주문 내역</a></li>
 						<li><a href="/mypage/listReviewWrite">상품 후기</a></li>
 						<li><a href="/mypage/listQna">상품 문의</a></li>
-						<li><a href="/mypage/mypageMain">개인 정보 수정</a></li>
+						<li><a href="/mypage/loginMypage">개인 정보 수정</a></li>
 					</ul>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 								<div class="od_content">
 									<div><strong>${o.product_name }</strong> </div>
 									<span><strong>${o.product_price }&nbsp;원</strong></span>&nbsp;&nbsp;
-									<span id="od_cnt"> 수량 : ${o.detail_cnt }</span><!-- &emsp;&emsp;&emsp;&emsp;&emsp; -->
+									<span id="od_cnt"> 수량 : ${o.detail_cnt }</span>
 									<span><strong id="od_status">${o.status_name }</strong></span>
 								</div>
 								
@@ -71,7 +71,7 @@
 							상품금액<span class="od_payInfo_content">${totalDetail }&nbsp;원</span>
 						</div>
 						<div>
-							배송비<span class="od_payInfo_content"> 3000원</span>
+							배송비<span class="od_payInfo_content"> 3000 원</span>
 						</div>
 						<div>
 							결제금액<span class="od_payInfo_content"> ${totalDetail +3000 }&nbsp;원</span>
@@ -105,8 +105,10 @@
 		</div>
 		
 	
-			<div id="footer"><!-- 푸터 --></div>
+			
+		</div>
 		</div>
 	</div>
+	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>

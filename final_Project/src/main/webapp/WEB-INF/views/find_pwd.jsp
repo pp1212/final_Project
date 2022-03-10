@@ -26,5 +26,6 @@
 			<input id="find_submit" type="submit" value="비밀번호찾기">
 		</form>
 	</div>
+		<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 </body>
 </html>

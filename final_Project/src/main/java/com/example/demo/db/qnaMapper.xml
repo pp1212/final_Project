@@ -19,8 +19,24 @@
   	select nvl(max(qna_no),0)+1 from qna
   </select>
   
+  	<!-- select q.qna_no, d.detail_no, q.qna_title, q.qna_date from
+	qna q, customerOrder_detail d, customer_order o 
+	where q.detail_no=d.detail_no and o.order_no=d.order_no 
+	and o.cust_id=#{cust_id} 
+	order by q.qna_date desc -->
   <select id="listQna" resultType="qnaVO">
-	select q.qna_no, d.detail_no, q.qna_title, q.qna_date from qna q, customerOrder_detail d, customer_order o where q.detail_no=d.detail_no and o.order_no=d.order_no and o.cust_id=#{cust_id} order by q.qna_date desc
+	select qna_no, detail_no, qna_title, qna_date from 
+	(select rownum num, qna_no, detail_no, qna_title, qna_date from 
+	(select q.qna_no, d.detail_no, q.qna_title, q.qna_date from 
+	qna q, customerOrder_detail d, customer_order o  
+	where q.detail_no=d.detail_no and o.order_no=d.order_no 
+	and o.cust_id=#{cust_id}  
+	order by q.qna_date desc)) 
+	where num between #{start} and #{end}
+  </select>
+  
+  <select id="QnaGetTotalRecord" resultType="java.lang.Integer">
+  	select count(*) from Qna
   </select>
   
   <insert id="insertQna" parameterType="qnaVO">

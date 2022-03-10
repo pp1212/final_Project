@@ -64,9 +64,9 @@
 			</div>
 			
 		</div>
-		<div id="footer"><!-- 푸터 --></div>
+		
 	</div>
 	</div>
-			
+	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>	
 </body>
 </html>

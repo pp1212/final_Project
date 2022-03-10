@@ -352,12 +352,36 @@ public class DBManager {
 		return no;
 	}
 	
-	public static List<QnaVO> listQna(String cust_id) {
+//	public static List<ProductVO> listProduct(HashMap map){
+//		SqlSession session = factory.openSession();
+//		List<ProductVO> list = session.selectList("product.listProduct",map);
+//		System.out.println(list);
+//		System.out.println("데이터수:"+list.size());
+//		session.close();
+//		return list;
+//	}
+	
+	public static List<QnaVO> listQna(HashMap map) {
 		SqlSession session = factory.openSession();
-		List<QnaVO> list = session.selectList("qna.listQna",cust_id);
+		List<QnaVO> list = session.selectList("qna.listQna",map);
 		session.close();
 		return list;
 	}
+	
+	public static int QnaGetTotalRecord(HashMap map) {
+		SqlSession session = factory.openSession();
+		int no = session.selectOne("qna.QnaGetTotalRecord", map);
+		System.out.println("totalRecord:"+no);
+		session.close();
+		return no;
+	}
+	
+//	public static List<QnaVO> listQna(String cust_id) {
+//		SqlSession session = factory.openSession();
+//		List<QnaVO> list = session.selectList("qna.listQna",cust_id);
+//		session.close();
+//		return list;
+//	}
 	
 	public static int insertQna(QnaVO q) {
 		SqlSession session = factory.openSession();

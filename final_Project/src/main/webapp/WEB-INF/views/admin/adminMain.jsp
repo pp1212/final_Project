@@ -14,7 +14,8 @@
 	<a href="mgr_listProduct"> <img class="mgr_product" src="/images/상품관리.png" width="100" height="100"/>상품관리</a><br>
 	<a href="mgr_listQna"> <img class="mgr_qna" src="/images/상품문의.png" width="100" height="100"/>상품문의답글</a><br>
 	<a href="category_sale"> <img class="category" src="/images/카테고리별 판매량.png" width="100" height="100"/>카테고리별판매량</a><br>
-	<a href="monthTotal"> <img class="month" src="/images/월별 총매출.png" width="100" height="100"/>월별총매출</a><br><br><br>
+	<a href="monthTotal.html"> <img class="month" src="/images/월별 총매출.png" width="100" height="100"/>월별총매출</a><br><br><br>
+
 	<a href="http://localhost:8080/main">쇼핑몰 메인으로</a><br>
 </div>	
 </body>
