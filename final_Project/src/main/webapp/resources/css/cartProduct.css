@@ -1,3 +1,11 @@
+.cart_form{
+	width: 1400px;
+	height: 100%;
+	margin: 25px auto 100px;
+	border-radius: 3px;
+	padding: 50px 50px;
+}
+
 .cp_form{
 	  margin-left: auto;
       margin-right: auto;
@@ -41,7 +49,7 @@
 	background-color: #F2884B;
 	border-radius: 3px;
 	color: white;
-	font-size: 15px;
+	font-size: 17px;
 	outline: none;
 	box-shadow: none;
 	border : 1px solid #F2884B;
@@ -49,15 +57,15 @@
 	margin-right: 20px;
 	text-decoration: none;
 	text-align: center;
-	padding-top: 5px;
 	font-weight: bold;
+	margin-top: 10px;
 }
 
 #cp_all{
 	background-color: #F2884B;
 	border-radius: 3px;
 	color: white;
-	font-size: 15px;
+	font-size: 17px;
 	outline: none;
 	box-shadow: none;
 	border : 1px solid #F2884B;
@@ -65,8 +73,8 @@
 	margin-right: 20px;
 	text-decoration: none;
 	text-align: center;
-	padding-top: 5px;
 	font-weight: bold;
+	margin-top: 10px;
 }
 
 
@@ -90,4 +98,12 @@
 #cp_title{
 	margin-bottom: 5px;
 	margin-left: 150px;
+}
+
+input{
+	width: 100px;
+}
+
+input[type=checkbox] {
+transform : scale(1.3);
 }

@@ -1,3 +1,11 @@
 .admin_list{
-	float: left
+	width: 1400px;
+	height: 100%;
+	margin: 25px auto 100px;
+	border-radius: 3px;
+	padding: 50px 50px;
+}
+
+.box{
+	float:left;
 }

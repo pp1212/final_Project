@@ -13,9 +13,9 @@
 </head>
 <body>
 	<div><jsp:include page="../common/header.jsp"></jsp:include></div>
-	
+	<div class="cart_form">
 	<h2 id="cp_title">장바구니</h2>
-	<hr id="cp_hr">
+	<hr width="1100px">
 	<form name="checkBoxForm">
 	<table border="1" width="80%">
 		<c:forEach var="cp" items="${list }" varStatus="loop">
@@ -43,13 +43,14 @@
 			<tr>
 				<td colspan=7 style="text-align:right;">총 상품 금액 : <input name="total_sum" type="text" size="20" value="0" readonly>원</td>
 			</tr>
-			
 			<tr align="center">
+			
 				<td colspan=7><button type="button" id="cp_select" onclick="javascript:CheckOrder(checkBoxForm)">선택 상품 주문</button>
 				&emsp;<button type="button" id="cp_all" onclick="javascript:AllOrder(checkBoxForm);">전체 상품 주문</button></td>
-			</tr>			
+			</tr>		
 	</table>
 	</form>
+	</div>
 	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	<script src="${pageContext.request.contextPath}/resources/js/cart.js"></script>	
 	

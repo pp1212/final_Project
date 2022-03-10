@@ -16,23 +16,28 @@
 <link rel="stylesheet" href="../resources/css/orderPage.css" type="text/css">
 </head>
 <body>
-
-	<h2>주문하기</h2>
-	<h4>주문자</h4>
-	<hr>
+	<div><jsp:include page="../common/header.jsp"></jsp:include></div>
+<div class=join_form>
+	<div class="order_1">
+	<h1>주문하기</h1>
+	</div>
+	<div class="order_2">
+	<h3>주문자</h3>
+	</div>
+	<hr width="1000px">
 	<form action="">
 	<div class="order_form">
-	<span class="order" id="order_name">
-		이름: <input type="text" name="name"><br> 
-	</span>
-	<span class="order" id="order_phone">
-		휴대폰 번호:<input type="tel" name="phone">
-	</span>	
+	
+		이름<span class="order" id="order_name"><input type="text" name="name"><br> </span>
+	
+	
+		휴대폰 번호<span class="order" id="order_phone"><input type="tel" name="phone"></span>	
+	
 	</div>
 	</form>
 
-	<h4>배송정보</h4>
-	<hr>
+	<h3>배송정보</h3>
+	<hr width="1000px">
 	<div>배송지</div>
 	<input type="text" id="order_addr1" placeholder="우편번호">
 	<input type="button" id="btnCheck" onclick="sample6_execDaumPostcode()"
@@ -44,14 +49,13 @@
 	<input type="text" id="sample6_extraAddress" placeholder="참고항목">
 	<br>
 
-	<h4>배송상품</h4>
-	<hr>
+	<h3>배송상품</h3>
+	<hr width="1000px">
 	<script>
 		let today = new Date();
 		let month = today.getMonth() + 1; // 월
 		let date = today.getDate() + 1; // 날짜
 		let day = today.getDay(); // 요일
-
 		document.write(month + '/' + date + ' 도착 예정')
 	</script>
 
@@ -62,7 +66,7 @@
 	%>
 
 
-	<table border="1" width="80%">
+	<table style="width: 80%">
 		<thead>
 			<tr>
 				<td>상품이미지</td>
@@ -219,14 +223,14 @@
 		
 	</script>
 
-	<h4>결제수단</h4>
+	<h3>결제수단</h3>
 	<hr>
-	<input type="checkbox" name="payment" value="0" onclick='checkOnlyOne(this)'/>신용카드
-	<input type="checkbox" name="payment" value="1" onclick='checkOnlyOne(this)'/>실시간 계좌이체
+	<input type="checkbox" name="payment" value="0" onclick='checkOnlyOne(this)'/>신용카드&nbsp;
+	<input type="checkbox" name="payment" value="1" onclick='checkOnlyOne(this)'/>실시간 계좌이체&nbsp;
 	<input type="checkbox" name="payment" value="2" onclick='checkOnlyOne(this)'/>휴대폰 결제
 	<br>
-	<input type="checkbox" name="payment" value="3" onclick='checkOnlyOne(this)'/>PAYCO
-	<input type="checkbox" name="payment" value="4" onclick='checkOnlyOne(this)'/>kakaopay
+	<input type="checkbox" name="payment" value="3" onclick='checkOnlyOne(this)'/>PAYCO&nbsp;&nbsp;&nbsp;
+	<input type="checkbox" name="payment" value="4" onclick='checkOnlyOne(this)'/>kakaopay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="checkbox" name="payment" value="5" onclick='checkOnlyOne(this)'/>Smilepay
 	<br>
 	
@@ -247,7 +251,8 @@
 
 	
 		<button type="button" onclick="OrderRequest()" id="btnOrder">결제하기</button>
-	
+	</div>
+		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 
 	<script
 		src="${pageContext.request.contextPath}/resources/js/orderPage.js"></script>
