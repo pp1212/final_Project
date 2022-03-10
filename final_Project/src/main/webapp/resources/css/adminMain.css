@@ -1,9 +1,10 @@
 .admin_list{
 	width: 1400px;
 	height: 100%;
-	margin: 25px auto 100px;
+	margin: 25px auto 300px;
 	border-radius: 3px;
 	padding: 50px 50px;
+	margin-bottom: 100px;
 }
 
 .box{

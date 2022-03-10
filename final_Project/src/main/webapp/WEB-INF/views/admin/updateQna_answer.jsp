@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/updateQna_answer.css" type="text/css">
 </head>
 <body>
+<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 	<h2>1:1문의 상세</h2>
 	<br>
 	<form action="updateQna_answer" method="post">
@@ -26,5 +28,6 @@
 	<input type="submit" value="확인">
 	<input type="reset" value="취소">
 	</form>
+			   <div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>

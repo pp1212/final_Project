@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/mgr_insertProduct.css" type="text/css">
 </head>
 <body>
+<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 	<h2>상품등록</h2>
 	<form action="mgr_insertProduct" method="post" enctype="multipart/form-data">
 	    <input type="hidden" name="product_no" value="${product_no}"><br>
@@ -25,6 +27,6 @@
 		<input type="submit" value="등록">
 		<input type="reset" value="취소">
 	</form>
-
+	   <div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>

@@ -8,9 +8,11 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/category_sale.css" type="text/css">
 </head>
 <body>
-
+<div><jsp:include page="../common/header.jsp"></jsp:include></div>
+	<div class="cate">
       <h1>카테고리별 판매량</h1>
       <select id="category_code">
         <option value="sp">국, 찌개</option>
@@ -58,12 +60,10 @@
     		}
     	}
     }
-    </script>
+    </script>  
     
-    
-<div id="cate_list"></div>
-
-    
-    
+    <div id="cate_list"></div> 
+    </div>     
+    <div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>

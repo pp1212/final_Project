@@ -7,10 +7,13 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/mgr_updateProduct.css" type="text/css">
 </head>
 <body>
+<div><jsp:include page="../common/header.jsp"></jsp:include></div>
+	<div class="mgr_list">
 	<h2>상품수정</h2>
-	<hr>
+	<hr width="1000px">
 	<form action="mgr_updateProduct" method="post" enctype="multipart/form-data">
 		상품번호: ${p.product_no }
 		<input type="hidden" name="product_no" value="${p.product_no }"><br>
@@ -24,5 +27,7 @@
 		상품사진 : <img src="/images/${p.product_img }" width="100" height="100"><br>
 		<input type="submit" value="수정">
 	</form>
+	</div>
+		   <div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>
