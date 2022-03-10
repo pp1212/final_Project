@@ -17,7 +17,7 @@
 	<div id="find_main">
 		<a href="main">메인으로 가기</a>
 	</div> 
-	
+		<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 
 </body>
 </html>

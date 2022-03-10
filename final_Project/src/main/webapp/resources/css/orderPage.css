@@ -1,0 +1,53 @@
+ table,td,tr {
+  	margin-left: auto;
+    margin-right: auto;
+    border-collapse:collapse;
+    text-align: center;
+  }
+  
+  .order{
+	margin-bottom: 50px;
+}
+  
+  .order_form{
+	margin-bottom: 30px;
+	outline: none;
+}
+
+#order_name{
+	margin-left: 100px;
+}
+#order_phone{
+	margin-left: 85px;
+}
+
+.join_form{
+	width: 1000px;
+	height: 100%;
+	margin: 25px auto 100px;
+	border-radius: 3px;
+	padding: 50px 50px;
+	
+}
+
+#btnCheck{
+	background-color: white;
+	border-radius: 3px;
+	color: #F2884B;
+	margin-left: 5px;
+	font-size: 15px;
+	outline: none;
+	box-shadow: none;
+	border : 1px solid #F2884B;
+}
+
+#btnOrder{
+	margin-left: 430px;
+	color: white;
+	background-color : #F2884B;
+	border-radius: 3px;
+	font-size: 18px;
+	outline: none;
+	box-shadow: none;
+	border: #F2884B;
+}

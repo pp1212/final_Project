@@ -56,6 +56,7 @@
 							</div>
 						</li>
 						<li class="menu2"><a href="/market/recentProduct">신제품</a></li>
+						<li class="menu3"><a href="/market/cartProduct">장바구니</a></li>
 					</ul>
 				</div>
 				<div></div>

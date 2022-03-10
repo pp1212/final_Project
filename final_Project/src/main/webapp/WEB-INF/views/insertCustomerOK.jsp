@@ -14,5 +14,6 @@
 	<hr width="700px">
 	<div id="msg"> ${msg } </div>
 	<a id="od_btn" href="login">로그인하기</a>
+	<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 </body>
 </html>

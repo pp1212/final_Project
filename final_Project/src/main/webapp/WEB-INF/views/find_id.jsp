@@ -27,5 +27,6 @@
 			<input id="find_submit" type="submit" value="아이디찾기">
 		</form>
 	</div>
+	<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 </body>
 </html>

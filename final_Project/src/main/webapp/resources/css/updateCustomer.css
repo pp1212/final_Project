@@ -74,7 +74,7 @@ input {
 }
 
 #join_submit{
-	margin-left: 430px;
+	margin-left: 330px;
 	color: white;
 	background-color : #F2884B;
 	border-radius: 3px;
@@ -88,6 +88,9 @@ input {
 }
 .join_name{
 	margin-left: 180px;
+}
+#footer{
+	margin-top: 700px;
 }
 
 

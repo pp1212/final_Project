@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="../resources/css/insertCustomer.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/footer.css" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
@@ -111,69 +113,69 @@
 		<form action="insertCustomer" method="post" name="joinForm">
 			<div class="join_form">
 				
-				<div class="join_box">
-					<strong class="join_name">아이디</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_id">
-							<input type="text" placeholder="  6자 이상의 영문 혹은 숫자를 조합" name="cust_id" id="cust_id" size="50">
-							<span><input type="button" value="중복확인" id="btnCheck" class="btnCheck" style="height: 30px; width: 80px;"><span id="result" class="result"></span></span>	
-						</span>
-				</div>
-				
-				
-				<div class="join_box">
-					<strong class="join_name">비밀번호</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_pwd">  
-							<input type="password" placeholder="  비밀번호를 입력해주세요" name="cust_pwd" id="cust_pwd" size="50"><br>
-						</span>
-				</div>
-				
-				
-				<div class="join_box">
-					<strong class="join_name">비밀번호확인</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_pwdok">  
-							<input type="password" placeholder="  비밀번호를 한번 더 입력해주세요" name="cust_pwd_ck" id="cust_pwd_ck" onkeyup="passConfirm()" size="50"> <span id ="confirmMsg"></span><br>
-						</span>
-				</div>
-				
-				<div class="join_box">
-					<strong class="join_name">이름</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_name">  
-							<input type="text" placeholder="  이름을 입력해주세요" name="cust_name" size="50"><br>
-						</span>
-				</div>
-				
-				<div class="join_box">
-					<strong class="join_name">휴대폰</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_phone">  
-							<input type="text" placeholder="  숫자만 입력해주세요" name="cust_phone" size="50"><br>
-						</span>
-				</div>
-				
-				<div class="join_box">
-					<strong class="join_name">이메일</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_email"> 
-							<input type="text" placeholder="  예) bogglebox@boggle.com" name="cust_email" id="cust_email" size="50">
-							<input type="button" value="중복확인" id="btnCheck2" class="btnCheck" style="height: 30px; width: 80px;">
-							<span id="emailCheck" class="result"></span><br>
-						</span>
-				</div>
+					<div class="join_box">
+						<strong class="join_name">아이디</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_id">
+								<input type="text" placeholder="  6자 이상의 영문 혹은 숫자를 조합" name="cust_id" id="cust_id" size="50">
+								<span><input type="button" value="중복확인" id="btnCheck" class="btnCheck" style="height: 30px; width: 80px;"><span id="result" class="result"></span></span>	
+							</span>
+					</div>
 					
-				<div class="join_box">
-					<strong class="join_name">주소</strong><label class="join_8">*</label>
-						<span class="join_tag" id="join_tag_addr">		
-							<input type="text" name="cust_addr1" id="cust_addr1"  placeholder="  우편번호" size="10"> 
-			           		<input type="button" value="우편번호찾기" onclick="kakaopost()" class="btnCheck" style="height: 30px; width: 100px;"><br>
-							<input type="text" name="cust_addr2" id="address" placeholder="  도로명주소" size="50"><br>
-							<input type="text" name="cust_addr3" id="cust_addr3" placeholder="  상세주소" size="50"><br>
-						</span>
-				</div>
+					
+					<div class="join_box">
+						<strong class="join_name">비밀번호</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_pwd">  
+								<input type="password" placeholder="  비밀번호를 입력해주세요" name="cust_pwd" id="cust_pwd" size="50"><br>
+							</span>
+					</div>
+					
+					
+					<div class="join_box">
+						<strong class="join_name">비밀번호확인</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_pwdok">  
+								<input type="password" placeholder="  비밀번호를 한번 더 입력해주세요" name="cust_pwd_ck" id="cust_pwd_ck" onkeyup="passConfirm()" size="50"> <span id ="confirmMsg"></span><br>
+							</span>
+					</div>
+					
+					<div class="join_box">
+						<strong class="join_name">이름</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_name">  
+								<input type="text" placeholder="  이름을 입력해주세요" name="cust_name" size="50"><br>
+							</span>
+					</div>
+					
+					<div class="join_box">
+						<strong class="join_name">휴대폰</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_phone">  
+								<input type="text" placeholder="  숫자만 입력해주세요" name="cust_phone" size="50"><br>
+							</span>
+					</div>
+					
+					<div class="join_box">
+						<strong class="join_name">이메일</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_email"> 
+								<input type="text" placeholder="  예) bogglebox@boggle.com" name="cust_email" id="cust_email" size="50">
+								<input type="button" value="중복확인" id="btnCheck2" class="btnCheck" style="height: 30px; width: 80px;">
+								<span id="emailCheck" class="result"></span><br>
+							</span>
+					</div>
 						
+					<div class="join_box">
+						<strong class="join_name">주소</strong><label class="join_8">*</label>
+							<span class="join_tag" id="join_tag_addr">		
+								<input type="text" name="cust_addr1" id="cust_addr1"  placeholder="  우편번호" size="10"> 
+				           		<input type="button" value="우편번호찾기" onclick="kakaopost()" class="btnCheck" style="height: 30px; width: 100px;"><br>
+								<input type="text" name="cust_addr2" id="address" placeholder="  도로명주소" size="50"><br>
+								<input type="text" name="cust_addr3" id="cust_addr3" placeholder="  상세주소" size="50"><br>
+							</span>
+					</div>
+					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkCustomer()">
+				</div>		
 				<br>
-				<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkCustomer()">
-				</div>
+				
+				
 		</form>	
-	</div>
-		
-
+		</div>
+		<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 </body>
 </html>

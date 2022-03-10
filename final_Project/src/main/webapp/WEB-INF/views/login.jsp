@@ -50,6 +50,7 @@
 			<a id="login_kakao" href="javascript:kakaoLogin()">카카오톡으로 로그인하기<img id="login_kakaoImg" src="/images/kakao.PNG"></a>
 		</form>
 	</div>
+	<div><jsp:include page="./common/footer.jsp"></jsp:include></div>
 	
 </body>
 </html>
