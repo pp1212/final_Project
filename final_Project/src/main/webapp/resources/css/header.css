@@ -123,3 +123,20 @@ section{
 #header .nb_list > li:hover #sub-menu{
 	display: block;
 }
+
+.nb .cart_inner{
+	position: absolute;
+	right: 5px;
+}
+
+.nb .cart_inner .cart_show{
+	display: block;
+	border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nb .cart_inner .cart_show img{
+	width: 30px;
+	height: 30px;
+}
