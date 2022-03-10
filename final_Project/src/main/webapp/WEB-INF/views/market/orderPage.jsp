@@ -12,6 +12,7 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css"
 	type="text/css">
+<link rel="stylesheet" href="../resources/css/orderPage.css" type="text/css">
 </head>
 <body>
 
@@ -19,15 +20,21 @@
 	<h4>주문자</h4>
 	<hr>
 	<form action="">
+	<div class="order_form">
+	<span class="order" id="order_name">
 		이름: <input type="text" name="name"><br> 
+	</span>
+	<span class="order" id="order_phone">
 		휴대폰 번호:<input type="tel" name="phone">
+	</span>	
+	</div>
 	</form>
 
 	<h4>배송정보</h4>
 	<hr>
 	<div>배송지</div>
 	<input type="text" id="order_addr1" placeholder="우편번호">
-	<input type="button" onclick="sample6_execDaumPostcode()"
+	<input type="button" id="btnCheck" onclick="sample6_execDaumPostcode()"
 		value="우편번호 찾기">
 	<br>
 	<input type="text" id="order_addr2" placeholder="주소">
