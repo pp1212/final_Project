@@ -134,8 +134,8 @@ function passConfirm() {
 		</div>
 	
 	</div>
-	<%-- <div><jsp:include page="../common/footer.jsp"></jsp:include></div> --%>
-	<div id="footer" class="hd_footer">
+	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
+	<!-- <div id="footer" class="hd_footer">
 		<div class="hd_footer_inner">
 			<div class="hd_footer_left">
 				<ul class="item">
@@ -168,6 +168,6 @@ function passConfirm() {
 			</div>
 		</div>
 	</div>
-
+ -->
 </body>
 </html>
