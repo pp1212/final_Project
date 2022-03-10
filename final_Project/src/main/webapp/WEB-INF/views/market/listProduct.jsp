@@ -72,7 +72,7 @@
 								</a>
 								<div class="box_list_title_wrap">
 									<span class="box_list_sub">${p.product_desc }</span>
-									<span class="box_list_title">${p.product_name }</span>
+									<span class="box_list_title"><a href="/market/detailProduct?product_no=${p.product_no }">${p.product_name }</a></span>
 								</div>
 								<div class="box_list_price">
 									<span class="box_list_price-origin">${p.product_price }원</span>
