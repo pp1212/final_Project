@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/qna.css" type="text/css">
 </head>
 <body>
 	
@@ -32,26 +33,40 @@
 			<!-- 오른쪽 -->
 			<div class="page_section">
 				<!-- 제목 -->
-				<div class="head_article">
+				<div class="head_article" id="qna_head">
 					<h2>1:1 문의</h2>
 				</div> 
 				
-				<div id="reviewView">
-					<table border="1">
-						<tr>
-							<td>번호</td>
-							<td>제목</td>			
-							<td>작성일</td>			
-						</tr>
-						<c:forEach var="q" items="${list }">
-							<tr>
-								<td>${q.qna_no }</td>	
-								<td><a href="detailQna?qna_no=${q.qna_no }">${q.qna_title }</a></td>	
-								<td><fmt:formatDate value="${q.qna_date }"/></td>					
-							</tr>
+				<div id="qna_container">
+					<div id="qna_name">
+						<span class="qna_name" id="qna_no">번호</span> 
+						<span class="qna_name">|</span> 
+						<span class="qna_name" id="qna_title">제목</span> 
+						<span class="qna_name">|</span> 
+						<span class="qna_name" id="qna_date">작성일</span>
+					</div>
+						
+					<c:forEach var="q" items="${list }">
+						<div id="qna_content">
+							<div id="qna_content_no">${q.qna_no }</div>
+							<!-- <span class="qna_name" id="qna_div1">|</span> -->				
+							<a id="qna_content_title" href="detailQna?qna_no=${q.qna_no }" >${q.qna_title }</a>
+							<!-- <div class="qna_name" id="qna_div2">|</div> -->
+							<div  id="qna_content_date"><fmt:formatDate value="${q.qna_date }"/><br></div>
+							
+							<hr id="qna_hr">
+						</div>
+					</c:forEach>
+					<br>
+					<div id="qna_insert"><a href="insertQna" style="color: white;">문의작성</a></div>
+					<br>
+					<br>
+					
+					<div id="qna_page">
+						<c:forEach var="i" begin="1" end="${totalPage }">
+							<a href="listQna?pageNUM=${i }">${i }</a>&nbsp;&nbsp;		
 						</c:forEach>
-					</table>
-					<a href="insertQna">문의작성</a>
+					</div>
 				</div>
 			
 			</div>

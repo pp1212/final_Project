@@ -1,16 +1,22 @@
 package com.example.demo.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.db.DBManager;
 import com.example.demo.vo.ListQnaVO;
+import com.example.demo.vo.ProductVO;
 import com.example.demo.vo.QnaVO;
 
 @Repository
 public class QnaDAO {
 
+	public static int pageSIZE = 10;
+	public static int totalRecord;
+	public static int totalPage;
+	
 	public QnaVO detailQna(int qna_no) {
 		return DBManager.detailQna(qna_no);
 	}
@@ -23,9 +29,15 @@ public class QnaDAO {
 		return DBManager.deleteQna(qna_no);
 	}
 	
-	public List<QnaVO> listQna(String cust_id) {
-		return DBManager.listQna(cust_id);
+	public List<QnaVO> listQna(HashMap map) {
+		totalRecord = DBManager.QnaGetTotalRecord(map);
+		totalPage = (int)Math.ceil(totalRecord/(double)pageSIZE);
+		return DBManager.listQna(map);
 	}
+//	
+//	public List<QnaVO> listQna(String cust_id) {
+//		return DBManager.listQna(cust_id);
+//	}
 	
 	public int insertQna(QnaVO q) {
 		return DBManager.insertQna(q);
