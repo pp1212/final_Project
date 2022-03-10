@@ -1,24 +1,26 @@
-* {
-font-family: 'Noto Sans KR', sans-serif;
-} 
-#hr{
+
+/* #hr{
 	text-align: left;
-}
+} */
 .join_container{
-	margin-left: 100px;
+	/* margin-left: 100px; */
+	float: right;
+	width: 800px;
 }
 .join_form{
 	margin-left: 0px;
 	float: left;
-	margin-top: 30px;
+	border-top: 1px solid black;
+	padding-top: 30px;
 }
 #join_title{
-	margin-left: 170px;
+	/* margin-left: 170px; */
 	margin-bottom: 0px;
 }
 #join_essential{
  	text-align: right;
-	margin-right: 100px;	
+	margin-right: 280px;
+	margin-bottom: 10px;	
 }
 .join_tag{
 	margin-bottom: 50px;
@@ -59,7 +61,7 @@ input {
 	margin-bottom: 20px;	
 }
 #cust_addr3, #address{
-	margin-left: 330px;	
+	margin-left: 155px;	
 }
 
 .btnCheck{
@@ -74,7 +76,7 @@ input {
 }
 
 #join_submit{
-	margin-left: 330px;
+	margin-left: 155px;
 	color: white;
 	background-color : #F2884B;
 	border-radius: 3px;
@@ -86,13 +88,13 @@ input {
 .result{
 	margin-left: 5px;
 }
-.join_name{
+/* .join_name{
 	margin-left: 180px;
-}
-#footer{
+} */
+/* #footer{
 	margin-top: 700px;
 }
-
+ */
 
 
 

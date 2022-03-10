@@ -1,7 +1,4 @@
-/* .page_section{
-	margin-left: 50px;
-	margin-bottom: 100px;
-} */
+
 
 .page_section{
 	float: right;
@@ -17,18 +14,19 @@
 }
 
 .head_article{
-	margin-left: 50px;
+
 	height: 70px;
 }
 
 .page_article{
 	width: 1050px;
-	margin: 0 auto;
+	margin: 0 auto 100px auto;
 }
 
 #snb{
 	float: left;
 	width: 200px;
+	margin-top: 25px;
 }
 
 .tit_snb{

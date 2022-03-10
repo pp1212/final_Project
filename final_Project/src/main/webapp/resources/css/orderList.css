@@ -7,10 +7,10 @@
 	margin-right: 30px;
 }
 
-.ol_form{
+/* .ol_form{
 	margin-left: 200px;
 }
-
+ */
 #ol_cancel{
 	background-color: #F2884B;
 	border-radius: 3px;
@@ -44,12 +44,12 @@
 #ol_hr{
 	float: left;
 	width: 700px;
-	margin-left: 50px;
+
 }
 
 #ol_title{
 	margin-bottom: 5px;
-	margin-left: 150px;
+
 }
 #ol_date{
 	margin-left: 5px;

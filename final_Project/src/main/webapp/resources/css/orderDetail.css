@@ -1,6 +1,6 @@
  #od_title,#od_orderNo{
  	margin-bottom: 5px;
-	margin-left: 150px;
+/* 	margin-left: 150px; */
  }
 
  .thumb{
@@ -17,7 +17,7 @@
 }
 
 #od_form{
-	margin-left: 200px;
+/* 	margin-left: 200px; */
 	margin-top: 0px;
 }
 .od_box{
@@ -27,7 +27,7 @@
 #od_hr{
 	float: left;
 	width: 650px;
-	margin-left: 50px;
+/* 	margin-left: 50px; */
 	margin-bottom: 0px;
 }
 #od_hr_under{
@@ -39,7 +39,7 @@ img{
 	float: left;
 }
 .od_content{
-	margin-left: 80px;
+/* 	margin-left: 80px; */
 	width: 550px;
 	margin-top: 10px;
 	font-size: 15px;
@@ -60,7 +60,7 @@ img{
 	margin-top: 10px;
 }
 #od_btn{
-	margin-left: 330px;
+ 	margin-left: 250px;
 	background-color: #F2884B; 
 	color: white; 
 	padding: 5px 20px; 

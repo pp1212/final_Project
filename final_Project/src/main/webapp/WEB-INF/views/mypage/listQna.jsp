@@ -53,8 +53,9 @@
 							<a id="qna_content_title" href="detailQna?qna_no=${q.qna_no }" >${q.qna_title }</a>
 							<!-- <div class="qna_name" id="qna_div2">|</div> -->
 							<div  id="qna_content_date"><fmt:formatDate value="${q.qna_date }"/><br></div>
-							
+							<!-- <div>
 							<hr id="qna_hr">
+							</div> -->
 						</div>
 					</c:forEach>
 					<br>

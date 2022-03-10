@@ -67,7 +67,7 @@ function passConfirm() {
 		<div id="join_essential">
 			<label class="join_8">*</label>필수입력사항
 		</div>
-		<hr id="hr" width="700px">
+		<!-- <hr id="hr" width="700px"> -->
 		
 		<form action="updateCustomer" method="post" name="joinForm">
 			<div class="join_form">
@@ -134,8 +134,8 @@ function passConfirm() {
 		</div>
 	
 	</div>
-	<%-- <div><jsp:include page="../common/footer.jsp"></jsp:include></div> --%>
-	<div id="footer" class="hd_footer">
+	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
+	<!-- <div id="footer" class="hd_footer">
 		<div class="hd_footer_inner">
 			<div class="hd_footer_left">
 				<ul class="item">
@@ -168,6 +168,6 @@ function passConfirm() {
 			</div>
 		</div>
 	</div>
-
+ -->
 </body>
 </html>
