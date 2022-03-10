@@ -1,7 +1,4 @@
-/* .page_section{
-	margin-left: 50px;
-	margin-bottom: 100px;
-} */
+
 
 .page_section{
 	float: right;
@@ -29,6 +26,7 @@
 #snb{
 	float: left;
 	width: 200px;
+	margin-top: 25px;
 }
 
 .tit_snb{

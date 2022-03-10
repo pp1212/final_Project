@@ -1,6 +1,8 @@
 #lm_container{
-	margin-left:250px;
-}
+	/* margin-left:250px; */
+	float: right;
+	width: 800px;
+} 
 #lm_content{
 	margin-left: 250px;
 	margin-top: 50px;

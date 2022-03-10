@@ -67,7 +67,7 @@ function passConfirm() {
 		<div id="join_essential">
 			<label class="join_8">*</label>필수입력사항
 		</div>
-		<hr id="hr" width="700px">
+		<!-- <hr id="hr" width="700px"> -->
 		
 		<form action="updateCustomer" method="post" name="joinForm">
 			<div class="join_form">
