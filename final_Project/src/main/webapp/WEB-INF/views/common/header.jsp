@@ -8,6 +8,18 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/header.css" type="text/css">
+<script type="text/javascript">
+	$(function(){
+		$(".cart_show").click(function(){
+			if(${empty sessionScope.cust_id}){
+				alert("로그인 한 회원만 가능합니다.");
+				return;
+			}else{
+				location.href = "/market/cartProduct";
+			}
+		});
+	});
+</script>
 </head>
 <body>
 	<div id="header">
@@ -56,10 +68,11 @@
 							</div>
 						</li>
 						<li class="menu2"><a href="/market/recentProduct">신제품</a></li>
-						<li class="menu3"><a href="/market/cartProduct">장바구니</a></li>
 					</ul>
+					<div class="cart_inner">
+						<button class="cart_show"><img src="/images/icon_cart.png"></button>
+					</div>
 				</div>
-				<div></div>
 			</div>
 		</div>
 	</div>
