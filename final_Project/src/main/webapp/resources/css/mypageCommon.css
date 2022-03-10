@@ -1,6 +1,19 @@
-.page_section{
+/* .page_section{
 	margin-left: 50px;
 	margin-bottom: 100px;
+} */
+
+.page_section{
+	float: right;
+	width: 800px;
+}
+
+.page_article:after{
+	content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    clear: both;
 }
 
 .head_article{

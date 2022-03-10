@@ -8,13 +8,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/listReviewComplete.css" type="text/css">
 </head>
 <body>
 	<div id="container">
 		<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 		<div class="page_article">
-		
-		
 			<div id="snb">
 				<h2 class="tit_snb">마이보글</h2>
 				<div class="inner_snb">
@@ -54,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="footer"><!-- 푸터 --></div>
+		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
 	
 </body>
