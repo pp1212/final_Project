@@ -87,7 +87,7 @@
 					</table>
 					<br>
 					<br>
-					<div style="margin-left: 400px;">
+					<div style="margin-left: 200px;">
 						<input class="insert" type="reset" value="취소">
 						<input class="insert" type="submit" value="확인">
 					</div>
