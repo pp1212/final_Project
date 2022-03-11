@@ -63,7 +63,7 @@
   </insert>
 
   <update id="mgr_updateProduct" parameterType="productVO">
-  update product set product_name=#{product_name},product_price = #{product_price},product_desc=#{product_desc}, product_margin=#{product_margin}, product_img=#{product_img}, product_detail=#{product_detail} where product_no=#{product_no}
+  update product set product_name=#{product_name},product_price = #{product_price},product_desc=#{product_desc}, product_margin=#{product_margin} where product_no=#{product_no}
   </update>
   
   <delete id="mgr_deleteProduct" parameterType="productVO">

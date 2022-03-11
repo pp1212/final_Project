@@ -30,6 +30,11 @@
 			</tr>
 		</c:forEach>
 	</table>
+		<div class="pagenation">
+			<c:forEach var="i" begin="1" end="${mgr_totalPage }">
+				<a href="/admin/mgr_listQna?mgr_pageNUM=${i }">${i }</a>&nbsp;&nbsp;
+						</c:forEach>
+		</div>
 	</div>
 	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 

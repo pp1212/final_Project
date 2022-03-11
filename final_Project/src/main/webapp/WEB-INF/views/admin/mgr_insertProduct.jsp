@@ -15,12 +15,12 @@
 	<h2>상품등록</h2>
 	<form action="mgr_insertProduct" method="post" enctype="multipart/form-data">
 	    <input type="hidden" name="product_no" value="${product_no}"><br>
-		상품이름 : <input type="text" name="product_name"><br>
-		상품가격 : <input type="text" name="product_price"><br>
-		상품설명 : <input type="text" name="product_desc"><br>
-		카테고리 코드 : <input type="text" name="category_code"><br>
+		상품이름 : <input type="text" name="product_name"><br><br>
+		상품가격 : <input type="text" name="product_price"><br><br>
+		상품설명 : <input type="text" name="product_desc"><br><br>
+		카테고리 코드 : <input type="text" name="category_code"><br><br>
 		상품상세사진<br>
-		<input type="file" name="uploadFiledetail"><br>
+		<input type="file" name="uploadFiledetail"><br><br>
 		
 		상품사진<br>
 		<input type="file" name="uploadFile"><br>

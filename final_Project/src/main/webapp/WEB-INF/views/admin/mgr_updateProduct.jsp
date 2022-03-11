@@ -16,14 +16,14 @@
 	<hr width="1000px">
 	<form action="mgr_updateProduct" method="post" enctype="multipart/form-data">
 		상품번호: ${p.product_no }
-		<input type="hidden" name="product_no" value="${p.product_no }"><br>
-		상품이름 : <input type="text" name="product_name" value="${p.product_name }"><br>
-		상품가격 : <input type="text" name="product_price" value="${p.product_price }"><br>
-		상품설명 : <input type="text" name="product_desc" value="${p.product_desc }"><br>
-		상품등록날짜 :  ${p.product_date }<br>
-		상품할인여부 : <input type="text" name="product_margin" value="${p.product_margin }"><br>
-		카테고리 코드 : ${p.category_code }<br>
-		상품상세사진 : <img src="/images/${p.product_detail }" width="100" height="100"><br>
+		<input type="hidden" name="product_no" value="${p.product_no }"><br><br>
+		상품이름 : <input type="text" name="product_name" value="${p.product_name }"><br><br>
+		상품가격 : <input type="text" name="product_price" value="${p.product_price }"><br><br>
+		상품설명 : <input type="text" name="product_desc" value="${p.product_desc }"><br><br>
+		상품등록날짜 :  ${p.product_date }<br><br>
+		상품할인여부 : <input type="text" name="product_margin" value="${p.product_margin }"><br><br>
+		카테고리 코드 : ${p.category_code }<br><br>
+		상품상세사진 : <img src="/images/${p.product_detail }" width="100" height="100"><br><br>
 		상품사진 : <img src="/images/${p.product_img }" width="100" height="100"><br>
 		<input type="submit" value="수정">
 	</form>

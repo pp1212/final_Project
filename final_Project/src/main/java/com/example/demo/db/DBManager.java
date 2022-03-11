@@ -408,9 +408,9 @@ public class DBManager {
 		return re;
 	}
 	
-	public static List<QnaVO> mgr_listQna(){
+	public static List<QnaVO> mgr_listQna(HashMap map){
 		SqlSession session = factory.openSession();
-		List<QnaVO> list = session.selectList("qna.mgr_listQna");
+		List<QnaVO> list = session.selectList("qna.mgr_listQna",map);
 		session.close();
 		return list;
 	}
