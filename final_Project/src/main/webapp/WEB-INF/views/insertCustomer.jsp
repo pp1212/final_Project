@@ -102,10 +102,7 @@
 		            alert("ID는 4~12자의 영문 대소문자와 숫자로만 입력하여 주세요.");        
 		            return false;
 		        }
-
-
 	
-		
 		}
 		
 	
@@ -185,7 +182,7 @@
 								<input type="text" name="cust_addr3" id="cust_addr3" placeholder="  상세주소" size="50"><br>
 							</span>
 					</div>
-					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkCustomer()">
+					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkForm()">
 				</div>		
 				<br>
 				

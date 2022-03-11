@@ -79,7 +79,7 @@ public class QnaController {
 		}
 		int re = dao.insertQna(q);
 		if(re != 1) {
-			mav.setViewName("/common/error");
+			mav.setViewName("/error");
 			mav.addObject("msg","게시글 등록에 실패하였습니다");
 		}else {//insert성공했으면
 			try {
