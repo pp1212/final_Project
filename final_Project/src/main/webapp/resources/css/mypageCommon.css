@@ -1,5 +1,3 @@
-
-
 .page_section{
 	float: right;
 	width: 800px;
@@ -14,13 +12,12 @@
 }
 
 .head_article{
-
 	height: 70px;
 }
 
 .page_article{
 	width: 1050px;
-	margin: 0 auto 100px auto;
+	margin: 0 auto 300px auto;
 }
 
 #snb{

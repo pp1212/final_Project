@@ -134,3 +134,48 @@
 	width: 100%;
     margin: 50px auto 100px;
 }
+
+.modal .modal-img-section{
+	display: inline-block;
+}
+
+.modal .modal-info-section{
+	display: inline-block;
+}
+
+.modal .modal-img-section .product-img{
+	width: 200px;
+}
+
+.modal .modal-info-section .modal-info-name{
+	display: inline-block;
+    width: 200px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.modal .modal-info-section .modal-info-cnt{
+	display: inline-block;
+    width: 70px;
+    margin-left: 150px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.modal .modal-info-section .modal-info-price{
+	display: inline-block;
+	width: 120px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#left-Button, #right-Button{
+	cursor: pointer;
+}
+
+.modal-footer .btn-primary{
+	font-size: 18px;
+    border: 1px solid #F26835;
+    color: white;
+    background-color: #F26835;
+}
