@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -12,8 +13,15 @@ import com.example.demo.vo.ReviewVO;
 @Repository
 public class ReviewDAO {
 	
-	public List<ListReviewVO> listReviewWrite(String cust_id){
-		return DBManager.listReviewWrite(cust_id);
+	public static int pageSIZE = 5;
+	public static int totalRecord;
+	public static int totalPage;
+	
+	public List<ListReviewVO> listReviewWrite(HashMap map){
+		totalRecord = DBManager.review_getTotalRecord(map);
+		totalPage = (int)Math.ceil(totalRecord/(double)pageSIZE);
+		
+		return DBManager.listReviewWrite(map);
 	}
 	
 	public List<ContentReviewVO> listReviewComplete(String cust_id){

@@ -23,13 +23,26 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		$(".qna_title").click(function(){
-			$(this).siblings(".qna-accordion").toggle("slow");
+		$(".qna-text-div").click(function(){
+			$(this).siblings(".qna-accordion").slideToggle("slow");
 		});
 		
-		$(".review_title").click(function(){
-			$(this).siblings(".review-accordion").toggle("slow");
+		$(".review-text-div").click(function(){
+			$(this).siblings(".review-accordion").slideToggle("slow");
 		});
+	});
+	
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 200){
+			$(".top").fadeIn();
+		}else{
+			$(".top").fadeOut();
+		}
+	});
+	
+	$(".top").click(function(){
+		$("html,body").animate({scrollTop : 0},400);
+		return false;
 	});
 </script>
 </head>
@@ -137,22 +150,22 @@
 								<c:when test="${not empty reviewList}">
 									<c:forEach var="r" items="${reviewList }">
 										<li class='li-tag'>
-											<div class='review-box'>
-												<div class='review-text-div'>
-													<span class="review_title">${r.review_title }</span><br>
-													<span>${r.cust_id }</span>
-													<div class="review-accordion">
-														<span>${r.review_content }</span>
-														<img src="/images/${r.review_img }" onerror="this.style.display='none'">
-													</div>
-												</div>
+											<div class='review-text-div'>
+												<span class="review_title">${r.review_title }</span><br>
+												<span class="review_cust_id">${r.cust_id }</span>
+											</div>
+											<div class="review-accordion">
+												<span>${r.review_content }</span>
+												<img src="/images/${r.review_img }" onerror="this.style.display='none'">
 											</div>
 										</li>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
-									<img src="/images/icon_mark.png">
-									등록된 상품후기가 없습니다.
+									<div class="no_img">
+										<img src="/images/icon_mark.png">
+										<p>등록된 상품후기가 없습니다.</p>
+									</div>
 								</c:otherwise>
 							</c:choose>
 						</ul>
@@ -168,33 +181,35 @@
 								<c:when test="${not empty qnaList}">
 									<c:forEach var="q" items="${qnaList }">
 										<li class='li-tag'>
-											<div class='qna-box'>
-												<div class='qna-text-div'>
-													<span class="qna_title">${q.qna_title }</span><br>
+											<div class='qna-text-div'>
+												<span class="qna_title">${q.qna_title }</span>
+												<div class="qna_info">
 													<span>${q.cust_id }</span>
 														|
-													<span><fmt:formatDate value="${q.qna_date }"/> </span>
-													<div class="qna-accordion">
-														<div class="qna-question">
-															<span><img src="/images/icon_q.jpg" style="width: 25px; height: 25px;"></span>
-															<span>${q.qna_content }</span>
-															<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
-														</div>
-														<c:if test="${not empty q.qna_answer}">
-															<div class="qna-answer">
-																<span><img src="/images/icon_a.jpg" style="width: 25px; height: 25px;"></span>
-																<span>${q.qna_answer }</span>
-															</div>
-														</c:if>
-													</div>
+													<span><fmt:formatDate value="${q.qna_date }"/></span>
 												</div>
+											</div>
+											<div class="qna-accordion">
+												<div class="qna-question">
+													<span><img src="/images/icon_q.jpg" style="width: 30px;"></span>
+													<span>${q.qna_content }</span>
+													<img src="/images/${q.qna_img }" onerror="this.style.display='none'">
+												</div>
+												<c:if test="${not empty q.qna_answer}">
+													<div class="qna-answer">
+														<span><img src="/images/icon_a.jpg" style="width: 30px;"></span>
+														<span>${q.qna_answer }</span>
+													</div>
+												</c:if>
 											</div>
 										</li>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
-									<img src="/images/icon_mark.png">
-									등록된 상품문의가 없습니다.
+									<div class="no_img">
+										<img src="/images/icon_mark.png">
+										<p>등록된 상품문의가 없습니다.</p>
+									</div>
 								</c:otherwise>
 							</c:choose>
 						</ul>
@@ -208,6 +223,6 @@
 		</div>
 		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
-	
+	<a href="#" class="top">Top</a>
 </body>
 </html> 

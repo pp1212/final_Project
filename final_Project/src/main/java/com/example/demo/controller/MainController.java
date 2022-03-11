@@ -32,4 +32,8 @@ public class MainController {
 		model.addAttribute("mList", mList);
 		//System.out.println("할인상품:"+mList);
 	}
+	
+	@RequestMapping("/market/event")
+	public void event() {
+	}
 }

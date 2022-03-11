@@ -22,6 +22,19 @@
 			return;
 		}
 	}
+	
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 200){
+			$(".top").fadeIn();
+		}else{
+			$(".top").fadeOut();
+		}
+	});
+	
+	$(".top").click(function(){
+		$("html,body").animate({scrollTop : 0},400);
+		return false;
+	});
 </script>
 </head>
 <body>
@@ -93,5 +106,6 @@
 		</div>
 		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
+	<a href="#" class="top">Top</a>
 </body>
 </html>

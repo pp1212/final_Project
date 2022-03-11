@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,9 +34,20 @@ public class ReviewController {
 	private ReviewDAO dao;
 	
 	@RequestMapping("/mypage/listReviewWrite")
-	public void listReviewWrite(HttpSession session,Model model){
+	public void listReviewWrite(HttpSession session,Model model,@RequestParam(defaultValue = "1") int pageNUM){
 		String cust_id = (String)session.getAttribute("cust_id");
-		model.addAttribute("list", dao.listReviewWrite(cust_id));
+		int start = (pageNUM-1) * dao.pageSIZE +1;
+		int end = start + dao.pageSIZE -1;
+//		System.out.println("start:"+start);
+//		System.out.println("end:"+end);
+		
+		HashMap map = new HashMap();
+		map.put("cust_id", cust_id);
+		map.put("start", start);
+		map.put("end", end);
+		
+		model.addAttribute("list", dao.listReviewWrite(map));
+		model.addAttribute("totalPage", dao.totalPage);
 	}
 	
 	@RequestMapping("/mypage/listReviewComplete")

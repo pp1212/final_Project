@@ -179,3 +179,130 @@
     color: white;
     background-color: #F26835;
 }
+
+.review-wrap .review-ul-body{
+	padding: 0;
+	margin: 0;
+    max-width: 100%;
+    border-bottom: 1.5px solid #ccc;
+}
+
+.review-wrap .review-ul-body .li-tag{
+	padding: 0;
+}
+
+.review-wrap .review-ul-body .li-tag:not(:last-child){
+	border-bottom: 1px solid #ccc;
+}
+
+.review-wrap .li-tag .review-text-div{
+	padding: 25px 0 25px 23px;
+	background: url('/images/icon_d.png') no-repeat right 50%;
+	cursor: pointer;
+}
+
+.review-wrap .li-tag .review-text-div .review_title{
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.review-wrap .li-tag .review-text-div .review_cust_id{
+	font-size: 14px;
+}
+
+.review-wrap .li-tag .review-accordion{
+	border-top: 1px solid #ccc;
+	padding: 25px;
+	background: #f9f9f9;
+}
+
+.review-wrap .li-tag .review-accordion span{
+	margin-top: 20px;
+	line-height: 20px;
+}
+
+.review-wrap .li-tag .review-accordion img{
+	display: block;
+	margin-top: 20px;
+	width: 400px;
+}
+
+.no_img{
+	padding: 100px 0;
+}
+
+.no_img img{
+	position: absolute;
+	left: 48%;
+}
+
+.no_img p{
+	text-align: center;
+	padding-top: 75px;
+}
+
+.qna-wrap .qna-ul-body{
+	padding: 0;
+	margin: 0;
+    max-width: 100%;
+    border-bottom: 1.5px solid #ccc;
+}
+
+.qna-wrap .qna-ul-body .li-tag{
+	padding: 0;
+}
+
+.qna-wrap .qna-ul-body .li-tag:not(:last-child){
+	border-bottom: 1px solid #ccc;
+}
+
+.qna-wrap .li-tag .qna-text-div{
+	padding: 25px 0 25px 23px;
+	background: url('/images/icon_d.png') no-repeat right 50%;
+	cursor: pointer;
+}
+
+.qna-wrap .li-tag .qna-text-div .qna_title{
+	width: 460px;
+	font-size: 18px;
+	font-weight: 700;
+	display: inline-block;
+}
+
+.qna-wrap .li-tag .qna-text-div .qna_info{
+	display: inline-block;
+	width: 550px;
+	text-align: right;
+}
+
+.qna-wrap .li-tag .qna-accordion{
+	padding: 25px;
+	background: #f9f9f9;
+}
+
+.qna-wrap .li-tag .qna-accordion .qna-question > img{
+	display: block;
+	margin-top: 20px;
+	width: 400px;
+}
+
+.qna-answer{
+	padding: 50px 0 30px;
+}
+
+.qna-wrap .li-tag .qna-text-div .qna_info span{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
+}
