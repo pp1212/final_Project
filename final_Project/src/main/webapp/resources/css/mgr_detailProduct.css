@@ -17,6 +17,7 @@
 	float: left;
 	margin-bottom: 20px;
 	margin-top: 40px;
+	margin-left:280px;
     display:block;
 	text-decoration: none;
 	text-align: center;
@@ -40,3 +41,90 @@
 	text-align: center;
 	font-weight: bold;
 }
+
+#product_box{
+	border-top: 2px solid black;
+	width: 650px;
+}
+
+table td{
+	border-bottom: 1px solid  #c0c0c0;
+}
+table th{
+	background-color: rgb(242, 230, 208);
+	border-bottom: 1px solid  rgb(242, 230, 208);
+}
+
+hr{
+	width: 650px;
+	margin: 0px;
+	padding: 0px;
+}
+.qna_name{
+	float:left;
+	margin-left: 20px;
+    text-align: center;
+   /*  padding: 15px; */
+   /*  background: #f7f5f8; */
+    vertical-align: middle;
+    
+}
+.qna_content{
+	/* float: left; */
+	text-align: center;
+	margin-right: 50px;
+
+
+}
+#product_no{
+	height: 30px;
+}
+
+textarea{
+	resize: none;
+}
+
+#p_product_no{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#p_product_name{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#p_product_price{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#p_product_desc{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#p_product_date{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#p_product_margin{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#p_category_code{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+#p_product_detail{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#p_product_img{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+

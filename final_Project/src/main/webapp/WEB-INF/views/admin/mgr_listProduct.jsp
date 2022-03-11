@@ -20,7 +20,7 @@
 		<a href="mgr_insertProduct">상품등록</a>
 		<hr>
 		<table border="1" width="80%">
-			<tr>
+			<tr id="qna_name">
 				<td>상품번호</td>
 				<td>카테고리</td>
 				<td>상품이름</td>
