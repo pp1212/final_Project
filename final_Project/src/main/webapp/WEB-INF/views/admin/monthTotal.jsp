@@ -80,7 +80,47 @@
 
 </head>
 <body>
-	<div><jsp:include page="../common/header.jsp"></jsp:include></div>
+		<div id="header">
+		<section id="user-area">
+		<!-- 로그인에 따라 바뀌는 곳 -->
+		<ul>
+			<li>관리자보글님</li>
+   			<li><a href="admin/adminMain">관리자페이지</a><br></li>
+			<li><a href="/mypage/orderList">마이페이지</a></li>
+			<li><a href="/logout">로그아웃</a></li>
+		</ul>
+
+		</section>
+		<div class="header_inner">
+			<div class="header_sec">
+				<h1 class="logo">
+					<a href="/main"><img src="/images/BoggleBox_logo.jpg" style="width: 120px;"></a>
+				</h1>
+				<div class="nb">
+					<ul class="nb_list">
+						<li class="menu1">
+							<a href="/market/listProduct?category_code=sp"><img src="/images/icon_nb.jpg">카테고리</a>
+							<div id="sub-menu">
+								<ul>
+									<li><a href="/market/listProduct?category_code=sp">국,찌개</a></li>
+									<li><a href="/market/listProduct?category_code=d">반찬</a></li>
+									<li><a href="/market/listProduct?category_code=s">샐러드</a></li>
+									<li><a href="/market/listProduct?category_code=n">면류</a></li>
+									<li><a href="/market/listProduct?category_code=r">밥,죽</a></li>
+									<li><a href="/market/listProduct?category_code=b">베이커리</a></li>
+									<li><a href="/market/listProduct?category_code=v">비건</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="menu2"><a href="/market/recentProduct">신제품</a></li>
+					</ul>
+					<div class="cart_inner">
+						<button class="cart_show"><img src="/images/icon_cart.png"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
 	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
