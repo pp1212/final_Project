@@ -22,7 +22,7 @@
 					success:function(res){
 						console.log(res);
 						let email = res.kakao_account.email;
-						location.href="/insertCustomer/";
+						location.href="/main/";
 					}
 				});
 			}
