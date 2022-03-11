@@ -167,7 +167,7 @@
 					<div class="join_box">
 						<strong class="join_name">이메일</strong><label class="join_8">*</label>
 							<span class="join_tag" id="join_tag_email"> 
-								<input type="text" placeholder="  예) bogglebox@boggle.com" name="cust_email" id="cust_email" size="50">
+								<input type="text" placeholder="  예) bogglebox@boggle.com" name="cust_email" id="cust_email" size="50" value="${email}">
 								<input type="button" value="중복확인" id="btnCheck2" class="btnCheck" style="height: 30px; width: 80px;">
 								<span id="emailCheck" class="result"></span><br>
 							</span>
@@ -182,7 +182,7 @@
 								<input type="text" name="cust_addr3" id="cust_addr3" placeholder="  상세주소" size="50"><br>
 							</span>
 					</div>
-					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkForm()">
+					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;">
 				</div>		
 				<br>
 				

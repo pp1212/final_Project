@@ -29,14 +29,16 @@
 	order by q.qna_date desc)) 
 	where num between #{start} and #{end} -->
 	
-	select qna_no, detail_no, qna_title, qna_date, cust_id from 
+	select qna_no, detail_no, qna_title, qna_date from 
+	(select qna_no, detail_no, qna_title, qna_date, cust_id from 
 	(select rownum num, qna_no, detail_no, qna_title, qna_date,cust_id from 
 	(select q.qna_no, d.detail_no, q.qna_title, q.qna_date, o.cust_id from 
 	qna q, customerOrder_detail d, customer_order o  
 	where q.detail_no=d.detail_no and o.order_no=d.order_no 
-	and o.cust_id=#{cust_id}
+	and o.cust_id= #{cust_id} 
 	order by q.qna_date desc)) 
-	where cust_id = #{cust_id} and num between #{start} and #{end}
+	where num between #{start} and #{end})
+	where cust_id = #{cust_id} 
   </select>
   
   <select id="QnaGetTotalRecord" resultType="java.lang.Integer">

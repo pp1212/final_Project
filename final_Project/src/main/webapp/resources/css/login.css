@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
-* {
-	 font-family: 'Noto Sans KR', sans-serif; 
-}
 #login_login{
 	text-align: center;
 	margin-bottom: 50px;
 }
 #login_container{
+	display:inline-block;
 	margin-top: 50px;
 	text-align: center;
+}
+#login_form{
+	position: relative;
+	margin-left: 590px;
+	width: 320px;
 }
 #login_id{
 	height: 20px;
@@ -21,7 +23,7 @@
 #login_find{
 	text-align: right;
 	font-size: 13px;
-	margin-right: 610px;
+	margin-right: 5px;
 }
 #login_btn{
 	margin-top: 10px;
