@@ -77,32 +77,25 @@
    
     
   </script>
-
+<style type="text/css">
+.a{
+	font-size: 13px;
+}
+#a_container{
+	margin-top: 10px;
+}
+</style>
 </head>
 <body>
 		<div id="header">
 		<section id="user-area">
-		<!-- 로그인에 따라 바뀌는 곳 -->
-			<c:choose>
-				<c:when test="${not empty member }">
-					<ul class="list-menu">
-						<li>관리자보글님</li>
+		<div id="a_container">
+			<label class="a">관리자보글님&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+			<a class="a" href="admin/adminMain">관리자페이지&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+			<a class="a" href="/mypage/orderList">마이페이지&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+			<a class="a" href="/logout">로그아웃</a>
+		</div>
 
-						<c:if test="${cust_id eq 'bbox' }"> 
-               				 <li><a href="admin/adminMain">관리자페이지</a><br></li>
-       				    </c:if>
-						<li><a href="/mypage/orderList">마이페이지</a></li>
-						<li><a href="/logout">로그아웃</a></li>
-
-					</ul>
-				</c:when>
-				<c:otherwise>
-					<ul class="list-menu">
-						<li><a href="/insertCustomer">회원가입</a></li>
-						<li><a href="/login">로그인</a></li>
-					</ul>
-				</c:otherwise>
-			</c:choose>
 		</section>
 		<div class="header_inner">
 			<div class="header_sec">

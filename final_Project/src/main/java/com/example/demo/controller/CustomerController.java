@@ -38,11 +38,14 @@ public class CustomerController {
 	public ModelAndView join_submit(CustomerVO c){
 		ModelAndView mav = new ModelAndView();
 		int re = dao.insertCustomer(c);
+		System.out.println("insert수행결과:"+re);
 		if(re == 1) {
 			mav.setViewName("insertCustomerOK");
 			mav.addObject("msg",c.getCust_id()+"보글님 회원가입이 완료되었습니다.");
 		}else {
-			mav.setViewName("./common/error");
+			System.out.println("에러가 발생하였습니다.");
+			mav.addObject("msg","회원가입에 실패했습니다.");
+			mav.setViewName("/common/error");
 		}
 		return mav;
 	}
