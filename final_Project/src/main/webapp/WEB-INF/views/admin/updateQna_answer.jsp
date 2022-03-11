@@ -12,6 +12,7 @@
 </head>
 <body>
 <div><jsp:include page="../common/header.jsp"></jsp:include></div>
+	<div class="mgr_list">
 	<h2>1:1문의 상세</h2>
 	<br>
 	<form action="updateQna_answer" method="post">
@@ -28,6 +29,7 @@
 	<input type="submit" value="확인">
 	<input type="reset" value="취소">
 	</form>
+	</div>
 			   <div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>

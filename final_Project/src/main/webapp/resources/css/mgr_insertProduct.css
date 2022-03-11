@@ -1,1 +1,7 @@
-@charset "EUC-KR";
+ .mgr_list{
+	width: 1000px;
+	height: 100%;
+	margin: 25px auto 100px;
+	border-radius: 3px;
+	padding: 50px 50px;
+} 

@@ -11,6 +11,7 @@
 </head>
 <body>
 <div><jsp:include page="../common/header.jsp"></jsp:include></div>
+<div class="mgr_list">
 	<h2>상품등록</h2>
 	<form action="mgr_insertProduct" method="post" enctype="multipart/form-data">
 	    <input type="hidden" name="product_no" value="${product_no}"><br>
@@ -27,6 +28,7 @@
 		<input type="submit" value="등록">
 		<input type="reset" value="취소">
 	</form>
+	</div>
 	   <div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 </body>
 </html>
