@@ -89,3 +89,19 @@
 	text-align: center;
 	border-radius: 2px;
 }
+
+.pagenation{
+	margin-top: 70px;
+	margin-bottom: 130px;
+	text-align: center;
+}
+
+.pagenation a{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 3px;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 32px;
+}

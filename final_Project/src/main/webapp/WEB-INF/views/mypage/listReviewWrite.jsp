@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../resources/css/listReviewWrite.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/listReviewWrite.css" type="text/css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -58,6 +58,13 @@
 							</li>
 						</c:forEach>
 					</ul>
+				</div>
+				<div class="pagenation">
+					<span class="pagenation_number">
+						<c:forEach var="i" begin="1" end="${totalPage }">
+							<a href="/mypage/listReviewWrite?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
+						</c:forEach>
+					</span>
 				</div>
 			</div>
 		</div>

@@ -4,8 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="review">
   <select id="listReviewWrite" resultType="listReviewVO">
-  	select c.order_no,review_no, d.detail_no, product_img, product_name from product p, customerOrder_detail d, review r,customer_order c
-	where c.order_no=d.order_no and d.detail_no=r.detail_no and p.product_no=d.product_no and review_code=0 and cust_id=#{cust_id} order by c.order_no desc
+	select order_no,review_no, detail_no, product_img, product_name from(
+	select rownum num,order_no,review_no, detail_no, product_img, product_name from(
+	select c.order_no,review_no, d.detail_no, product_img, product_name from product p, customerOrder_detail d, review r,customer_order c
+	where c.order_no=d.order_no and d.detail_no=r.detail_no and p.product_no=d.product_no and review_code=0 and cust_id=#{cust_id} order by c.order_no desc))
+	where num between #{start} and #{end}
+  </select>
+  
+  <select id="review_getTotalRecord" resultType="java.lang.Integer">
+  	select count(*) from review r,customerOrder_detail d,customer_order c where c.order_no=d.order_no and d.detail_no=r.detail_no and review_code=0 and cust_id=#{cust_id}
   </select>
   
   <select id="listReviewComplete" resultType="contentReviewVO">
