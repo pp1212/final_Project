@@ -1,0 +1,12 @@
+.page_article{
+	width: 1050px;
+	margin: 0 auto;
+}
+
+.page_article li{
+	padding-bottom: 10px;
+}
+
+.page_article li img{
+	max-width: 100%;
+}

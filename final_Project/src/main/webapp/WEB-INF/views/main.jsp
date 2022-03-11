@@ -22,13 +22,13 @@
 			<div class="banner-sect">
 				<div class="slide_div">
 					<div>
-						<a><img src="/images/banner1.jpg" width="100%"></a>
+						<a href="/market/event"><img src="/images/banner1.jpg" width="100%"></a>
 					</div>
 					<div>
-						<a><img src="/images/banner2.jpg" width="100%"></a>
+						<a href="/market/event"><img src="/images/banner2.jpg" width="100%"></a>
 					</div>
 					<div>
-						<a><img src="/images/banner3.jpg" width="100%"></a>
+						<a href="/market/event"><img src="/images/banner3.jpg" width="100%"></a>
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 			</div>
 			<div class="event-sect">
 				<div class="post-event">
-					<img src="/images/event1.jpg">
+					<a href="/market/event"><img src="/images/event1.jpg"></a>
 				</div>
 			</div>
 			<div class="discount-sect">
