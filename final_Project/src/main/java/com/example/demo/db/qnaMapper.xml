@@ -59,7 +59,13 @@
   </update>
   
    <select id="mgr_listQna" resultType="qnaVO">
-	select q.qna_no, d.detail_no, q.qna_title, q.qna_date from qna q, customerOrder_detail d,  customer_order o where q.detail_no=d.detail_no and o.order_no=d.order_no
+	select qna_no, detail_no, qna_title, qna_date from 
+	(select rownum num, qna_no, detail_no, qna_title, qna_date from 
+	(select q.qna_no, d.detail_no, q.qna_title, q.qna_date from 
+	qna q, customerOrder_detail d, customer_order o  
+	where q.detail_no=d.detail_no and o.order_no=d.order_no  
+	order by q.qna_date desc)) 
+	where num between #{start} and #{end}
   </select>
   
    <select id="mgr_detailQna" resultType="qnaVO">
