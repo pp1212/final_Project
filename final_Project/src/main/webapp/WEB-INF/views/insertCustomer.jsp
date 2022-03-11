@@ -91,7 +91,22 @@
 		});
 	});
 	
+	function Validation() {
+		 var RegExp = /^[a-zA-Z0-9]{4,12}$/;
+
+		
+			 var objId = document.getElementById("cust_id"); //아이디
+
+		 
+			 if(!RegExp.test(objId.value)){ //아이디 유효성검사
+		            alert("ID는 4~12자의 영문 대소문자와 숫자로만 입력하여 주세요.");        
+		            return false;
+		        }
+
+
 	
+		
+		}
 		
 	
 </script>
@@ -110,7 +125,8 @@
 			<hr width="1000px">
 		</div>
 		
-		<form action="insertCustomer" method="post" name="joinForm">
+		<form action="insertCustomer" method="post" name="joinForm" onsubmit="return Validation();">
+
 			<div class="join_form">
 				
 					<div class="join_box">
