@@ -517,11 +517,19 @@ public class DBManager {
 	//customerOrder_refund
 	
 	public static int insertRefund(CustomerOrder_refundVO cr) {
-		cr.setRefund_no(getNextNo());
+	//	cr.setRefund_no(getNextNo());
 		SqlSession session = factory.openSession();
 		int re = session.insert("customerOrder_refund.insertRefund", cr);
+		session.commit();
 		session.close();
 		return re;
+	}
+	
+	public static int refund_getNextNo() {
+		SqlSession session = factory.openSession();
+		int refund_no = session.selectOne("customerOrder_refund.getNextNo");
+		session.close();
+		return refund_no;
 	}
 	
 	//===========================================
