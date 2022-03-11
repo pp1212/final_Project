@@ -229,7 +229,6 @@
 
 .no_img{
 	padding: 100px 0;
-    border-top: 1px solid #ccc;
 }
 
 .no_img img{
@@ -294,4 +293,16 @@
 .qna-wrap .li-tag .qna-text-div .qna_info span{
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
 }
