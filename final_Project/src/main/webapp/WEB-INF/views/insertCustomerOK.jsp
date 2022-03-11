@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/insertCustomerOK.css" type="text/css">
 </head>
