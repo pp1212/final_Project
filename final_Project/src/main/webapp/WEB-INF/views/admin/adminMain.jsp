@@ -25,9 +25,6 @@
 	<div class="box" id="box4">
 	<a href="monthTotal.html"> <img class="month" src="/images/월별 총매출.png" style=display:block; width="200" height="200"/>월별총매출</a><br>
 	</div>
-	<div class="return">
-	<a href="http://localhost:8080/main">쇼핑몰 메인으로</a><br>
-	</div>
 	</div>
 	<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	
