@@ -96,8 +96,13 @@
 }
 
 #cp_title{
-	margin-bottom: 5px;
-	margin-left: 150px;
+		width: 580px;
+	color: #F2884B;
+	height: 30px;
+	margin:0 auto;
+	margin-bottom:50px;
+	margin-top:50px;
+	text-align: center;
 }
 
 input{

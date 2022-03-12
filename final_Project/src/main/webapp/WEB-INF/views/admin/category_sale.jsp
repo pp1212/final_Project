@@ -9,6 +9,10 @@
 	src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/category_sale.css" type="text/css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+</script>
 </head>
 <body>
 <div><jsp:include page="../common/header.jsp"></jsp:include></div>
@@ -44,22 +48,39 @@
     	}
     
     function Show_CategoryCallback(obj) {
+    	
     	var count = obj.length;
     	console.log(obj);
+    	var arr = [
+            ['상품이름', '판매량',{ role: "style" },{ role: 'annotation' }],
+            ];
     	if (obj != null) {
     		console.log("callback success");
     		document.getElementById("cate_list").innerHTML="";
     		for (var index = 0; index < count; index++) {
-    			obj[index].product_no;
-    			obj[index].product_name;
-    			
-    			var data = new Object();
-    			data.product_name= obj[index].product_name;    			
-    			//document.body.append(data.product_name);
-    			document.getElementById("cate_list").innerHTML+="<br/><br/>"+(index+1)+"위: "+data.product_name;
+    			arr.push([obj[index].product_name,obj[index].cnt,"#F2884B",obj[index].cnt]);
     		}
     	}
+    	
+    	var options = {
+    	        title: '카테고리별 판매량',
+    	        chartArea: {width: '50%', height:'100%'},
+    	        hAxis: {
+    	          title: '판매량',
+    	          minValue: 0
+    	        },
+    	        legend: { position: "none" },
+    	        vAxis: {
+    	          title: '상품이름'
+    	        }
+    	      };
+    	console.log(arr);
+    	var data = google.visualization.arrayToDataTable(arr);
+    	var chart = new google.visualization.BarChart(document.getElementById('cate_list'));
+        chart.draw(data, options);
     }
+    
+    
     </script>  
     
     <div id="cate_list"></div> 

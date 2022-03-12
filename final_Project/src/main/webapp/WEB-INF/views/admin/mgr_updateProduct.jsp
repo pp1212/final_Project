@@ -36,7 +36,7 @@
 						<div class="qna_name">상품이름</div>
 					</th>
 					<td>
-						<div class="qna_content" id="p_product_name"><input type="text" name="product_name" value="${p.product_name }"></div>
+						<div class="qna_content" id="p_product_name"><input type="text" name="product_name" value="${p.product_name }" style="height: 22px; width: 300px;"></div>
 					</td>
 				</tr>
 				<tr id="pro_tr_price">
@@ -44,7 +44,7 @@
 						<div class="qna_name">상품가격</div>
 					</th>
 					<td>
-						<div class="qna_content" id="p_product_price"><input type="text" name="product_price" value="${p.product_price }"></div>
+						<div class="qna_content" id="p_product_price"><input type="text" name="product_price" value="${p.product_price }"  style="height: 22px; width: 100px;"></div>
 					</td>
 				</tr>
 				<tr id="pro_tr_desc">
@@ -52,7 +52,7 @@
 						<div class="qna_name">상품설명</div>
 					</th>
 					<td>
-						<div class="qna_content" id="p_product_desc"> <input type="text" name="product_desc" value="${p.product_desc }"></div>
+						<div class="qna_content" id="p_product_desc"> <input type="text" name="product_desc" value="${p.product_desc }"  style="height: 22px; width: 300px;"></div>
 					</td>
 				</tr>
 				<tr id="pro_tr_date">
@@ -68,7 +68,7 @@
 						<div class="qna_name">상품할인여부</div>
 					</th>
 					<td>
-						<div class="qna_content" id="p_product_margin"><input type="text" name="product_margin" value="${p.product_margin }"></div>
+						<div class="qna_content" id="p_product_margin"><input type="text" name="product_margin" value="${p.product_margin }"  style="height: 22px; width: 20px;"></div>
 					</td>
 				</tr>
 				<tr id="pro_tr_cate">

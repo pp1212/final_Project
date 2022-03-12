@@ -149,6 +149,7 @@ function CheckOrder(frm) {
 	}
 	if (yn && a == 0) {
 		alert("선택된 제품이 없습니다.");
+		location.href="http://localhost:8080/market/cartProduct";
 	}
 }
 

@@ -75,7 +75,7 @@
 					<td>
 						<div class="qna_content" id="q_qna_img">
 							<img src="../images/${q.qna_img }"
-								onerror="this.style.display='none'" width="100" height="100">
+								onerror="this.style.display='none'" width="200" height="200">
 						</div>
 					</td>
 				</tr>

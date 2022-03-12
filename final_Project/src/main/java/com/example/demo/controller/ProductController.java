@@ -26,6 +26,7 @@ import com.example.demo.dao.ProductDAO;
 import com.example.demo.dao.QnaDAO;
 import com.example.demo.dao.ReviewDAO;
 import com.example.demo.vo.CartVO;
+import com.example.demo.vo.CategorySaleVO;
 import com.example.demo.vo.ContentReviewVO;
 import com.example.demo.vo.ListQnaVO;
 import com.example.demo.vo.ProductVO;
@@ -279,12 +280,8 @@ public class ProductController {
 
 	@RequestMapping(value = "/admin/category_sale", method = RequestMethod.POST)
 	@ResponseBody
-	public Object category_sale(String category_code) {
-		System.out.println(category_code);
-		List<ProductVO> list = dao.category_sale(category_code);
-		System.out.println(list);
-
-		return list;
+	public List<CategorySaleVO> category_sale(String category_code) {
+		return dao.category_sale(category_code);
 	}
 
 }

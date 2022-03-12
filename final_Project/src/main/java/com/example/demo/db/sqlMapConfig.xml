@@ -13,6 +13,7 @@
   	<typeAlias type="com.example.demo.vo.QnaVO" alias="qnaVO"/>
   	<typeAlias type="com.example.demo.vo.ListQnaVO" alias="listQnaVO"/>
   	<typeAlias type="com.example.demo.vo.MonthTotalVO" alias="monthTotalVO"/>
+  	<typeAlias type="com.example.demo.vo.CategorySaleVO" alias="categorysaleVO"/>
   	<typeAlias type="com.example.demo.vo.Customer_orderVO" alias="customer_orderVO"/>
   	<typeAlias type="com.example.demo.vo.CustomerOrder_detailVO" alias="customerOrder_detailVO"/>
   	<typeAlias type="com.example.demo.vo.ListOrderVO" alias="listOrderVO"/>

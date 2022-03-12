@@ -25,3 +25,10 @@ input[type=submit]{
 #category_code{
 	font-size: 17px;
 }
+
+#cate_list{
+	height: 500px;
+	position: relative;
+	border: 1px solid #dddfe1;
+	padding-left: 20px;
+}

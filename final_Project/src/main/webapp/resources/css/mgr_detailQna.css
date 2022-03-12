@@ -49,6 +49,7 @@
 
 table td{
 	border-bottom: 1px solid  #c0c0c0;
+	border-right: 1px solid  #c0c0c0;
 }
 table th{
 	background-color: rgb(242, 230, 208);

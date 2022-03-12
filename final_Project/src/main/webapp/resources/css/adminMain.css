@@ -8,6 +8,7 @@
 
 .box{
 	float:left;
+	margin-top: 40px;
 }
 
 #box1{
@@ -25,5 +26,5 @@
 
 .return{
 	float:right;
-	margin-top: 70px;
+	margin-top: 40px;
 }

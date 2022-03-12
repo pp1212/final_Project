@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.db.DBManager;
+import com.example.demo.vo.CategorySaleVO;
 import com.example.demo.vo.MarginProductVO;
 import com.example.demo.vo.ProductVO;
 
@@ -69,7 +70,7 @@ public class ProductDAO {
 		return DBManager.product_getNextNo();
 	}
 	
-	public List<ProductVO> category_sale(String category_code){
+	public List<CategorySaleVO> category_sale(String category_code){
 		return DBManager.category_sale(category_code);
 	}
 }
