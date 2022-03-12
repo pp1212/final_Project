@@ -14,6 +14,20 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/main.css" type="text/css">
+<script type="text/javascript">
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 200){
+			$(".top").fadeIn();
+		}else{
+			$(".top").fadeOut();
+		}
+	});
+	
+	$(".top").click(function(){
+		$("html,body").animate({scrollTop : 0},400);
+		return false;
+	});
+</script>
 </head>
 <body>
 	<div id="container">
@@ -22,13 +36,13 @@
 			<div class="banner-sect">
 				<div class="slide_div">
 					<div>
-						<a><img src="/images/banner1.jpg" width="100%"></a>
+						<a href="/market/event"><img src="/images/banner1.jpg" width="100%"></a>
 					</div>
 					<div>
-						<a><img src="/images/banner2.jpg" width="100%"></a>
+						<a href="/market/event"><img src="/images/banner2.jpg" width="100%"></a>
 					</div>
 					<div>
-						<a><img src="/images/banner3.jpg" width="100%"></a>
+						<a href="/market/event"><img src="/images/banner3.jpg" width="100%"></a>
 					</div>
 				</div>
 			</div>
@@ -57,7 +71,7 @@
 			</div>
 			<div class="event-sect">
 				<div class="post-event">
-					<img src="/images/event1.jpg">
+					<a href="/market/event"><img src="/images/event1.jpg"></a>
 				</div>
 			</div>
 			<div class="discount-sect">
@@ -97,5 +111,6 @@
 		</div>
 		<div><jsp:include page="common/footer.jsp"></jsp:include></div>
 	</div>
+	<a href="#" class="top">Top</a>
 </body>
 </html>

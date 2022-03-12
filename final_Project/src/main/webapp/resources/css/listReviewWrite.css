@@ -89,3 +89,31 @@
 	text-align: center;
 	border-radius: 2px;
 }
+
+.pagenation{
+	margin-top: 70px;
+	margin-bottom: 130px;
+	text-align: center;
+}
+
+.pagenation a{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin-left: 3px;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 32px;
+}
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
+}

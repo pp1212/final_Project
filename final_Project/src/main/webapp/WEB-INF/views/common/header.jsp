@@ -68,6 +68,7 @@
 							</div>
 						</li>
 						<li class="menu2"><a href="/market/recentProduct">신제품</a></li>
+						<li class="menu3"><a href="/market/event">이벤트</a></li>
 					</ul>
 					<div class="cart_inner">
 						<button class="cart_show"><img src="/images/icon_cart.png"></button>

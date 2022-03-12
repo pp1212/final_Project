@@ -152,11 +152,18 @@ public class DBManager {
 	//=========================================
 	//review
 	
-	public static List<ListReviewVO> listReviewWrite(String cust_id){
+	public static List<ListReviewVO> listReviewWrite(HashMap map){
 		SqlSession session = factory.openSession();
-		List<ListReviewVO> list = session.selectList("review.listReviewWrite",cust_id);
+		List<ListReviewVO> list = session.selectList("review.listReviewWrite",map);
 		session.close();
 		return list;
+	}
+	
+	public static int review_getTotalRecord(HashMap map) {
+		SqlSession session = factory.openSession();
+		int re = session.selectOne("review.review_getTotalRecord", map);
+		session.close();
+		return re;
 	}
 	
 	public static List<ContentReviewVO> listReviewComplete(String cust_id){

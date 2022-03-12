@@ -6,9 +6,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../resources/css/listReviewWrite.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
+<link rel="stylesheet" href="../resources/css/listReviewWrite.css" type="text/css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 200){
+			$(".top").fadeIn();
+		}else{
+			$(".top").fadeOut();
+		}
+	});
+	
+	$(".top").click(function(){
+		$("html,body").animate({scrollTop : 0},400);
+		return false;
+	});
+</script>
 </head>
 <body>
 	<div id="container">
@@ -59,10 +73,17 @@
 						</c:forEach>
 					</ul>
 				</div>
+				<div class="pagenation">
+					<span class="pagenation_number">
+						<c:forEach var="i" begin="1" end="${totalPage }">
+							<a href="/mypage/listReviewWrite?pageNUM=${i }">${i }</a>&nbsp;&nbsp;
+						</c:forEach>
+					</span>
+				</div>
 			</div>
 		</div>
 		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
 	</div>
-	
+	<a href="#" class="top">Top</a>
 </body>
 </html>
