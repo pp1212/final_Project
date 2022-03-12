@@ -135,6 +135,12 @@ public class ProductController {
 
 		return re > 0 ? "true" : "false";
 	}
+	
+	@RequestMapping("/market/searchProduct")
+	public void searchProduct(String keyword,Model model) {
+		model.addAttribute("list", dao.searchProduct(keyword));
+	}
+	
 
 	@RequestMapping("/admin/adminMain")
 	@ResponseBody

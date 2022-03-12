@@ -42,6 +42,10 @@
   	select product_no,product_img, product_name, product_price,product_desc from product where product_margin=1
   </select>
   
+  <select id="searchProduct" resultType="productVO">
+  	select product_no,product_img, product_name,product_desc, product_price from product where product_name like '%' || #{keyword} || '%'
+  </select>
+  
   <!-- admin -->
   <select id="mgr_listProduct" resultType="productVO">
     select product_no,category_code,product_name from 

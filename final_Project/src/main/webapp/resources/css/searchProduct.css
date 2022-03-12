@@ -1,0 +1,89 @@
+.page_article{
+	border-top: 2px solid #f7f7f7;
+	margin-top: 10px;
+}
+
+.searchLsit{
+	width: 1100px;
+	margin: 0 auto 130px auto;
+}
+
+.searchLsit .box{
+	margin-top: 35px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.searchLsit .box_list:nth-child(3n+1){
+	margin-left: 0;
+	clear: both;
+}
+
+.searchLsit .box_list{
+	position: relative;
+	float: left;
+	width: 340px;
+	padding-bottom: 15px;
+	border-bottom: solid 1px #bcbcbc;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.searchLsit .box_list_title_wrap{
+	margin-top: 15px;
+}
+
+.searchLsit .box_list_sub{
+	color: #555;
+    overflow: hidden;
+}
+
+.searchLsit .box_list_title{
+	min-height: 56px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 28px;
+	display: block;
+}
+
+.searchLsit .box_list_price-origin{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
+}
+
+.search_n{
+	width: 1100px;
+	margin: 0 auto 300px auto;
+}
+
+.search_n .search_n_desc{
+	padding: 90px 0 100px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	line-height: 1.8;
+}
+
+.search_n .search_n_desc strong{
+	display: block;
+	margin-bottom: 10px;
+}
+
+
+

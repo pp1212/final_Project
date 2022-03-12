@@ -88,6 +88,13 @@ public class DBManager {
 		return list;
 	}
 	
+	public static List<ProductVO> searchProduct(String keyword){
+		SqlSession session = factory.openSession();
+		List<ProductVO> list = session.selectList("product.searchProduct", keyword);
+		session.close();
+		return list;
+	}
+	
 	public static List<ProductVO> mgr_listProduct(HashMap map){
 		SqlSession session = factory.openSession();
 		List<ProductVO> list = session.selectList("product.mgr_listProduct",map);
