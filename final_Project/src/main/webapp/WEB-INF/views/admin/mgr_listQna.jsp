@@ -16,8 +16,8 @@
 	<div class="mgr_list">
 	<h2>1:1 문의</h2>
 	<br>
-	<table border="1">
-		<tr>
+	<table border="1"  width="80%">
+		<tr id="qna_name">
 			<td>번호</td>
 			<td>제목</td>			
 			<td>작성일</td>			

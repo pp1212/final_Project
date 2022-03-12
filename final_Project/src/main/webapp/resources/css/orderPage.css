@@ -15,6 +15,13 @@
     border: 0.5px solid gray;
   }
   
+ #cart_name{
+	width: 700px;
+	height: 30px;
+	background-color: rgb(242, 230, 208);
+	padding-top: 8px;
+}
+  
   .order{
 	margin-bottom: 50px;
 }
@@ -75,4 +82,16 @@ margin-left: 20px;
 
 input[type=checkbox] {
 transform : scale(1.2);
+}
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
 }

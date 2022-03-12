@@ -14,6 +14,20 @@
 <link rel="stylesheet" href="../resources/css/common.css"
 	type="text/css">
 <link rel="stylesheet" href="../resources/css/orderPage.css" type="text/css">
+<script type="text/javascript">
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 200){
+			$(".top").fadeIn();
+		}else{
+			$(".top").fadeOut();
+		}
+	});
+	
+	$(".top").click(function(){
+		$("html,body").animate({scrollTop : 0},400);
+		return false;
+	});
+</script>
 </head>
 <body>
 	<div><jsp:include page="../common/header.jsp"></jsp:include></div>
@@ -28,10 +42,10 @@
 	<form action="">
 	<div class="order_form">
 	
-		이름<span class="order" id="order_name"><input type="text" name="name"><br> </span>
+		이름<span class="order" id="order_name"><input type="text" name="name" placeholder="  이름을 입력해주세요"><br> </span>
 	
 	
-		휴대폰 번호<span class="order" id="order_phone"><input type="tel" name="phone"></span>	
+		휴대폰 번호<span class="order" id="order_phone"><input type="tel" name="phone" placeholder="  숫자만 입력해주세요"></span>	
 	
 	</div>
 	</form>
@@ -68,7 +82,7 @@
 
 	<table style="width: 80%">
 		<thead>
-			<tr>
+			<tr id="cart_name">
 				<td>상품이미지</td>
 				<td>상품이름</td>
 				<td>수량</td>
@@ -253,7 +267,7 @@
 		<button type="button" onclick="OrderRequest()" id="btnOrder">결제하기</button>
 	</div>
 		<div><jsp:include page="../common/footer.jsp"></jsp:include></div>
-
+<a href="#" class="top">Top</a>
 	<script
 		src="${pageContext.request.contextPath}/resources/js/orderPage.js"></script>
 	<script

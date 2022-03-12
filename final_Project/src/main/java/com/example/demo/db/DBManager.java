@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.example.demo.vo.CartProductVO;
 import com.example.demo.vo.CartVO;
+import com.example.demo.vo.CategorySaleVO;
 import com.example.demo.vo.ContentReviewVO;
 import com.example.demo.vo.CustomerOrder_detailVO;
 import com.example.demo.vo.CustomerOrder_refundVO;
@@ -149,9 +150,9 @@ public class DBManager {
 		return product_no;
 	}
 	
-	public static List<ProductVO> category_sale(String category_code){
+	public static List<CategorySaleVO> category_sale(String category_code){
 		SqlSession session = factory.openSession();
-		List<ProductVO> list = session.selectList("product.category_sale",category_code);
+		List<CategorySaleVO> list = session.selectList("product.category_sale",category_code);
 		session.close();
 		return list;
 	}

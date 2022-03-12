@@ -14,7 +14,7 @@
 <body>
 	<div><jsp:include page="../common/header.jsp"></jsp:include></div>
 	<div class="cart_form">
-	<h2 id="cp_title">장바구니</h2>
+	<h1 id="cp_title">장바구니</h1>
 	<hr width="1100px">
 	<form name="checkBoxForm">
 	<table border="1" width="80%">
@@ -38,7 +38,7 @@
 				<td><c:set var="result" value="${cp.product_price*cp.product_cnt}"/>${result}원</td>
 				<td><br><button id="cp_update" type="button" onclick="javascript:CartUpdate(product_cnt,product_no, cart_no, cust_id, ${loop.index})">변경</button>&emsp;</td>
 				<td><br><button id="cp_delete" type="button" onclick="javascript:CartDelete(cart_no, ${loop.index})">삭제</button>&emsp;</td>				
-			</tr>		
+			</tr>	
 		</c:forEach>
 			<tr>
 				<td colspan=7 style="text-align:right;">총 상품 금액 : <input name="total_sum" type="text" size="20" value="0" readonly>원</td>

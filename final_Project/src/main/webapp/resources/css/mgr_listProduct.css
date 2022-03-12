@@ -21,3 +21,10 @@
 	margin-top: 10px;
 	display: inline-block;
 }
+
+#qna_name{
+	width: 700px;
+	height: 30px;
+	background-color: rgb(242, 230, 208);
+	padding-top: 8px;
+}
