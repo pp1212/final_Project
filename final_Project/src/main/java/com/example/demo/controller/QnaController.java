@@ -79,7 +79,7 @@ public class QnaController {
 		}
 		int re = dao.insertQna(q);
 		if(re != 1) {
-			mav.setViewName("/common/error");
+			mav.setViewName("/error");
 			mav.addObject("msg","게시글 등록에 실패하였습니다");
 		}else {//insert성공했으면
 			try {
@@ -184,8 +184,21 @@ public class QnaController {
 	}
 	
 	@RequestMapping("/admin/mgr_listQna")
-	public void list(Model model) {
-		model.addAttribute("list",dao.mgr_listQna());
+	public void list(Model model,@RequestParam(defaultValue = "1") int mgr_pageNUM) {
+		System.out.println("mgr_pageNUM:" + mgr_pageNUM);
+
+		int start = (mgr_pageNUM - 1) * dao.mgr_pageSIZE + 1;
+		int end = start + dao.mgr_pageSIZE - 1;
+		System.out.println("start:" + start);
+		System.out.println("end:" + end);
+
+		HashMap map = new HashMap();
+		
+		map.put("start", start);
+		map.put("end", end);
+		
+		model.addAttribute("list", dao.mgr_listQna(map));
+		model.addAttribute("mgr_totalPage", dao.mgr_totalPage);
 	}
 	
 	@RequestMapping("/admin/mgr_detailQna")

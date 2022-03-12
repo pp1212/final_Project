@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import com.example.demo.vo.CartProductVO;
 import com.example.demo.vo.CartVO;
+import com.example.demo.vo.CategorySaleVO;
 import com.example.demo.vo.ContentReviewVO;
 import com.example.demo.vo.CustomerOrder_detailVO;
 import com.example.demo.vo.CustomerOrder_refundVO;
@@ -142,9 +143,9 @@ public class DBManager {
 		return product_no;
 	}
 	
-	public static List<ProductVO> category_sale(String category_code){
+	public static List<CategorySaleVO> category_sale(String category_code){
 		SqlSession session = factory.openSession();
-		List<ProductVO> list = session.selectList("product.category_sale",category_code);
+		List<CategorySaleVO> list = session.selectList("product.category_sale",category_code);
 		session.close();
 		return list;
 	}
@@ -152,11 +153,18 @@ public class DBManager {
 	//=========================================
 	//review
 	
-	public static List<ListReviewVO> listReviewWrite(String cust_id){
+	public static List<ListReviewVO> listReviewWrite(HashMap map){
 		SqlSession session = factory.openSession();
-		List<ListReviewVO> list = session.selectList("review.listReviewWrite",cust_id);
+		List<ListReviewVO> list = session.selectList("review.listReviewWrite",map);
 		session.close();
 		return list;
+	}
+	
+	public static int review_getTotalRecord(HashMap map) {
+		SqlSession session = factory.openSession();
+		int re = session.selectOne("review.review_getTotalRecord", map);
+		session.close();
+		return re;
 	}
 	
 	public static List<ContentReviewVO> listReviewComplete(String cust_id){
@@ -408,9 +416,9 @@ public class DBManager {
 		return re;
 	}
 	
-	public static List<QnaVO> mgr_listQna(){
+	public static List<QnaVO> mgr_listQna(HashMap map){
 		SqlSession session = factory.openSession();
-		List<QnaVO> list = session.selectList("qna.mgr_listQna");
+		List<QnaVO> list = session.selectList("qna.mgr_listQna",map);
 		session.close();
 		return list;
 	}
@@ -517,11 +525,19 @@ public class DBManager {
 	//customerOrder_refund
 	
 	public static int insertRefund(CustomerOrder_refundVO cr) {
-		cr.setRefund_no(getNextNo());
+	//	cr.setRefund_no(getNextNo());
 		SqlSession session = factory.openSession();
 		int re = session.insert("customerOrder_refund.insertRefund", cr);
+		session.commit();
 		session.close();
 		return re;
+	}
+	
+	public static int refund_getNextNo() {
+		SqlSession session = factory.openSession();
+		int refund_no = session.selectOne("customerOrder_refund.getNextNo");
+		session.close();
+		return refund_no;
 	}
 	
 	//===========================================

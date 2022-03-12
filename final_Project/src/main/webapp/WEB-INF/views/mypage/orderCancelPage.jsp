@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="../resources/css/orderCancelPage.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/common.css" type="text/css">
 <link rel="stylesheet" href="../resources/css/mypageCommon.css" type="text/css">
@@ -49,6 +50,7 @@
 					<p>
 						주문번호<br>
 						<strong>${o.order_no }</strong>
+						<input type="hidden" value="${o.order_no }" name="order_no">
 					</p>
 				</div>
 				<hr id="oc_hr_date">
@@ -81,7 +83,7 @@
 				<!-- 환불테이블에 수정, 등록시 취소사유가 같이 가야한다..-->
 				<h3>취소사유</h3>
 				<div id="oc_select">
-					<select id="oc_select_box" style="width: 400px; height: 30px;">
+					<select name="refund_code" id="oc_select_box" style="width: 400px; height: 30px;">
 						<option value="0">단순변심</option>
 						<option value="1">상품불량</option>
 						<option value="2">배송지연</option>

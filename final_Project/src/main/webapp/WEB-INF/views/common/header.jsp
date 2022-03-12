@@ -31,7 +31,7 @@
 						<li>${member.cust_name }보글님</li>
 
 						<c:if test="${cust_id eq 'bbox' }"> 
-               				 <li><a href="admin/adminMain">관리자페이지</a><br></li>
+               				 <li><a href="http://localhost:8080/admin/adminMain">관리자페이지</a><br></li>
        				    </c:if>
 						<li><a href="/mypage/orderList">마이페이지</a></li>
 						<li><a href="/logout">로그아웃</a></li>
@@ -68,6 +68,7 @@
 							</div>
 						</li>
 						<li class="menu2"><a href="/market/recentProduct">신제품</a></li>
+						<li class="menu3"><a href="/market/event">이벤트</a></li>
 					</ul>
 					<div class="cart_inner">
 						<button class="cart_show"><img src="/images/icon_cart.png"></button>

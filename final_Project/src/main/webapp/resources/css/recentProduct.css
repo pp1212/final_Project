@@ -95,3 +95,16 @@ ul{
 	margin: 0;
 	padding: 0;
 }
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
+}
+

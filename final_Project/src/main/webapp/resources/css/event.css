@@ -1,0 +1,24 @@
+.page_article{
+	width: 1050px;
+	margin: 0 auto;
+}
+
+.page_article li{
+	padding-bottom: 10px;
+}
+
+.page_article li img{
+	max-width: 100%;
+}
+
+a.top{
+	position: fixed;
+	z-index: 200;
+	right: 250px;
+	bottom: 50px;
+	width: 58px;
+	height: 58px;
+	display: none;
+	background: url('/images/btn_u.jpg') no-repeat 50% 50%;
+	text-indent: -9999px;
+}

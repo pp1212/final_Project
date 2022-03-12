@@ -105,38 +105,23 @@ public class Customer_orderController {
 	}
 	
 	@RequestMapping(value = "/mypage/orderCancelPage", method = RequestMethod.POST)
-	public ModelAndView orderCancelPage_submit(Model model,int order_no, CustomerOrder_refundVO cr) {
+	public ModelAndView orderCancelPage_submit(Model model, int order_no, int refund_code) {
 		ModelAndView mav = new ModelAndView();
-		int re = rDAO.insertRefund(cr);
-	
+		int refund_no = rDAO.refund_getNextNo();
+		CustomerOrder_refundVO vo = new CustomerOrder_refundVO(refund_no, order_no, refund_code);
+		int re = rDAO.insertRefund(vo);
+		//int re = rDAO.insertRefund(cr);
+		
 		if(re == 1) {
 			dao.orderCancelCheck(order_no);
 			mav.setViewName("redirect:/mypage/orderList");
 		}else {
 			mav.addObject("msg", "주문취소에 실패하였습니다.");
-			mav.setViewName("redirect:/common/error");
+			mav.setViewName("/common/error");
 		}
 		return mav;
 	}
 	
-//	@RequestMapping("/admin/monthTotal")
-//	@ResponseBody
-//	public String monthTotal(HttpServletRequest request, MonthTotalVO mt) {
-//		List<MonthTotalVO> list = dao.monthTotal();
-//		request.setAttribute("list", list);
-//		HashMap map = new HashMap();
-//		map.put("list", list);
-//		String json = null;
-//		try {
-//			json = new ObjectMapper().writeValueAsString(map);
-//		}catch (Exception e) {
-//			System.out.println("예외발생:"+e.getMessage());
-//		}
-//		System.out.println(list);
-//		return json;
-//		
-//	}
-//	
 	
 	
 	@GetMapping(value="/admin/monthTotal")
