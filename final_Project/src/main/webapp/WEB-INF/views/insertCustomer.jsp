@@ -28,7 +28,7 @@
 		var password = document.getElementById('cust_pwd');				//비밀번호 
 		var passwordConfirm = document.getElementById('cust_pwd_ck');	//비밀번호 확인 값
 		var confrimMsg = document.getElementById('confirmMsg');			//확인 메세지
-		var correctColor = "#00ff00";
+		var correctColor = "#008000";
 		var wrongColor ="#ff0000";
 		
 		if(password.value == passwordConfirm.value){//password 변수의 값과 passwordConfirm 변수의 값과 동일하다.
@@ -115,9 +115,9 @@
 		<div id="join_title">
 			<h2>회원가입</h2>
 		</div>
-		<div id="join_essential">
+		<p id="join_essential">
 			<label class="join_8">*</label>필수입력사항
-		</div>
+		</p>		
 		<div>
 			<hr width="1000px">
 		</div>
