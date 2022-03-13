@@ -130,3 +130,27 @@ section{
 	width: 27px;
 	height: 27px;
 }
+
+.nb .side_search{
+	position: absolute;
+	right: 60px;
+	top: -5px;
+}
+
+.nb .side_search .inp_search{
+	width: 242px;
+	height: 32px;
+	padding: 0 60px 0 14px;
+	border: 1px solid #f7f7f6;
+	border-radius: 18px;
+	background-color: #f7f7f7;
+	outline: none;
+}
+
+.nb .side_search .btn_search{
+	position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+}
