@@ -28,7 +28,8 @@ box-sizing: content-box;
 }
 #join_essential{
 	text-align: right;	
-	margin-right: 250px;
+	/* margin-right: 250px; */
+	width: 1000px;
 }
 .join_tag{
 	margin-bottom: 50px;
@@ -102,7 +103,10 @@ input {
 }
 
 
-
+.join_container{
+	width: 1100px;
+    margin: 0 auto;
+}
 
 
 
