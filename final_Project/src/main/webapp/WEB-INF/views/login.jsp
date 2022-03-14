@@ -14,7 +14,7 @@
 	Kakao.init("51f6f1b1862f38ef216edbad5ec912c9");
 	function kakaoLogin() {
 		Kakao.Auth.loginForm({
-			scope:"profile_nickname,account_email,gender,age_range,birthday",
+			scope:"profile_nickname,account_email,gender",
 			success:function(authObj){
 				console.log(authObj);
 				Kakao.API.request({
@@ -22,7 +22,7 @@
 					success:function(res){
 						console.log(res);
 						let email = res.kakao_account.email;
-						location.href="/KakaoLoginOK/"+email;
+						location.href="/main/";
 					}
 				});
 			}
@@ -38,17 +38,19 @@
 	
 	<div id="login_container">
 		<form action="login" method="post">
-			<p id="login_id">
-				<input class="login_content" type="text" placeholder="아이디를 입력해주세요" name="cust_id" >
-			</p>	
-			<p id="login_pwd">
-				<input class="login_content" type="password" placeholder="비밀번호를 입력해주세요" name="cust_pwd" >
-			</p>
-			<p id="login_find">
-				<a href="find_id">아이디 찾기</a>&nbsp;|&nbsp;<a href="find_pwd">비밀번호 찾기</a>
-			</p>
-			<input id="login_btn" type="submit" value="로그인"><a id="login_insert" href="insertCustomer">회원가입</a><br>
-			<a id="login_kakao" href="javascript:kakaoLogin()">카카오톡으로 로그인하기<img id="login_kakaoImg" src="/images/kakao.PNG"></a>
+			<div id="login_form">
+				<p id="login_id">
+					<input class="login_content" type="text" placeholder="아이디를 입력해주세요" name="cust_id" >
+				</p>	
+				<p id="login_pwd">
+					<input class="login_content" type="password" placeholder="비밀번호를 입력해주세요" name="cust_pwd" >
+				</p>
+				<p id="login_find">
+					<a href="find_id">아이디 찾기</a>&nbsp;|&nbsp;<a href="find_pwd">비밀번호 찾기</a>
+				</p>
+				<input id="login_btn" type="submit" value="로그인"><a id="login_insert" href="insertCustomer">회원가입</a><br>
+				<a id="login_kakao" href="javascript:kakaoLogin()">카카오톡으로 로그인하기<img id="login_kakaoImg" src="/images/kakao.PNG"></a>
+			</div>
 		</form>
 	</div>
 	<div><jsp:include page="./common/footer.jsp"></jsp:include></div>

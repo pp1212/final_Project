@@ -28,7 +28,7 @@
 		var password = document.getElementById('cust_pwd');				//비밀번호 
 		var passwordConfirm = document.getElementById('cust_pwd_ck');	//비밀번호 확인 값
 		var confrimMsg = document.getElementById('confirmMsg');			//확인 메세지
-		var correctColor = "#00ff00";
+		var correctColor = "#008000";
 		var wrongColor ="#ff0000";
 		
 		if(password.value == passwordConfirm.value){//password 변수의 값과 passwordConfirm 변수의 값과 동일하다.
@@ -115,9 +115,9 @@
 		<div id="join_title">
 			<h2>회원가입</h2>
 		</div>
-		<div id="join_essential">
+		<p id="join_essential">
 			<label class="join_8">*</label>필수입력사항
-		</div>
+		</p>		
 		<div>
 			<hr width="1000px">
 		</div>
@@ -167,7 +167,7 @@
 					<div class="join_box">
 						<strong class="join_name">이메일</strong><label class="join_8">*</label>
 							<span class="join_tag" id="join_tag_email"> 
-								<input type="text" placeholder="  예) bogglebox@boggle.com" name="cust_email" id="cust_email" size="50">
+								<input type="text" placeholder="  예) bogglebox@boggle.com" name="cust_email" id="cust_email" size="50" value="${email}">
 								<input type="button" value="중복확인" id="btnCheck2" class="btnCheck" style="height: 30px; width: 80px;">
 								<span id="emailCheck" class="result"></span><br>
 							</span>
@@ -182,7 +182,7 @@
 								<input type="text" name="cust_addr3" id="cust_addr3" placeholder="  상세주소" size="50"><br>
 							</span>
 					</div>
-					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;" onclick="checkForm()">
+					<input type="submit" value="가입하기" id="join_submit" style="height: 40px; width: 150px;">
 				</div>		
 				<br>
 				

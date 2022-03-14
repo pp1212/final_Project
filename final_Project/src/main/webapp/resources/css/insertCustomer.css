@@ -27,10 +27,9 @@ box-sizing: content-box;
 	
 }
 #join_essential{
-	position: relative;
- 	text-align: right;
-	margin-left: 1000px;
-	margin-right: 250px;	
+	text-align: right;	
+	/* margin-right: 250px; */
+	width: 1000px;
 }
 .join_tag{
 	margin-bottom: 50px;
@@ -97,13 +96,17 @@ input {
 }
 .result{
 	margin-left: 5px;
+	font-size: 13px;
 }
 .join_name{
 	margin-left: 180px;
 }
 
 
-
+.join_container{
+	width: 1100px;
+    margin: 0 auto;
+}
 
 
 

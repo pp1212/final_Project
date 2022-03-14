@@ -70,6 +70,12 @@
 						<li class="menu2"><a href="/market/recentProduct">신제품</a></li>
 						<li class="menu3"><a href="/market/event">이벤트</a></li>
 					</ul>
+					<div class="side_search">
+						<form action="/market/searchProduct" method="post">
+							<input name="keyword" type="text" placeholder="검색어를 입력해주세요." class="inp_search">
+							<input type="image" src="/images/icon_search.jpg" class="btn_search">
+						</form>
+					</div>
 					<div class="cart_inner">
 						<button class="cart_show"><img src="/images/icon_cart.png"></button>
 					</div>

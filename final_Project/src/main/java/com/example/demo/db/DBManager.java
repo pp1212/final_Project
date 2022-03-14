@@ -89,6 +89,13 @@ public class DBManager {
 		return list;
 	}
 	
+	public static List<ProductVO> searchProduct(String keyword){
+		SqlSession session = factory.openSession();
+		List<ProductVO> list = session.selectList("product.searchProduct", keyword);
+		session.close();
+		return list;
+	}
+	
 	public static List<ProductVO> mgr_listProduct(HashMap map){
 		SqlSession session = factory.openSession();
 		List<ProductVO> list = session.selectList("product.mgr_listProduct",map);
@@ -379,6 +386,14 @@ public class DBManager {
 	public static int QnaGetTotalRecord(HashMap map) {
 		SqlSession session = factory.openSession();
 		int no = session.selectOne("qna.QnaGetTotalRecord", map);
+		System.out.println("totalRecord:"+no);
+		session.close();
+		return no;
+	}
+	
+	public static int QnaGetTotalRecord2(HashMap map) {
+		SqlSession session = factory.openSession();
+		int no = session.selectOne("qna.QnaGetTotalRecord2", map);
 		System.out.println("totalRecord:"+no);
 		session.close();
 		return no;
