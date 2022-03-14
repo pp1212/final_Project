@@ -391,6 +391,14 @@ public class DBManager {
 		return no;
 	}
 	
+	public static int QnaGetTotalRecord2(HashMap map) {
+		SqlSession session = factory.openSession();
+		int no = session.selectOne("qna.QnaGetTotalRecord2", map);
+		System.out.println("totalRecord:"+no);
+		session.close();
+		return no;
+	}
+	
 //	public static List<QnaVO> listQna(String cust_id) {
 //		SqlSession session = factory.openSession();
 //		List<QnaVO> list = session.selectList("qna.listQna",cust_id);

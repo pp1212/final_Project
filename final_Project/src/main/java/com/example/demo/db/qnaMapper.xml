@@ -42,7 +42,11 @@
   </select>
   
   <select id="QnaGetTotalRecord" resultType="java.lang.Integer">
-<!--   	select count(*) from Qna -->
+   	select count(*) from Qna
+	<!-- select count(*) from qna q, customerOrder_detail d, customer_order o  where q.detail_no=d.detail_no and o.order_no=d.order_no and o.cust_id=#{cust_id} --> 
+  </select>
+  
+  <select id="QnaGetTotalRecord2" resultType="java.lang.Integer">
 	select count(*) from qna q, customerOrder_detail d, customer_order o  where q.detail_no=d.detail_no and o.order_no=d.order_no and o.cust_id=#{cust_id} 
   </select>
   

@@ -34,7 +34,7 @@ public class QnaDAO {
 	}
 	
 	public List<QnaVO> listQna(HashMap map) {
-		totalRecord = DBManager.QnaGetTotalRecord(map);
+		totalRecord = DBManager.QnaGetTotalRecord2(map);
 		totalPage = (int)Math.ceil(totalRecord/(double)pageSIZE);
 		return DBManager.listQna(map);
 	}
