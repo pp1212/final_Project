@@ -8,8 +8,8 @@
 4.신제품목록   
 5.이벤트   
 6.마이페이지-상품후기   
-7.메인-헤더,배너,베스트,할인상품,푸터
-https://user-images.githubusercontent.com/90843819/158086329-092e55b4-09b4-48c0-a840-5b284dc386e6.mp4
+7.메인-헤더,배너,베스트,할인상품,푸터   
+영상시연 : https://user-images.githubusercontent.com/90843819/158086329-092e55b4-09b4-48c0-a840-5b284dc386e6.mp4
 
 # HaYeon
 1.회원가입   
@@ -29,6 +29,7 @@ https://user-images.githubusercontent.com/90843819/158086329-092e55b4-09b4-48c0-
 5.관리자-상품관리   
 6.관리자-상품문의답글   
 7.관리자-카테고리별판매량   
+영상시연 : https://user-images.githubusercontent.com/90843819/158086364-6541a8ab-891b-4c39-a4cd-69fb1cf6e591.mp4
 
 
 
