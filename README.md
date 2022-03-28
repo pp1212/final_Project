@@ -14,6 +14,7 @@
   - 사용언어 : Java, JavaScript, HTML, CSS, jsp
   - Framework : Spring, MyBatis
 
+## 구성원 및 역할
 ### JiYe
 1.아임포트     
 2.상품목록   
