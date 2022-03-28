@@ -5,6 +5,14 @@
 ![image](https://user-images.githubusercontent.com/90843819/158086783-afb1fad4-cd95-4628-ab26-582e9af78f8b.png)
 
 # 개요
+- 개발인원 : 3명
+- 개발기간 : 2022/01/04 ~ 2022/03/14 (구현 : 2022/02/18 ~ 2022/03/14)
+- 개발환경
+  - 개발도구 : sts
+  - DB : Oracle
+  - Server : Apache Tomcat 9.0
+  - 사용언어 : Java, JavaScript, HTML, CSS, jsp
+  - Framework : Spring, MyBatis
 
 ### JiYe
 1.아임포트     
