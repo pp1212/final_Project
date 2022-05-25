@@ -19,7 +19,7 @@
 <br>
 
 ## ERD
-![erwin수정_0329](https://user-images.githubusercontent.com/91641653/160618299-d50b9893-8ac4-4b0a-a786-bc1210199f65.jpg)
+![erwin수정_0329 - 복사본](https://user-images.githubusercontent.com/91641653/170291904-026ee3b0-3bc3-42b8-92c9-a05a9e4dd2ce.jpg)
 <br>
 
 ## 담당 구현 파트
